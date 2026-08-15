@@ -1,0 +1,18 @@
+{
+ "category": "Chocolate confectionery",
+ "batch": 1,
+ "brands": [
+  "Cadbury",
+  "M&M's",
+  "Maltesers",
+  "Pods"
+ ],
+ "tokens": [
+  "/m/0f7n6",
+  "M&M's",
+  "/m/05ybfg",
+  "/m/07kj4pz"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

@@ -1,0 +1,20 @@
+{
+ "category": "Household Cleaners (Indoor)",
+ "batch": 3,
+ "brands": [
+  "Pine O Cleen",
+  "Thankyou",
+  "Undo This Mess",
+  "White King",
+  "Zero Co"
+ ],
+ "tokens": [
+  "Pine O Cleen",
+  "/g/11c3ypq3s8",
+  "Undo This Mess",
+  "White King",
+  "Zero Co"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

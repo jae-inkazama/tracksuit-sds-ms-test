@@ -1,0 +1,20 @@
+{
+ "category": "Asian Foods & Condiments",
+ "batch": 1,
+ "brands": [
+  "AYAM",
+  "Just Cook",
+  "Kailis Brothers (KB)",
+  "Kikkoman",
+  "Lee Kum Kee"
+ ],
+ "tokens": [
+  "ayam brand",
+  "Just Cook",
+  "Kailis Brothers (KB)",
+  "/g/11c4bgnn3m",
+  "/m/0ggm6gn"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

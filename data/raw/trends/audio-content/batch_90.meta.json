@@ -1,0 +1,20 @@
+{
+ "category": "Audio Content",
+ "batch": 90,
+ "brands": [
+  "Spotify",
+  "ABC Listen",
+  "SoundCloud",
+  "Wondery",
+  "iHeartRadio"
+ ],
+ "tokens": [
+  "/g/11fhwks2m1",
+  "ABC Listen",
+  "SoundCloud",
+  "Wondery",
+  "iHeartRadio"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

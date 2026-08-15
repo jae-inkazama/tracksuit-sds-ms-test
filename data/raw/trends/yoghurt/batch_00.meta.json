@@ -1,0 +1,20 @@
+{
+ "category": "Yoghurt",
+ "batch": 0,
+ "brands": [
+  "Chobani",
+  "Activia",
+  "Chobani Fit",
+  "Cocobella",
+  "Coyo"
+ ],
+ "tokens": [
+  "/m/0jt3njc",
+  "activia yoghurt",
+  "chobani fit",
+  "cocobella",
+  "coyo yoghurt"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

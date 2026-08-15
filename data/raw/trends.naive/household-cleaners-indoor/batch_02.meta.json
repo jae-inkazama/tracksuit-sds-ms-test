@@ -1,0 +1,20 @@
+{
+ "category": "Household Cleaners (Indoor)",
+ "batch": 2,
+ "brands": [
+  "Pine O Cleen",
+  "Lucent Globe",
+  "Organic Choice",
+  "Pleasant State",
+  "Skipper (formerly Tirtyl)"
+ ],
+ "tokens": [
+  "Pine O Cleen",
+  "/g/11ryt4mc7z",
+  "Organic Choice",
+  "/g/11sbdcc_1f",
+  "Skipper (formerly Tirtyl)"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

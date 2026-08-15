@@ -1,0 +1,20 @@
+{
+ "category": "Social Media Platforms",
+ "batch": 1,
+ "brands": [
+  "Facebook",
+  "Reddit",
+  "Snapchat",
+  "Threads",
+  "TikTok"
+ ],
+ "tokens": [
+  "Facebook",
+  "/m/0bx7cy_",
+  "/g/11c6t_0qg0",
+  "/g/11v19b38sz",
+  "/g/11fy265933"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

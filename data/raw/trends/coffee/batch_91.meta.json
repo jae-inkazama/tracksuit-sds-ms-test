@@ -1,0 +1,20 @@
+{
+ "category": "Coffee",
+ "batch": 91,
+ "brands": [
+  "Vittoria Coffee",
+  "Rumble Coffee Roasters",
+  "ST. ALI",
+  "Sample Coffee",
+  "Single O"
+ ],
+ "tokens": [
+  "/m/0gx_p1d",
+  "Rumble Coffee Roasters",
+  "ST. ALI",
+  "Sample Coffee",
+  "Single O"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

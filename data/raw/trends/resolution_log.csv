@@ -1,0 +1,508 @@
+category_name,brand_name,query_token,kind,detail,tier
+Chocolate,Cadbury,/m/0f7n6,topic,Cadbury (Company) score=36,trends
+Chocolate,Darrell Lea,/m/097x6c,topic,Darrell Lea Confectionery Co. (Company) score=15,trends
+Chocolate,Ferrero,/m/03gng1,topic,Ferrero SpA (Food company) score=24,trends
+Chocolate,Lindt,/m/02m833,topic,Lindt (Chocolate and cocoa products company) score=36,trends
+Chocolate,Nestlé,nestle,term,override:term,trends
+Chocolate,Tony's Chocolonely,tonys chocolonely,term,override:term,trends
+Chocolate,Whittaker's,whittakers chocolate,term,override:term,trends
+Car Insurance,AAMI,/m/0wjlg1s,topic,AAMI (Insurance company) score=36,trends
+Car Insurance,Bingle,/m/0_gwsxz,topic,Bingle (Company) score=36,trends
+Car Insurance,Budget Direct,/m/0k9h0sg,topic,Budget Direct (Insurance company) score=36,trends
+Car Insurance,Huddle,huddle insurance,term,override:term,trends
+Car Insurance,Koba,koba insurance,term,override:term,trends
+Car Insurance,NRMA,/m/030sgz,topic,NRMA (Company) score=36,trends
+Car Insurance,RACQ,RACQ,term,no-matching-topic,trends
+Car Insurance,ROLLiN' Insurance,rollin insurance,term,override:term,trends
+Car Insurance,Suncorp,/m/0bg5_k,topic,Suncorp (General insurance corporation) score=36,trends
+Car Insurance,Youi,/g/11g9n7hzyd,topic,Youi (Insurance company) score=36,trends
+Asian Foods & Condiments,AYAM,ayam brand,term,override:term,trends
+Asian Foods & Condiments,Bibigo,/g/113qbvftz,topic,Bibigo (Topic),trends
+Asian Foods & Condiments,Chang's,changs noodles,term,override:term,trends
+Asian Foods & Condiments,Golden Wok,Golden Wok,term,zero-volume-fallback,trends
+Asian Foods & Condiments,Hong Kong Dim Sim Kitchen,/g/11b7k43hlw,topic,"Hong Kong Dim Sim Kitchen (Manufacturer in Marrickville, Australia)",trends
+Asian Foods & Condiments,Just Cook,Just Cook,term,no-matching-topic,trends
+Asian Foods & Condiments,Kailis Brothers (KB),Kailis Brothers (KB),term,no-matching-topic,trends
+Asian Foods & Condiments,Kikkoman,/g/11c4bgnn3m,topic,Kikkoman (Topic),trends
+Asian Foods & Condiments,Lee Kum Kee,/m/0ggm6gn,topic,Lee Kum Kee (Topic),trends
+Asian Foods & Condiments,Lucky Kitchen,Lucky Kitchen,term,no-matching-topic,trends
+Asian Foods & Condiments,Marion's Kitchen,Marion's Kitchen,term,no-matching-topic,trends
+Asian Foods & Condiments,Mr Chen's,mr chens,term,override:term,trends
+Asian Foods & Condiments,Obento,Obento,term,no-matching-topic,trends
+Asian Foods & Condiments,Pandaroo,pandaroo,term,override:term,trends
+Asian Foods & Condiments,Roll’d,/g/11h6yrzyk1,topic,Roll'd (Topic),trends
+Asian Foods & Condiments,Urban Eats,urban eats,term,override:term,trends
+Audio Content,ABC Listen,ABC Listen,term,zero-volume-fallback,trends
+Audio Content,Apple Music,apple music,term,override:term,trends
+Audio Content,Audible,/m/05z2gj,topic,Audible (Company),trends
+Audio Content,LiSTNR,listnr,term,override:term,trends
+Audio Content,Mamamia,/g/11dzsq__z5,topic,Mamamia (Website),trends
+Audio Content,SXM Podcasts,sxm podcasts,term,override:term,trends
+Audio Content,Schwartz Media,Schwartz Media,term,no-matching-topic,trends
+Audio Content,SoundCloud,SoundCloud,term,zero-volume-fallback,trends
+Audio Content,Spotify,/g/11fhwks2m1,topic,Spotify (Company),trends
+Audio Content,Wondery,Wondery,term,zero-volume-fallback,trends
+Audio Content,YouTube,/m/09jcvs,topic,YouTube (Video sharing company),trends
+Audio Content,iHeartRadio,iHeartRadio,term,zero-volume-fallback,trends
+Body Care,Beach Road Naturals,Beach Road Naturals,term,zero-volume-fallback,trends
+Body Care,Bosisto's,/g/11dxd4z2w4,topic,Bosisto's (Topic),trends
+Body Care,Dove,/m/055p7b,topic,Dove (Unilever brand),trends
+Body Care,Epzen,Epzen,term,zero-volume-fallback,trends
+Body Care,Freshwater Farm,/g/11vd3_6hhm,topic,Freshwater Farm (Topic),trends
+Body Care,Glow Lab,/g/11l7z6bcx5,topic,Glow Lab (Topic),trends
+Body Care,Johnson's,johnsons body wash,term,no-matching-topic,trends
+Body Care,My Soda,My Soda,term,zero-volume-fallback,trends
+Body Care,OC Naturals,OC Naturals,term,no-matching-topic,trends
+Body Care,Palmolive,/g/1218rvl2,topic,Palmolive (Brand),trends
+Body Care,Sukin,/g/11qkh53rgw,topic,Sukin (Topic),trends
+Body Care,Sundae Body,/g/11s1y0__hc,topic,Sundae Body (Topic),trends
+Body Care,Thankyou,/g/11c3ypq3s8,topic,Thankyou (Company),trends
+Breakfast or Health Foods,Blue Frog Breakfast,Blue Frog Breakfast,term,zero-volume-fallback,trends
+Breakfast or Health Foods,Brookfarm,/g/11c6t_0bmk,topic,Brookfarm (Topic),trends
+Breakfast or Health Foods,Carman's,carmans muesli,term,no-matching-topic,trends
+Breakfast or Health Foods,Farmer Jo,Farmer Jo,term,no-matching-topic,trends
+Breakfast or Health Foods,Freshness Fine Foods,Freshness Fine Foods,term,zero-volume-fallback,trends
+Breakfast or Health Foods,Hubbards,Hubbards,term,zero-volume-fallback,trends
+Breakfast or Health Foods,Irrewarra,/g/1tfp2ldx,topic,Irrewarra (Topic),trends
+Breakfast or Health Foods,Jordans,/m/0640x1t,topic,The Jordans & Ryvita Company (Food company),trends
+Breakfast or Health Foods,Morning Sun,Morning Sun,term,zero-volume-fallback,trends
+Breakfast or Health Foods,Pure Delish,Pure Delish,term,zero-volume-fallback,trends
+Breakfast or Health Foods,Sonoma Bakery,Sonoma Bakery,term,no-matching-topic,trends
+Breakfast or Health Foods,Uncle Tobys,/m/0696s6,topic,Uncle Tobys (Company),trends
+Cafes,Cafe 63,/g/11h6ys1g6h,topic,Cafe 63 (Topic),trends
+Cafes,Gloria Jeans,Gloria Jeans,term,zero-volume-fallback,trends
+Cafes,Jamaica Blue,/g/11b7c8xt70,topic,Jamaica Blue (Topic),trends
+Cafes,Krispy Kreme,Krispy Kreme,term,zero-volume-fallback,trends
+Cafes,Starbucks,/g/12nwwykv1,topic,Starbucks (Topic),trends
+Cafes,The Coffee Club,/m/0f27dm,topic,The Coffee Club (Coffeehouse company),trends
+Cafes,Zarraffa's,Zarraffa's,term,zero-volume-fallback,trends
+"Chips, Crisps, Crackers",Boulder,boulder chips,term,override:term,trends
+"Chips, Crisps, Crackers",Burts,Burts,term,zero-volume-fallback,trends
+"Chips, Crisps, Crackers",Kettle,kettle chips,term,override:term,trends
+"Chips, Crisps, Crackers",Proper Crisps,Proper Crisps,term,zero-volume-fallback,trends
+"Chips, Crisps, Crackers",Red Rock Deli,Red Rock Deli,term,no-matching-topic,trends
+"Chips, Crisps, Crackers",Snacka Changi,Snacka Changi,term,zero-volume-fallback,trends
+"Chips, Crisps, Crackers",Tyrells,tyrrells crisps,term,override:term,trends
+Chocolate & Confectionery,Allens,/g/11bc6b84f7,topic,Allens (Topic),trends
+Chocolate & Confectionery,Boodles,Boodles,term,zero-volume-fallback,trends
+Chocolate & Confectionery,Cadbury,/m/0nf1nsz,topic,Cadbury (Topic),trends
+Chocolate & Confectionery,Darrell Lea,/g/11bc6nhtt9,topic,Darrell Lea (Topic),trends
+Chocolate & Confectionery,KitKat,KitKat,term,no-matching-topic,trends
+Chocolate & Confectionery,Lindt,/g/1ymzrpgy8,topic,Lindt (Topic),trends
+Chocolate & Confectionery,The Natural Confectionery Co.,/m/0f4rh9,topic,The Natural Confectionery Company (Company),trends
+Chocolate bars and blocks,Cadbury,/m/0nf1nsz,topic,Cadbury (Topic),trends
+Chocolate bars and blocks,Darrell Lea,/g/11bc6nhtt9,topic,Darrell Lea (Topic),trends
+Chocolate bars and blocks,KitKat,KitKat,term,no-matching-topic,trends
+Chocolate bars and blocks,Life Savers,/m/049344,topic,Life Savers (Topic),trends
+Chocolate bars and blocks,Lindt,/g/1ymzrpgy8,topic,Lindt (Topic),trends
+Chocolate bars and blocks,Old Gold,Old Gold,term,no-matching-topic,trends
+Chocolate bars and blocks,Toblerone,/m/02d7h9,topic,Toblerone (Topic),trends
+Chocolate bars and blocks,Tony's Chocolonely,Tony's Chocolonely,term,no-matching-topic,trends
+Chocolate bars and blocks,Whittaker's,Whittaker's,term,no-matching-topic,trends
+Coffee,Allpress Espresso,/g/11q9tk1wt0,topic,Allpress Espresso (Topic),trends
+Coffee,Axil,Axil,term,zero-volume-fallback,trends
+Coffee,Campos,/g/11q250k0cn,topic,CAMPOS COFFEE (Topic),trends
+Coffee,Coffee Supreme,/g/11q3356jb2,topic,Coffee Supreme (Topic),trends
+Coffee,Industry Beans,/g/11rt_fsyjx,topic,Industry Beans (Topic),trends
+Coffee,ONA Coffee,/g/11vqv5nqwl,topic,ONA Coffee (Topic),trends
+Coffee,Pablo & Rusty's,Pablo & Rusty's,term,zero-volume-fallback,trends
+Coffee,Padre Coffee,Padre Coffee,term,zero-volume-fallback,trends
+Coffee,Proud Mary's,Proud Mary's,term,zero-volume-fallback,trends
+Coffee,Rumble Coffee Roasters,Rumble Coffee Roasters,term,zero-volume-fallback,trends
+Coffee,ST. ALI,ST. ALI,term,zero-volume-fallback,trends
+Coffee,Sample Coffee,Sample Coffee,term,zero-volume-fallback,trends
+Coffee,Seven Miles,Seven Miles,term,no-matching-topic,trends
+Coffee,Single O,Single O,term,zero-volume-fallback,trends
+Coffee,Suntory Boss Coffee,Suntory Boss Coffee,term,no-matching-topic,trends
+Coffee,Toby's Estate,Toby's Estate,term,zero-volume-fallback,trends
+Coffee,Veneziano Coffee Roasters,Veneziano Coffee Roasters,term,zero-volume-fallback,trends
+Coffee,Vittoria Coffee,/m/0gx_p1d,topic,Vittoria Coffee (Food company),trends
+"Coupons, Discounts and Vouchers",Cashrewards,/g/11hz8jx70t,topic,Cashrewards (Retail company),trends
+"Coupons, Discounts and Vouchers",EatClub,eatclub,term,override:term,trends
+"Coupons, Discounts and Vouchers",Entertainment,entertainment book,term,override:term,trends
+"Coupons, Discounts and Vouchers",First Table,/g/11kpf1crkj,topic,First Table Limited (Company),trends
+"Coupons, Discounts and Vouchers",Groupon,groupon,term,override:term,trends
+"Coupons, Discounts and Vouchers",RedBalloon,/m/0vpstvv,topic,RedBalloon (Company),trends
+"Crumbs, Coatings and Sauces",Hart & Soul,Hart & Soul,term,zero-volume-fallback,trends
+"Crumbs, Coatings and Sauces",Maggi,Maggi,term,zero-volume-fallback,trends
+"Crumbs, Coatings and Sauces",MasterFoods,/g/11k59pvsgl,topic,Masterfoods (Topic),trends
+"Crumbs, Coatings and Sauces",McCormick,/g/11c4bhctvz,topic,McCormick (Topic),trends
+"Crumbs, Coatings and Sauces",Mingle,/g/11qg14jt5r,topic,Mingle Seasoning (Topic),trends
+"Crumbs, Coatings and Sauces",Old El Paso,/m/0cl3gq,topic,Old El Paso (Topic),trends
+Department Stores,Big W,Big W,term,zero-volume-fallback,trends
+Department Stores,David Jones,David Jones,term,zero-volume-fallback,trends
+Department Stores,Kmart,/g/11b827g0wh,topic,Kmart (Topic),trends
+Department Stores,Myer,Myer,term,zero-volume-fallback,trends
+Department Stores,Salvos Stores,/g/11b7cjs770,topic,Salvos Stores (Topic),trends
+Department Stores,Target,/g/11byczxsgr,topic,Target (Topic),trends
+Eco Products,Adore,Adore,term,zero-volume-fallback,trends
+Eco Products,Biome,/m/01qjv4,topic,Biometric (Topic),trends
+Eco Products,Flora & Fauna,/g/11j68mlr3b,topic,Flora & Fauna (Topic),trends
+Eco Products,Go for Zero,Go for Zero,term,zero-volume-fallback,trends
+Eco Products,Healthy Life,/g/11rqgqmf45,topic,Healthy Life Herbs (Topic),trends
+Eco Products,Little Eco Shop,Little Eco Shop,term,zero-volume-fallback,trends
+Fast Food,FISHBOWL,fishbowl poke,term,override:term,trends
+Fast Food,Grill'd,grill'd burgers,term,no-matching-topic,trends
+Fast Food,Guzman y Gomez,/g/11clhsb7s5,topic,Guzman y Gomez (Fast food restaurant chain) score=36,trends
+Fast Food,Hungry Jack's,Hungry Jack's,term,no-matching-topic,trends
+Fast Food,KFC,/g/11b7q_l184,topic,KFC (Topic),trends
+Fast Food,Mad Mex,/m/012vv24s,topic,Mad Mex (Fast-food restaurant company) score=36,trends
+Fast Food,McDonalds,/m/07gyp7,topic,McDonald's (Fast food restaurant chain) score=36,trends
+Fast Food,Oporto,/m/0b8dqr,topic,Oporto (Fast-food restaurant company) score=36,trends
+Fast Food,Red Rooster,/m/018_zw,topic,Red Rooster (Restaurant company) score=36,trends
+Fast Food,Roll'd,roll'd vietnamese,term,no-matching-topic,trends
+Fast Food,Schnitz,Schnitz,term,no-matching-topic,trends
+Fast Food,Soul Origin,Soul Origin,term,no-matching-topic,trends
+Fast Food,Subway,/m/0f7q4,topic,Subway (Fast-food restaurant company) score=36,trends
+Fast Food,Taco Bell,/m/09cg6,topic,Taco Bell (Fast-food restaurant company) score=36,trends
+Fast Food,Zambrero,/m/0134v2vl,topic,Zambrero (Fast food restaurant company) score=36,trends
+Female Fashion,Country Road,/g/11dxd5kfcx,topic,Country Road (Topic),trends
+Female Fashion,Cue,/m/0hr3_wj,topic,Cuevana (Website),trends
+Female Fashion,Decjuba,/g/11c6txb0z5,topic,Decjuba (Topic),trends
+Female Fashion,Forever New,/g/11c6tyv3gz,topic,Forever New (Topic),trends
+Female Fashion,Gorman,/g/11c6ty8_53,topic,gorman (Topic),trends
+Female Fashion,Marcs,/g/11l9yby880,topic,MARCS (Topic),trends
+Female Fashion,Portmans,/g/11g6qm8k__,topic,Portmans (Topic),trends
+Female Fashion,Review,/g/11cn35kmhy,topic,REVIEW (Topic),trends
+Female Fashion,Seed Heritage,/g/113kw8q6m,topic,Seed Heritage (Topic),trends
+Female Fashion,Veronika Maine,/g/11c6vfc8vx,topic,Veronika Maine (Topic),trends
+Female Fashion,Witchery,/g/11g6qmj1mn,topic,Witchery (Topic),trends
+Female Skincare,Alpha-H,/g/11c6vff9_2,topic,Alpha-H (Topic),trends
+Female Skincare,Biologi,Biologi,term,zero-volume-fallback,trends
+Female Skincare,Emma Lewisham,/g/11q24d16wm,topic,Emma Lewisham (Topic),trends
+Female Skincare,Go-to-skincare,/g/11sz2fh8wg,topic,Go-to Skincare (Topic),trends
+Female Skincare,Grown Alchemist,/g/11dxd4jdlr,topic,Grown Alchemist (Topic),trends
+Female Skincare,Kora Organics,/m/010rdcs6,topic,KORA Organics (Topic),trends
+Female Skincare,Rationale,Rationale,term,no-matching-topic,trends
+Female Skincare,Ren Skincare,Ren Skincare,term,no-matching-topic,trends
+Feminine Hygiene Products (Female Only),Barely Intimate,Barely Intimate,term,no-matching-topic,trends
+Feminine Hygiene Products (Female Only),Canesten,Canesten,term,no-matching-topic,trends
+Feminine Hygiene Products (Female Only),Femfresh,/g/11c6twtzgk,topic,Femfresh (Topic),trends
+Feminine Hygiene Products (Female Only),Replens,/g/11c4bh2mvc,topic,Replens (Topic),trends
+Feminine Hygiene Products (Female Only),Summer’s Eve,Summer’s Eve,term,zero-volume-fallback,trends
+Feminine Hygiene Products (Female Only),Vagisil,/m/09rhnf,topic,Vagisil (Drug brand),trends
+Feminine Hygiene Products (Female Only),Vush,/g/11swgh185q,topic,Vush Stimulation (Topic),trends
+Floor Cleaning Appliances,Bissell,/g/11bc64qnlg,topic,BISSELL (Topic),trends
+Floor Cleaning Appliances,Dyson,/g/1hhcj17z5,topic,Dyson (Topic),trends
+Floor Cleaning Appliances,Hoover,/m/0vv4xct,topic,Hoover (Topic),trends
+Floor Cleaning Appliances,Kärcher,/m/0r8g08g,topic,Kärcher (Topic),trends
+Floor Cleaning Appliances,Shark,/g/113lpmjx_,topic,Shark (Topic),trends
+Floor Cleaning Appliances,Tineco,/g/11lgjmgymj,topic,Tineco (Topic),trends
+Floor Cleaning Appliances,Vax,/g/11cm64ymyw,topic,Vax (Topic),trends
+Fresh Meat & Poultry,Cleaver's Organic,cleavers organic,term,override:term,trends
+Fresh Meat & Poultry,Coles Finest,Coles Finest,term,no-matching-topic,trends
+Fresh Meat & Poultry,Coles Graze,Coles Graze,term,no-matching-topic,trends
+Fresh Meat & Poultry,Farm Grown Organic,Farm Grown Organic,term,no-matching-topic,trends
+Fresh Meat & Poultry,Lilydale,lilydale chicken,term,override:term,trends
+Fresh Meat & Poultry,Macro,macro organic,term,override:term,trends
+Fresh Milk (Dairy),Dairy Farmers,/g/11bc6kkz7_,topic,United Dairy Farmers (Topic),trends
+Fresh Milk (Dairy),Farmhouse Gold,Farmhouse Gold,term,no-matching-topic,trends
+Fresh Milk (Dairy),Norco,/g/11bx9klh7l,topic,Norco (Topic),trends
+Fresh Milk (Dairy),PURA,PURA,term,zero-volume-fallback,trends
+Fresh Milk (Dairy),Pauls,Pauls,term,no-matching-topic,trends
+Fresh Milk (Dairy),Zymil,Zymil,term,zero-volume-fallback,trends
+Fresh Milk (Dairy),a2 Milk,/m/08k65_,topic,A2 milk (Topic),trends
+Furniture & Homeware,Brosa,brosa furniture,term,no-matching-topic,trends
+Furniture & Homeware,Castlery,Castlery,term,no-matching-topic,trends
+Furniture & Homeware,Ecosa,Ecosa,term,no-matching-topic,trends
+Furniture & Homeware,Fantastic Furniture,fantastic furniture,term,no-matching-topic,trends
+Furniture & Homeware,Freedom,/m/0nd4wng,topic,freedom (Furniture retail chain) score=36,trends
+Furniture & Homeware,Ikea,/m/03tb1,topic,IKEA (Furniture retail company) score=36,trends
+Furniture & Homeware,Koala,/g/11mv_h76n8,topic,Koala Sleep Pty Ltd (Company) score=18,trends
+Furniture & Homeware,Lounge Lovers,lounge lovers,term,no-matching-topic,trends
+Furniture & Homeware,Nick Scali,/m/0k917bl,topic,Nick Scali Limited (Retail company) score=22,trends
+Furniture & Homeware,Temple & Webster,/g/11dxjvm2_k,topic,Temple & Webster (Furniture retail company) score=36,trends
+Furniture & Homeware,West Elm,West Elm,term,no-matching-topic,trends
+Garden Care,BioGuano,BioGuano,term,zero-volume-fallback,trends
+Garden Care,Brunnings,/g/11dxd3y3wx,topic,Brunnings (Topic),trends
+Garden Care,Garden Basics,Garden Basics,term,no-matching-topic,trends
+Garden Care,Neutrog,/m/0vtktqs,topic,Neutrogena (Topic),trends
+Garden Care,PowerFeed,PowerFeed,term,zero-volume-fallback,trends
+Garden Care,Richgro,Richgro,term,no-matching-topic,trends
+Garden Care,Scotts,/g/1ymz7_c4d,topic,Scotts (Topic),trends
+Garden Care,Seasol,/g/1tdmf04r,topic,"Seasol International (Manufacturer in Boronia, Australia)",trends
+Garden Care,Yates,/g/11dxd5j_g3,topic,Yates (Topic),trends
+Haircare,BondiBoost,/g/11q324cnxk,topic,Bondi Boost (Topic),trends
+Haircare,Fruits,Fruits,term,zero-volume-fallback,trends
+Haircare,Garnier Fructis,Garnier Fructis,term,no-matching-topic,trends
+Haircare,Georgiemane,/g/11qpwfrf2s,topic,Georgiemane (Topic),trends
+Haircare,Glow Lab,/g/11l7z6bcx5,topic,Glow Lab (Topic),trends
+Haircare,Herbal Essences,/m/07v8jx,topic,Herbal Essences (Topic),trends
+Haircare,MONDAY,/g/11hgc8tcd4,topic,Monday Swimwear (Topic),trends
+Haircare,My Soda,My Soda,term,zero-volume-fallback,trends
+Haircare,OC Naturals,OC Naturals,term,no-matching-topic,trends
+Haircare,OGX,/g/113py27jy,topic,OGX (Topic),trends
+Haircare,Palmolive,/g/1218rvl2,topic,Palmolive (Brand),trends
+Haircare,Sukin,/g/11qkh53rgw,topic,Sukin (Topic),trends
+Haircare,Sunsilk,/m/027fnvr,topic,Sunsilk (Topic),trends
+Haircare,Thanks To Nature,/g/11shf52z1t,topic,Thanks To Nature (Topic),trends
+Health & Beauty Retailers,Adore Beauty,/g/11c0rns7f3,topic,Adore Beauty (Retail company) score=36,trends
+Health & Beauty Retailers,Biome,biome eco store,term,override:term,trends
+Health & Beauty Retailers,Chemist Warehouse,/g/11f0_dmbm_,topic,Chemist Warehouse (Retail company) score=36,trends
+Health & Beauty Retailers,Mecca,mecca cosmetics,term,no-matching-topic,trends
+Health & Beauty Retailers,Nourished Life,nourished life,term,no-matching-topic,trends
+Health & Beauty Retailers,Shop Naturally,shop naturally,term,override:term,trends
+Healthy Beverages,Bundaberg,/g/11c0xs13yp,topic,Bundaberg (Topic),trends
+Healthy Beverages,LoBros,LoBros,term,zero-volume-fallback,trends
+Healthy Beverages,Naked Life,/g/11tg1_qr6m,topic,Naked Life Spirits (Topic),trends
+Healthy Beverages,Nexba,/g/11jsxnqfv8,topic,Nexba (Topic),trends
+Healthy Beverages,Remedy,Remedy,term,zero-volume-fallback,trends
+Healthy Beverages,SORTED.,SORTED.,term,no-matching-topic,trends
+Healthy Beverages,Shine,Shine,term,zero-volume-fallback,trends
+Healthy Beverages,Ārepa,Ārepa,term,zero-volume-fallback,trends
+Chocolate confectionery,Allens,/m/027jkcy,topic,Allens (Law firm company) score=36,trends
+Chocolate confectionery,Cadbury,/m/0f7n6,topic,Cadbury (Company) score=36,trends
+Chocolate confectionery,Darrell Lea Balls,Darrell Lea Balls,term,no-matching-topic,trends
+Chocolate confectionery,Darrell Lea Bullets,Darrell Lea Bullets,term,zero-volume-fallback,trends
+Chocolate confectionery,Darrell Lea Twists,Darrell Lea Twists,term,zero-volume-fallback,trends
+Chocolate confectionery,M&M's,M&M's,term,no-matching-topic,trends
+Chocolate confectionery,Maltesers,/m/05ybfg,topic,Maltesers (Topic) score=32,trends
+Chocolate confectionery,Pods,/m/07kj4pz,topic,PODS (Moving company) score=36,trends
+Holiday Destinations,Bali,/g/121hxh1j,topic,Bali (Topic) score=32,trends
+Holiday Destinations,"Byron Bay, New South Wales","Byron Bay, New South Wales",term,zero-volume-fallback,trends
+Holiday Destinations,"Margaret River Region, Western Australia","Margaret River Region, Western Australia",term,no-matching-topic,trends
+Holiday Destinations,"Noosa, Queensland","Noosa, Queensland",term,no-matching-topic,trends
+Holiday Destinations,"Port Douglas, Queensland",/m/069m0g,topic,Port Douglas (Town in Australia) score=18,trends
+Holiday Destinations,Tasmania,/m/07cfx,topic,Tasmania (Australian State) score=30,trends
+Holiday Destinations,Visit Noosa,Visit Noosa,term,zero-volume-fallback,trends
+Homeware,Adairs,/g/11c6twqdk4,topic,adairs (Topic) score=32,trends
+Homeware,Bed Bath N’ Table,/g/11kpm_lgbt,topic,Bed Bath N' Table (Topic) score=32,trends
+Homeware,Bed Threads,/g/11mtf8vh7p,topic,Bed Threads (Topic) score=32,trends
+Homeware,Cultiver,Cultiver,term,zero-volume-fallback,trends
+Homeware,Dusk,/g/113nmbjgt,topic,Dusk (Topic) score=32,trends
+Homeware,Freedom,/g/1ptv7f0cp,topic,Freedom (Topic) score=32,trends
+Homeware,I Love Linen,/g/11rsq7j4zm,topic,I Love Linen (Topic) score=32,trends
+Homeware,Koala,/m/04cp_,topic,Koala (Animal) score=30,trends
+Homeware,Pillow Talk,/g/11kr77znyy,topic,Pillow Talk (Company) score=36,trends
+Homeware,Sheet Society,/g/11k99x8v42,topic,Sheet Society (Topic) score=32,trends
+Homeware,Sheridan,/g/11cnq6y1c6,topic,Sheridan (Topic) score=32,trends
+Homeware,Temple & Webster,/g/11dxjvm2_k,topic,Temple & Webster (Furniture retail company) score=36,trends
+Household Cleaners (Indoor),Ajax,/g/11lrgf3_k3,topic,Ajax (Topic) score=32,trends
+Household Cleaners (Indoor),Bosisto's,/g/11dxd4z2w4,topic,Bosisto's (Topic) score=32,trends
+Household Cleaners (Indoor),Dettol,/m/04_8nc,topic,Dettol (Topic) score=32,trends
+Household Cleaners (Indoor),Earth Choice,/g/11t9trnjst,topic,Earth Choice (Topic) score=32,trends
+Household Cleaners (Indoor),Earthwise,Earthwise,term,zero-volume-fallback,trends
+Household Cleaners (Indoor),Ecostore,Ecostore,term,zero-volume-fallback,trends
+Household Cleaners (Indoor),Koala Eco,/g/11sz3qw1ky,topic,KOALA ECO (Topic) score=32,trends
+Household Cleaners (Indoor),Koh,/m/0qzz_w7,topic,Kohler (Topic) score=20,trends
+Household Cleaners (Indoor),Lucent Globe,/g/11ryt4mc7z,topic,Lucent Globe (Topic) score=32,trends
+Household Cleaners (Indoor),Organic Choice,Organic Choice,term,no-matching-topic,trends
+Household Cleaners (Indoor),Pine O Cleen,Pine O Cleen,term,no-matching-topic,trends
+Household Cleaners (Indoor),Pleasant State,/g/11sbdcc_1f,topic,Pleasant State (Topic) score=32,trends
+Household Cleaners (Indoor),Skipper (formerly Tirtyl),Skipper (formerly Tirtyl),term,no-suggestions,trends
+Household Cleaners (Indoor),Thankyou,/g/11c3ypq3s8,topic,Thankyou (Company) score=36,trends
+Household Cleaners (Indoor),Undo This Mess,Undo This Mess,term,no-matching-topic,trends
+Household Cleaners (Indoor),White King,White King,term,no-matching-topic,trends
+Household Cleaners (Indoor),Zero Co,Zero Co,term,no-matching-topic,trends
+Kitchenware Retailers,Everten,Everten,term,zero-volume-fallback,trends
+Kitchenware Retailers,House,House,term,zero-volume-fallback,trends
+Kitchenware Retailers,Kitchen Warehouse,/g/11h4q8clfq,topic,Kitchen Warehouse (Topic) score=32,trends
+Kitchenware Retailers,Kitchenware,Kitchenware,term,zero-volume-fallback,trends
+Kitchenware Retailers,Minimax,/g/113kr62kd,topic,Minimax (Topic) score=32,trends
+Kitchenware Retailers,Myer,/g/11c6ty6z4g,topic,Myer (Topic) score=32,trends
+Kitchenware Retailers,Peter's of Kensington,Peter's of Kensington,term,zero-volume-fallback,trends
+Kitchenware Retailers,Victoria's Basement,Victoria's Basement,term,zero-volume-fallback,trends
+Laundry Care,Biozet Attack,Biozet Attack,term,zero-volume-fallback,trends
+Laundry Care,Bosisto's,/g/11dxd4z2w4,topic,Bosisto's (Topic) score=32,trends
+Laundry Care,Calgon,Calgon,term,zero-volume-fallback,trends
+Laundry Care,Cold Power,/g/11jfvl8f99,topic,Cold Power (Topic) score=32,trends
+Laundry Care,Dynamo,/g/11cp7jc53y,topic,Dynamo (Topic) score=32,trends
+Laundry Care,Earth Choice,/g/11t9trnjst,topic,Earth Choice (Topic) score=32,trends
+Laundry Care,Earthwise,Earthwise,term,zero-volume-fallback,trends
+Laundry Care,Ecostore,Ecostore,term,zero-volume-fallback,trends
+Laundry Care,Fab,/g/11g6qmc960,topic,Fabindia (Topic) score=19,trends
+Laundry Care,OMO,/g/11h6w3lrr7,topic,OMO (Topic) score=32,trends
+Laundry Care,Organic Choice,Organic Choice,term,no-matching-topic,trends
+Laundry Care,Radiant,/m/06h39,topic,Radian (Unit of angle) score=18,trends
+Laundry Care,Undo This Mess,Undo This Mess,term,no-matching-topic,trends
+Laundry Care,Woolite,Woolite,term,zero-volume-fallback,trends
+Liquor Retailer,BWS,bws liquor,term,no-matching-topic,trends
+Liquor Retailer,Bottlemart,bottlemart,term,no-matching-topic,trends
+Liquor Retailer,Cellarbrations,cellarbrations,term,no-matching-topic,trends
+Liquor Retailer,Dan Murphy's,Dan Murphy's,term,no-matching-topic,trends
+Liquor Retailer,First Choice,first choice liquor,term,override:term,trends
+Liquor Retailer,Harry Brown,harry brown liquor,term,override:term,trends
+Liquor Retailer,Liquor Legends,liquor legends,term,override:term,trends
+Liquor Retailer,Liquorland,Liquorland,term,zero-volume-fallback,trends
+Liquor Retailer,SipnSave,sip n save,term,override:term,trends
+Liquor Retailer,The Bottle-O,bottle-o,term,override:term,trends
+Liquor Retailer,Thirstycamel,thirsty camel,term,override:term,trends
+"Mattresses, beds, and pillows",Ecosa,Ecosa,term,no-matching-topic,trends
+"Mattresses, beds, and pillows",Emma,emma mattress,term,override:term,trends
+"Mattresses, beds, and pillows",Eva,eva mattress,term,override:term,trends
+"Mattresses, beds, and pillows",Ikea,/m/03tb1,topic,IKEA (Furniture retail company) score=36,trends
+"Mattresses, beds, and pillows",Koala,/g/11mv_h76n8,topic,Koala Sleep Pty Ltd (Company) score=18,trends
+"Mattresses, beds, and pillows",Noa,noa mattress,term,override:term,trends
+"Mattresses, beds, and pillows",SleepMaker,sleepmaker,term,no-matching-topic,trends
+"Mattresses, beds, and pillows",Sleeping Duck,sleeping duck mattress,term,no-matching-topic,trends
+"Mattresses, beds, and pillows",Sleepyhead,sleepyhead mattress,term,no-matching-topic,trends
+"Mattresses, beds, and pillows",Snooze,snooze mattress,term,no-matching-topic,trends
+Men's Clothing (Male Only),Calibre,Calibre,term,zero-volume-fallback,trends
+Men's Clothing (Male Only),Connor,/g/11ky8lp61j,topic,Connor (Topic) score=32,trends
+Men's Clothing (Male Only),Cotton On,/g/11c6t_4mz2,topic,Cotton On (Topic) score=32,trends
+Men's Clothing (Male Only),Hallenstein Brothers,Hallenstein Brothers,term,zero-volume-fallback,trends
+Men's Clothing (Male Only),Industrie,/g/11dxd2b8b9,topic,Industrie (Topic) score=32,trends
+Men's Clothing (Male Only),Jack London,Jack London,term,zero-volume-fallback,trends
+Men's Clothing (Male Only),M.J. Bale,/g/11ppb_36tl,topic,M.J. Bale (Topic) score=32,trends
+Men's Clothing (Male Only),Oxford,Oxford,term,zero-volume-fallback,trends
+Men's Clothing (Male Only),Peter Jackson,Peter Jackson,term,zero-volume-fallback,trends
+Men's Clothing (Male Only),Politix,/g/11c6t_0qgr,topic,Politix (Topic) score=32,trends
+Men's Clothing (Male Only),Tarocash,Tarocash,term,zero-volume-fallback,trends
+Men's Clothing (Male Only),yd.,yd.,term,zero-volume-fallback,trends
+Men's Online Health Providers,Advanced Hair Studio,Advanced Hair Studio,term,zero-volume-fallback,trends
+Men's Online Health Providers,Ashley & Martin,/g/11q7dlhh6m,topic,Ashley & Martin (Company) score=36,trends
+Men's Online Health Providers,Burst Health,/g/11w22s5h4c,topic,Burst Health (Topic) score=32,trends
+Men's Online Health Providers,Doctors (e.g. GP),Doctors (e.g. GP),term,no-matching-topic,trends
+Men's Online Health Providers,His Clinic,His Clinic,term,no-matching-topic,trends
+Men's Online Health Providers,Manscaped,/g/11fd61_vbs,topic,Manscaped (Topic) score=32,trends
+Men's Online Health Providers,Men's Health Clinic,Men's Health Clinic,term,zero-volume-fallback,trends
+Men's Online Health Providers,Mosh,/g/11g6qmgync,topic,Mosh (Topic) score=32,trends
+Men's Online Health Providers,Pilot,/g/11c5b3zblw,topic,Pilot (Topic) score=32,trends
+Men's Online Health Providers,Rosemary Health,Rosemary Health,term,no-matching-topic,trends
+Men's Online Health Providers,Simple Online Doctor,/g/11l65sm6bn,topic,Simple Online Doctor (Topic) score=32,trends
+Men's Online Health Providers,Stagger,Stagger,term,zero-volume-fallback,trends
+Men's Online Health Providers,The Hairy Pill,/g/11qq05kq37,topic,The Hairy Pill (Topic) score=32,trends
+News or Media Sources,Cheek Media Co.,Cheek Media Co.,term,no-matching-topic,trends
+News or Media Sources,Hack,/m/043384,topic,Hacksaw (Topic) score=20,trends
+News or Media Sources,Nine,/g/11bc62gm7p,topic,Nine West (Topic) score=20,trends
+News or Media Sources,Pedestrian,/m/017r8p,topic,Pedestrian (Topic) score=32,trends
+News or Media Sources,Shameless Media,Shameless Media,term,zero-volume-fallback,trends
+News or Media Sources,The Daily Aus,The Daily Aus,term,zero-volume-fallback,trends
+News or Media Sources,The Guardian,/m/0cnn5,topic,The Guardian (British newspaper) score=30,trends
+Online Market Places,Amazon,/g/11cm12hhlm,topic,Amazon (Topic) score=32,trends
+Online Market Places,Depop,/g/11bzx62_s0,topic,Depop (Company) score=36,trends
+Online Market Places,Etsy,/m/0rzjz20,topic,Etsy (E-commerce company) score=36,trends
+Online Market Places,Facebook Marketplace,Facebook Marketplace,term,no-matching-topic,trends
+Online Market Places,Grays,Grays,term,zero-volume-fallback,trends
+Online Market Places,Gumtree,/m/06m5x2,topic,Gumtree (Website) score=36,trends
+Online Market Places,Tradingpost,Tradingpost,term,no-matching-topic,trends
+Online Market Places,eBay,/m/0z90c,topic,eBay (E-commerce company) score=36,trends
+Online Outlet Retailer,David Jones,/g/11cn2yjw79,topic,David Jones (Topic) score=32,trends
+Online Outlet Retailer,Ozsale,/g/11fy2dfdk6,topic,Ozsale (Company) score=36,trends
+Online Outlet Retailer,THE OUTNET,/g/11f01jr1s6,topic,TheOutnet (Company) score=36,trends
+Online Outlet Retailer,The Archive Place,The Archive Place,term,no-matching-topic,trends
+Online Outlet Retailer,The DOM,The DOM,term,no-matching-topic,trends
+Online Outlet Retailer,The Iconic,/m/010pqcwy,topic,THE ICONIC (Fashion company) score=36,trends
+Outdoor Apparel,Country Road,/g/11dxd5kfcx,topic,Country Road (Topic) score=32,trends
+Outdoor Apparel,Deus Ex Machina,/g/11bwq8l0dt,topic,Deus Ex Machina (Topic) score=32,trends
+Outdoor Apparel,Gazman,Gazman,term,zero-volume-fallback,trends
+Outdoor Apparel,Glue Store,Glue Store,term,zero-volume-fallback,trends
+Outdoor Apparel,Helly Hansen,/m/06d72w,topic,Helly Hansen (Manufacturing company) score=36,trends
+Outdoor Apparel,Paddy Pallin,Paddy Pallin,term,zero-volume-fallback,trends
+Outdoor Apparel,R.M.Williams,/g/11h3qrq5_y,topic,R. M. Williams (Manufacturing company) score=36,trends
+Outdoor Apparel,Rodd & Gunn,/g/11dxd5j_n_,topic,Rodd & Gunn (Topic) score=32,trends
+Outdoor Apparel,Superdry,Superdry,term,zero-volume-fallback,trends
+Outdoor Apparel,Surf Dive 'n Ski,/g/11lp5np_n0,topic,Surf Dive 'n Ski (Topic) score=32,trends
+Outdoor Apparel,Swanndri,Swanndri,term,zero-volume-fallback,trends
+Outdoor Apparel,Thomas Cook,Thomas Cook,term,zero-volume-fallback,trends
+Packaged Snacks,Arnott’s,Arnott’s,term,zero-volume-fallback,trends
+Packaged Snacks,Cadbury,/m/0f7n6,topic,Cadbury (Company) score=36,trends
+Packaged Snacks,Carman's,Carman's,term,zero-volume-fallback,trends
+Packaged Snacks,Doritos,/m/0160jl,topic,DORITOS (Topic) score=32,trends
+Packaged Snacks,Olina's Bakehouse,Olina's Bakehouse,term,zero-volume-fallback,trends
+Packaged Snacks,Oreo,/m/0x1bbzb,topic,Oreo (Topic) score=32,trends
+Packaged Snacks,Red Rock Deli,Red Rock Deli,term,zero-volume-fallback,trends
+Packaged Snacks,Ritz,/m/01kkd6,topic,Ritz Crackers (Cookie) score=15,trends
+Packaged Snacks,Sakata,Sakata,term,zero-volume-fallback,trends
+Packaged Snacks,Smith's,/m/011zrf,topic,Smithsonian (Magazine) score=18,trends
+Retail Establishments,Birkenhead Point,/m/0269jf2,topic,"Birkenhead Point (Shopping centre in Drummoyne, Australia) score=30",trends
+Retail Establishments,Chadstone,/m/02x1qd,topic,Chadstone (Suburb in Australia) score=30,trends
+Retail Establishments,DFO,/g/1jlj_xj3b,topic,"DFO Moorabbin (Shopping centre in Moorabbin Airport, Australia) score=14",trends
+Retail Establishments,Harbour Town,/m/061jc0,topic,Harbour Town (Shopping centre) score=30,trends
+Retail Establishments,Myer,/g/11c6ty6z4g,topic,Myer (Topic) score=32,trends
+Retail Establishments,The DOM,The DOM,term,no-matching-topic,trends
+Retail Establishments,The Iconic,/m/010pqcwy,topic,THE ICONIC (Fashion company) score=36,trends
+Retail Establishments,Westfield,/g/11b826qqzd,topic,Westfield (Topic) score=32,trends
+Reusable Bottles,Decor,/g/11c4bp54w_,topic,DECORTÉ (Topic) score=20,trends
+Reusable Bottles,Fressko,/g/11c6tws4zz,topic,Fressko (Topic) score=32,trends
+Reusable Bottles,Hydro Flask,/g/11c5sv2h30,topic,Hydro Flask (Topic) score=32,trends
+Reusable Bottles,Owala,/g/11nngthwt3,topic,Owala (Brand) score=36,trends
+Reusable Bottles,Smash,Smash,term,zero-volume-fallback,trends
+Reusable Bottles,Stanley,/m/04yf_8s,topic,Stanley (Drinkware company) score=36,trends
+Reusable Bottles,Waterdrop,Waterdrop,term,zero-volume-fallback,trends
+Reusable Bottles,Yeti,/g/113nr3vz7,topic,YETI (Topic) score=32,trends
+Reusable Bottles,frank green,/g/11j5t2n_hn,topic,Frank Green (Topic) score=32,trends
+Skincare,Avène,/g/113mzhymc,topic,Avène (Topic) score=32,trends
+Skincare,Dr Dennis Gross,/g/11qlhnymm3,topic,Dr Dennis Gross (Topic) score=32,trends
+Skincare,Go-To,/g/11sz2fh8wg,topic,Go-to Skincare (Topic) score=17,trends
+Skincare,La Roche-Posay,/g/11cp7jtw54,topic,La Roche-Posay (Topic) score=32,trends
+Skincare,QR8 Mediskin,QR8 Mediskin,term,zero-volume-fallback,trends
+Skincare,SkinCeuticals,/g/11bc5lkdkc,topic,SkinCeuticals (Topic) score=32,trends
+Skincare,Software,/m/06q83,topic,Software Engineering (Topic) score=14,trends
+Skincare,The Secret Skincare,/g/11rtvp67gv,topic,The Secret Skincare (Topic) score=32,trends
+Skincare,Tommi,Tommi,term,zero-volume-fallback,trends
+Skincare (Female Only),Aesop,/m/0j_3lkw,topic,Aesop (Cosmetics company) score=36,trends
+Skincare (Female Only),Avène,/g/113mzhymc,topic,Avène (Topic) score=32,trends
+Skincare (Female Only),Bangn Body,/g/11l1hz6_dd,topic,Bangn Body (Topic) score=32,trends
+Skincare (Female Only),Benzac,/g/11dxd25bxd,topic,Benzac (Topic) score=32,trends
+Skincare (Female Only),Bondi Sands,/g/11dxd3g1n2,topic,Bondi Sands (Topic) score=32,trends
+Skincare (Female Only),Boost Lab,Boost Lab,term,zero-volume-fallback,trends
+Skincare (Female Only),CeraVe,/g/113nlkv_r,topic,CeraVe (Topic) score=32,trends
+Skincare (Female Only),Drunk Elephant,/g/11g6qkqq0v,topic,Drunk Elephant (Topic) score=32,trends
+Skincare (Female Only),Frank Body,/g/11dxd59pdl,topic,Frank Body (Topic) score=32,trends
+Skincare (Female Only),Go-To,/g/11sz2fh8wg,topic,Go-to Skincare (Topic) score=17,trends
+Skincare (Female Only),Kiehl's,/m/026dq_r,topic,Kiehl's (Personal care product company) score=36,trends
+Skincare (Female Only),La Roche-Posay,/g/11cp7jtw54,topic,La Roche-Posay (Topic) score=32,trends
+Skincare (Female Only),MCoBeauty,/g/11m82w4rb1,topic,MCoBeauty (Topic) score=32,trends
+Skincare (Female Only),Mecca,/g/11fy28fg3p,topic,MECCA (Company) score=36,trends
+Skincare (Female Only),Mecca Cosmetica,Mecca Cosmetica,term,zero-volume-fallback,trends
+Skincare (Female Only),Paula's Choice,Paula's Choice,term,no-matching-topic,trends
+Skincare (Female Only),Revolution,/g/11c6txr6y0,topic,Revolution Beauty (Topic) score=18,trends
+Skincare (Female Only),Soap & Glory,/g/11c4bfr1v5,topic,Soap & Glory (Topic) score=32,trends
+Skincare (Female Only),Software,/m/06q83,topic,Software Engineering (Topic) score=14,trends
+Skincare (Female Only),Sol de Janeiro,/g/11dxd44qwk,topic,Sol de Janeiro (Topic) score=32,trends
+Skincare (Female Only),Sukin,/g/11qkh53rgw,topic,Sukin (Topic) score=32,trends
+Skincare (Female Only),The Body Shop,/m/03vm1r,topic,The Body Shop (Cosmetics company) score=36,trends
+Skincare (Female Only),The Inkey List,/g/11ql_1dtqh,topic,The INKEY List (Topic) score=32,trends
+Skincare (Female Only),The Ordinary,/g/11g6qkjtcg,topic,The Ordinary (Topic) score=32,trends
+Skincare (Female Only),Ultra Violette,/g/11rxvlgjjn,topic,Ultra Violette (Topic) score=32,trends
+Skincare (Female Only),alya skin.,alya skin.,term,zero-volume-fallback,trends
+Skincare (Female Only),endota,endota,term,zero-volume-fallback,trends
+Skincare (Female Only),tbh Skincare,/g/11khlx607y,topic,tbh skincare (Topic) score=32,trends
+Social Media Platforms,Bluesky,Bluesky,term,zero-volume-fallback,trends
+Social Media Platforms,Facebook,Facebook,term,no-matching-topic,trends
+Social Media Platforms,Instagram,Instagram,term,no-matching-topic,trends
+Social Media Platforms,Pinterest,Pinterest,term,zero-volume-fallback,trends
+Social Media Platforms,RedNote,RedNote,term,zero-volume-fallback,trends
+Social Media Platforms,Reddit,/m/0bx7cy_,topic,Reddit (Website) score=36,trends
+Social Media Platforms,Snapchat,Snapchat,term,zero-volume-fallback,trends
+Social Media Platforms,Threads,Threads,term,zero-volume-fallback,trends
+Social Media Platforms,TikTok,TikTok,term,zero-volume-fallback,trends
+Social Media Platforms,Twitch,/m/0hgpf7h,topic,Twitch (Service) score=30,trends
+Social Media Platforms,Twitter,/m/0hn1vcg,topic,Twitter (Social media company) score=36,trends
+Social Media Platforms,X,/m/0289n8t,topic,X (Social network) score=30,trends
+Streetwear,Culture Kings,/g/11q8x6lqd1,topic,Culture Kings (Clothing retail company) score=36,trends
+Streetwear,Foot Locker,/m/08fhy9,topic,Foot Locker (Retail company) score=36,trends
+Streetwear,General Pants Co.,/m/09chv3,topic,General Pants Co. (Retail company) score=36,trends
+Streetwear,JD Sports,/g/11bc6vf4zn,topic,JD Sports (Retail company) score=36,trends
+Streetwear,PUSHAS,PUSHAS,term,zero-volume-fallback,trends
+Streetwear,Stateside Sports,Stateside Sports,term,zero-volume-fallback,trends
+Streetwear,Urban Wear,/g/11ckkwhp5c,topic,Urban Wear (Topic) score=32,trends
+Sugar confectionery,Allens,/m/027jkcy,topic,Allens (Law firm company) score=36,trends
+Sugar confectionery,Darrell Lea,/g/11bc6nhtt9,topic,Darrell Lea (Topic) score=32,trends
+Sugar confectionery,Double ‘D’,/g/11c6ty8znm,topic,Double D (Topic) score=32,trends
+Sugar confectionery,FUNDAY,FUNDAY,term,zero-volume-fallback,trends
+Sugar confectionery,Haribo,/m/01nwzm,topic,Haribo (Company) score=36,trends
+Sugar confectionery,Health Lab,Health Lab,term,zero-volume-fallback,trends
+Sugar confectionery,Life Savers,/m/049344,topic,Life Savers (Topic) score=32,trends
+Sugar confectionery,Pascall,/m/05p1lvj,topic,Pascall (Company) score=36,trends
+Sugar confectionery,Skittles,/g/11c4bhzy24,topic,Skittles (Topic) score=32,trends
+Sugar confectionery,Sour Patch,/m/05mbj7,topic,Sour Patch Kids (Topic) score=20,trends
+Sugar confectionery,The Natural Confectionery Co.,/m/0f4rh9,topic,The Natural Confectionery Company (Company) score=23,trends
+Sugar confectionery,Well Naturally,Well Naturally,term,no-matching-topic,trends
+Yoghurt,Activia,activia yoghurt,term,no-matching-topic,trends
+Yoghurt,Chobani,/m/0jt3njc,topic,Chobani (Company) score=36,trends
+Yoghurt,Chobani Fit,chobani fit,term,override:term,trends
+Yoghurt,Cocobella,cocobella,term,override:term,trends
+Yoghurt,Coyo,coyo yoghurt,term,override:term,trends
+Yoghurt,Dairy Farmers,dairy farmers yoghurt,term,override:term,trends
+Yoghurt,Danone,/m/0257ck,topic,Danone (Food company) score=36,trends
+Yoghurt,Gippsland Dairy,gippsland dairy,term,override:term,trends
+Yoghurt,Nakula,nakula yoghurt,term,override:term,trends
+Yoghurt,Tamar Valley,tamar valley yoghurt,term,override:term,trends
+Yoghurt,Ultimate,ultimate yoghurt,term,override:term,trends
+Yoghurt,Vaalia,vaalia,term,override:term,trends
+Yoghurt,Vitasoy,/m/0bxkd7,topic,Vitasoy (Beverage company) score=36,trends
+Yoghurt,Yakult,Yakult,term,no-matching-topic,trends
+Yoghurt,YoPro,yopro,term,override:term,trends
+Yoghurt,five:am organic,five am yoghurt,term,override:term,trends

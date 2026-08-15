@@ -1,0 +1,16 @@
+{
+ "category": "Liquor Retailer",
+ "batch": 2,
+ "brands": [
+  "BWS",
+  "The Bottle-O",
+  "Thirstycamel"
+ ],
+ "tokens": [
+  "/g/11zj3r4fmx",
+  "/g/1tkhff4d",
+  "/g/11vkz2s_r4"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

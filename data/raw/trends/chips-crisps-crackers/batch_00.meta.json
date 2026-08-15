@@ -1,0 +1,20 @@
+{
+ "category": "Chips, Crisps, Crackers",
+ "batch": 0,
+ "brands": [
+  "Red Rock Deli",
+  "Boulder",
+  "Burts",
+  "Kettle",
+  "Proper Crisps"
+ ],
+ "tokens": [
+  "Red Rock Deli",
+  "boulder chips",
+  "/g/11c6tx6bw9",
+  "kettle chips",
+  "/g/11b7_0fhx0"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

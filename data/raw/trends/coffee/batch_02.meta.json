@@ -1,0 +1,20 @@
+{
+ "category": "Coffee",
+ "batch": 2,
+ "brands": [
+  "Vittoria Coffee",
+  "Proud Mary's",
+  "Rumble Coffee Roasters",
+  "ST. ALI",
+  "Sample Coffee"
+ ],
+ "tokens": [
+  "/m/0gx_p1d",
+  "/g/11wvjtvd0c",
+  "/g/11m49l_nvf",
+  "/g/11zjr96l1y",
+  "/g/11mf4_7ht3"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

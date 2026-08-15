@@ -1,0 +1,20 @@
+{
+ "category": "Asian Foods & Condiments",
+ "batch": 0,
+ "brands": [
+  "AYAM",
+  "Bibigo",
+  "Chang's",
+  "Golden Wok",
+  "Hong Kong Dim Sim Kitchen"
+ ],
+ "tokens": [
+  "ayam brand",
+  "/g/113qbvftz",
+  "changs noodles",
+  "/g/11c59n0_5h",
+  "/g/11b7k43hlw"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

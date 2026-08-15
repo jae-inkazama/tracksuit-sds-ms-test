@@ -1,0 +1,16 @@
+{
+ "category": "Household Cleaners (Indoor)",
+ "batch": 90,
+ "brands": [
+  "Pine O Cleen",
+  "Earthwise",
+  "Ecostore"
+ ],
+ "tokens": [
+  "Pine O Cleen",
+  "Earthwise",
+  "Ecostore"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

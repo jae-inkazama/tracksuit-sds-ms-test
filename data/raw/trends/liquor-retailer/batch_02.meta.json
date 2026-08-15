@@ -1,0 +1,16 @@
+{
+ "category": "Liquor Retailer",
+ "batch": 2,
+ "brands": [
+  "Dan Murphy's",
+  "The Bottle-O",
+  "Thirstycamel"
+ ],
+ "tokens": [
+  "Dan Murphy's",
+  "bottle-o",
+  "thirsty camel"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

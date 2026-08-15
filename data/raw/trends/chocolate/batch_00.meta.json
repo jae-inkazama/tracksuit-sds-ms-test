@@ -1,0 +1,20 @@
+{
+ "category": "Chocolate",
+ "batch": 0,
+ "brands": [
+  "Cadbury",
+  "Darrell Lea",
+  "Ferrero",
+  "Lindt",
+  "Nestlé"
+ ],
+ "tokens": [
+  "/m/0f7n6",
+  "/m/097x6c",
+  "/m/03gng1",
+  "/m/02m833",
+  "nestle"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

@@ -1,0 +1,381 @@
+# Hand-curated search-term overrides for the pilot categories.
+#
+# Per-brand keys (all optional; brands not listed use auto topic resolution):
+#   term:          use this literal search term, skip topic resolution entirely
+#   topic_hint:    string to feed Trends autocomplete (default: brand name)
+#   topic_title:   expected topic title to accept
+#   topic_types:   acceptable topic-type substrings (case-insensitive)
+#   fallback_term: term to use if no acceptable topic is found
+#   note:          rationale (kept for the writeup's curation appendix)
+#
+# Per-category key:
+#   anchor: brand used as the common-scale reference in every request batch
+#           (prefer high, stable search volume + unambiguous name)
+
+categories:
+
+  # --- Spot fixes for bad auto-resolutions observed in the first real run ---
+  # (improved scoring in pull_trends.py handles most cases; these pin the rest)
+
+  "Asian Foods & Condiments":
+    brands:
+      "AYAM":
+        term: "ayam brand"
+        note: "First run resolved to 'ayame'. 'Ayam' alone is Malay/Indonesian for chicken."
+      "Chang's":
+        term: "changs noodles"
+        note: "First run resolved to P.F. Chang's (US restaurant chain). AU brand is famous for crispy noodles."
+      "Pandaroo":
+        term: "pandaroo"
+        note: "First run resolved to an Indonesian apartment listing."
+      "Mr Chen's":
+        term: "mr chens"
+      "Urban Eats":
+        term: "urban eats"
+        note: "First run resolved to Jack's Urban Eats (US)."
+
+  "Audio Content":
+    brands:
+      "Apple Music":
+        term: "apple music"
+        note: "Autocomplete only offers 'Apple Music Replay' (a feature); forced raw term."
+      "LiSTNR":
+        term: "listnr"
+        note: "First run resolved to a podcast-episode topic."
+      "SXM Podcasts":
+        term: "sxm podcasts"
+        note: "First run resolved to a podcast-episode topic. Expect near-zero AU volume."
+
+  "Body Care":
+    brands:
+      "Johnson's":
+        topic_hint: "Johnson's Baby"
+        topic_title: "Johnson's"
+        topic_types: ["brand", "company"]
+        fallback_term: "johnsons body wash"
+        note: "First run resolved to 'Johnsons Seeds'."
+
+  "Breakfast or Health Foods":
+    brands:
+      "Carman's":
+        topic_hint: "Carman's Fine Foods"
+        fallback_term: "carmans muesli"
+        note: "First run resolved to a genealogy book topic."
+
+  "Chips, Crisps, Crackers":
+    brands:
+      "Kettle":
+        term: "kettle chips"
+        note: "Auto-topic 'Kettle (Topic)' risks the appliance. Qualified term."
+      "Tyrells":
+        term: "tyrrells crisps"
+        note: "First run resolved to a Game-of-Thrones podcast episode. Real brand spelling is Tyrrell's."
+      "Boulder":
+        term: "boulder chips"
+        note: "First run resolved to Boulder Canyon (US). Qualified term; expect low volume."
+
+  "Coupons, Discounts and Vouchers":
+    anchor: "Cashrewards"
+    brands:
+      "Groupon":
+        term: "groupon"
+        note: "Auto-topic resolved to a zero-volume Groupon entity; raw term is unambiguous."
+      "Entertainment":
+        term: "entertainment book"
+        note: "First run resolved to 'Entertainment center'. The AU brand is the Entertainment Book."
+      "EatClub":
+        term: "eatclub"
+        note: "First run resolved to an iOS app-version topic."
+
+  "Fresh Meat & Poultry":
+    anchor: "Lilydale"
+    brands:
+      "Lilydale":
+        term: "lilydale chicken"
+        note: "First run resolved to 'Lilydale Fire Brigade'."
+      "Macro":
+        term: "macro organic"
+        note: "First run resolved to Banco Macro (Argentine bank). Woolworths own-brand; qualified term, expect low volume."
+      "Cleaver's Organic":
+        term: "cleavers organic"
+        note: "First run resolved to a Mountain Rose Herbs product."
+
+  "Fast Food":
+    anchor: "KFC"
+    brands:
+      "McDonalds":
+        topic_hint: "McDonald's"
+        topic_title: "McDonald's"
+        topic_types: ["fast food", "restaurant", "company"]
+        note: "Survey spells without apostrophe; topic entity is safer than the raw term."
+      "Hungry Jack's":
+        topic_types: ["restaurant", "company"]
+      "Subway":
+        topic_title: "Subway"
+        topic_types: ["restaurant", "sandwich"]
+        fallback_term: "subway restaurant"
+        note: "Homonym: underground rail. Topic entity required."
+      "Oporto":
+        topic_types: ["restaurant", "company"]
+        fallback_term: "oporto chicken"
+        note: "Homonym: Portuguese city Porto/Oporto."
+      "Guzman y Gomez":
+        topic_types: ["restaurant", "company"]
+      "Red Rooster":
+        topic_types: ["restaurant", "company"]
+        fallback_term: "red rooster chicken"
+      "Mad Mex":
+        topic_types: ["restaurant", "company"]
+        fallback_term: "mad mex mexican"
+      "Grill'd":
+        topic_types: ["restaurant", "company"]
+        fallback_term: "grill'd burgers"
+      "Roll'd":
+        topic_types: ["restaurant", "company"]
+        fallback_term: "roll'd vietnamese"
+      "Schnitz":
+        topic_types: ["restaurant", "company"]
+      "Soul Origin":
+        topic_types: ["restaurant", "company"]
+      "Zambrero":
+        topic_types: ["restaurant", "company"]
+      "Taco Bell":
+        topic_types: ["restaurant", "company"]
+      "FISHBOWL":
+        term: "fishbowl poke"
+        note: "Severe homonym (glass bowl for fish). Qualified term; expect low volume — flag in analysis."
+
+  "Car Insurance":
+    anchor: "AAMI"
+    brands:
+      "AAMI":
+        topic_types: ["insurance", "company"]
+      "Youi":
+        topic_types: ["insurance", "company"]
+      "Budget Direct":
+        topic_types: ["insurance", "company"]
+      "NRMA":
+        topic_types: ["insurance", "company", "organization"]
+        note: "NRMA is also roadside assistance/motoring org — intent mix broader than car insurance; note in analysis."
+      "Suncorp":
+        topic_types: ["insurance", "company", "bank"]
+        note: "Bank + insurer + stadium naming rights; intent mix caveat."
+      "RACQ":
+        topic_types: ["insurance", "company", "organization"]
+        note: "Queensland motoring club; includes roadside/banking intent."
+      "Bingle":
+        topic_types: ["insurance", "company"]
+        fallback_term: "bingle insurance"
+      "Huddle":
+        term: "huddle insurance"
+        note: "Severe homonym (generic word, sports, Microsoft Huddle). Qualified term."
+      "Koba":
+        term: "koba insurance"
+        note: "Severe homonym (name). Qualified term; tiny brand, expect near-zero volume."
+      "ROLLiN' Insurance":
+        term: "rollin insurance"
+        note: "Severe homonym. Qualified term."
+
+  "Health & Beauty Retailers":
+    anchor: "Chemist Warehouse"
+    brands:
+      "Chemist Warehouse":
+        topic_types: ["company", "retail", "pharmacy"]
+      "Mecca":
+        topic_hint: "Mecca cosmetics"
+        topic_title: "Mecca"
+        topic_types: ["cosmetic", "company", "retail"]
+        fallback_term: "mecca cosmetics"
+        note: "Severe homonym: the city of Mecca. Topic entity or qualified term required — this is the flagship curation demo."
+      "Adore Beauty":
+        topic_types: ["company", "retail"]
+        fallback_term: "adore beauty"
+      "Biome":
+        term: "biome eco store"
+        note: "Homonym: ecology term. Qualified term; expect low volume."
+      "Nourished Life":
+        topic_types: ["company", "retail"]
+        fallback_term: "nourished life"
+      "Shop Naturally":
+        term: "shop naturally"
+        note: "Generic phrase; expect noise/low volume — likely excluded in analysis QA."
+
+  "Furniture & Homeware":
+    anchor: "Ikea"
+    brands:
+      "Ikea":
+        topic_types: ["company", "retail", "furniture"]
+      "Fantastic Furniture":
+        topic_types: ["company", "retail", "furniture"]
+        fallback_term: "fantastic furniture"
+      "Freedom":
+        topic_hint: "Freedom Furniture"
+        topic_title: "Freedom"
+        topic_types: ["furniture", "company", "retail"]
+        fallback_term: "freedom furniture"
+        note: "Severe homonym: generic word. Topic entity or qualified term required."
+      "Koala":
+        topic_hint: "Koala mattress"
+        topic_title: "Koala"
+        topic_types: ["company", "mattress", "furniture"]
+        fallback_term: "koala furniture"
+        note: "Severe homonym: the animal. Placebo demo candidate — show raw 'koala' vs curated series."
+      "Nick Scali":
+        topic_types: ["company", "furniture", "retail"]
+      "Temple & Webster":
+        topic_types: ["company", "retail"]
+      "West Elm":
+        topic_types: ["company", "retail", "furniture"]
+      "Brosa":
+        topic_types: ["company", "furniture", "retail"]
+        fallback_term: "brosa furniture"
+        note: "Entered administration Dec 2022 — interesting natural experiment for search-vs-survey timing."
+      "Castlery":
+        topic_types: ["company", "furniture", "retail"]
+      "Ecosa":
+        topic_types: ["company", "mattress"]
+      "Lounge Lovers":
+        topic_types: ["company", "furniture", "retail"]
+        fallback_term: "lounge lovers"
+
+  "Mattresses, beds, and pillows":
+    anchor: "Koala"
+    brands:
+      "Koala":
+        topic_hint: "Koala mattress"
+        topic_title: "Koala"
+        topic_types: ["company", "mattress"]
+        fallback_term: "koala mattress"
+        note: "Severe homonym: the animal."
+      "Emma":
+        term: "emma mattress"
+        note: "Severe homonym: first name. Qualified term."
+      "Eva":
+        term: "eva mattress"
+        note: "Severe homonym: first name. Qualified term."
+      "Noa":
+        term: "noa mattress"
+        note: "Severe homonym. Qualified term."
+      "Ecosa":
+        topic_types: ["company", "mattress"]
+      "Sleeping Duck":
+        topic_types: ["company", "mattress"]
+        fallback_term: "sleeping duck mattress"
+      "SleepMaker":
+        topic_types: ["company", "mattress"]
+        fallback_term: "sleepmaker"
+      "Sleepyhead":
+        topic_types: ["company", "mattress"]
+        fallback_term: "sleepyhead mattress"
+        note: "Homonym: generic word + NZ brand of same name; AU geo filter helps."
+      "Snooze":
+        topic_hint: "Snooze furniture"
+        topic_title: "Snooze"
+        topic_types: ["company", "retail", "furniture", "mattress"]
+        fallback_term: "snooze mattress"
+        note: "Severe homonym: generic word / alarm snooze."
+      "Ikea":
+        topic_types: ["company", "retail", "furniture"]
+        note: "Intent mix: whole-store searches, not mattress-specific. Keep but caveat; consider sensitivity excluding it."
+
+  "Chocolate":
+    anchor: "Cadbury"
+    brands:
+      "Cadbury":
+        topic_types: ["company", "chocolate", "brand", "confectionery"]
+      "Lindt":
+        topic_types: ["company", "chocolate", "brand", "confectionery"]
+      "Nestlé":
+        term: "nestle"
+        note: "Corporate umbrella — intent far broader than chocolate; caveat/sensitivity. Forced to raw term: Trends autocomplete never offers the global Nestlé entity, only 'Nestle Nigeria'."
+      "Tony's Chocolonely":
+        term: "tonys chocolonely"
+        note: "Autocomplete only offers product-SKU topics; raw term is cleaner."
+      "Whittaker's":
+        term: "whittakers chocolate"
+        note: "Autocomplete only offers product-SKU topics; qualified term."
+      "Ferrero":
+        topic_types: ["company", "chocolate", "confectionery", "food"]
+        note: "Corporate umbrella (Nutella, Kinder); consumers may search sub-brands instead. Caveat."
+      "Darrell Lea":
+        topic_types: ["company", "chocolate", "confectionery"]
+
+  "Liquor Retailer":
+    anchor: "Dan Murphy's"
+    brands:
+      "Dan Murphy's":
+        topic_types: ["company", "retail", "liquor"]
+      "BWS":
+        topic_types: ["company", "retail", "liquor"]
+        fallback_term: "bws liquor"
+        note: "Acronym homonym risk; topic preferred."
+      "Liquorland":
+        topic_types: ["company", "retail", "liquor"]
+      "First Choice":
+        term: "first choice liquor"
+        note: "Severe homonym: generic phrase. Qualified term."
+      "Cellarbrations":
+        topic_types: ["company", "retail", "liquor"]
+        fallback_term: "cellarbrations"
+      "Bottlemart":
+        topic_types: ["company", "retail", "liquor"]
+        fallback_term: "bottlemart"
+      "The Bottle-O":
+        term: "bottle-o"
+        note: "Colloquialism for any bottle shop in AU — inflates volume; caveat in analysis."
+      "Thirstycamel":
+        term: "thirsty camel"
+        note: "Survey spells as one word; searchers won't."
+      "Liquor Legends":
+        term: "liquor legends"
+      "Harry Brown":
+        term: "harry brown liquor"
+        note: "Severe homonym: 2009 Michael Caine film. Qualified term."
+      "SipnSave":
+        term: "sip n save"
+
+  "Yoghurt":
+    anchor: "Chobani"
+    brands:
+      "Chobani":
+        topic_types: ["company", "brand", "yogurt", "food"]
+      "Chobani Fit":
+        term: "chobani fit"
+        note: "Sub-line of Chobani; term search only. Expect low volume."
+      "YoPro":
+        term: "yopro"
+      "Activia":
+        topic_types: ["brand", "company", "yogurt", "food"]
+        fallback_term: "activia yoghurt"
+      "Vaalia":
+        term: "vaalia"
+      "Yakult":
+        topic_types: ["company", "brand", "food"]
+      "Vitasoy":
+        topic_types: ["company", "brand", "food"]
+        note: "Primarily plant milk, not yoghurt — category/intent mismatch; caveat."
+      "Danone":
+        topic_types: ["company", "food"]
+        note: "Corporate umbrella; consumers rarely search 'Danone' for yoghurt intent."
+      "Gippsland Dairy":
+        term: "gippsland dairy"
+        note: "Region homonym (Gippsland); qualified by 'dairy'."
+      "Tamar Valley":
+        term: "tamar valley yoghurt"
+        note: "Severe homonym: Tasmanian region. Qualified term."
+      "Dairy Farmers":
+        term: "dairy farmers yoghurt"
+        note: "Severe homonym: generic occupation + milk brand. Qualified; expect near-zero volume."
+      "Ultimate":
+        term: "ultimate yoghurt"
+        note: "Hopeless homonym: generic superlative. Expected-fail demo brand."
+      "Coyo":
+        term: "coyo yoghurt"
+      "Cocobella":
+        term: "cocobella"
+      "Nakula":
+        term: "nakula yoghurt"
+        note: "Homonym: Mahabharata figure. Qualified term."
+      "five:am organic":
+        term: "five am yoghurt"
+        note: "Severe homonym: time of day. Qualified term."

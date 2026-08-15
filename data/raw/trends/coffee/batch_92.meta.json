@@ -1,0 +1,16 @@
+{
+ "category": "Coffee",
+ "batch": 92,
+ "brands": [
+  "Vittoria Coffee",
+  "Toby's Estate",
+  "Veneziano Coffee Roasters"
+ ],
+ "tokens": [
+  "/m/0gx_p1d",
+  "Toby's Estate",
+  "Veneziano Coffee Roasters"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

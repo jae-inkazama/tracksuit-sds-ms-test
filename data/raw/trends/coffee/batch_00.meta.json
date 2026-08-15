@@ -1,0 +1,20 @@
+{
+ "category": "Coffee",
+ "batch": 0,
+ "brands": [
+  "Vittoria Coffee",
+  "Allpress Espresso",
+  "Axil",
+  "Campos",
+  "Coffee Supreme"
+ ],
+ "tokens": [
+  "/m/0gx_p1d",
+  "/g/11q9tk1wt0",
+  "/g/11nn2fhk8j",
+  "/g/11q250k0cn",
+  "/g/11q3356jb2"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

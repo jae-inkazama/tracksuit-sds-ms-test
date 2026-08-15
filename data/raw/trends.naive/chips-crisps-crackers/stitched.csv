@@ -1,0 +1,309 @@
+category_name,brand_name,month,trends_index,raw_index,batch,scale_factor,stitch_flag
+"Chips, Crisps, Crackers",Red Rock Deli,2021-08-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2021-09-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2021-10-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2021-11-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2021-12-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2022-01-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2022-02-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2022-03-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2022-04-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2022-05-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2022-06-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2022-07-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2022-08-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2022-09-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2022-10-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2022-11-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2022-12-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2023-01-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2023-02-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2023-03-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2023-04-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2023-05-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2023-06-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2023-07-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2023-08-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2023-09-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2023-10-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2023-11-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2023-12-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2024-01-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2024-02-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2024-03-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2024-04-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2024-05-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2024-06-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2024-07-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2024-08-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2024-09-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2024-10-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2024-11-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2024-12-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2025-01-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2025-02-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Red Rock Deli,2025-03-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2021-08-01,3.0,3.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2021-09-01,3.0,3.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2021-10-01,2.4,2.4,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2021-11-01,2.5,2.5,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2021-12-01,3.25,3.25,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2022-01-01,3.0,3.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2022-02-01,2.25,2.25,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2022-03-01,2.5,2.5,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2022-04-01,3.5,3.5,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2022-05-01,4.2,4.2,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2022-06-01,3.75,3.75,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2022-07-01,3.6,3.6,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2022-08-01,2.75,2.75,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2022-09-01,3.25,3.25,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2022-10-01,3.2,3.2,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2022-11-01,2.75,2.75,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2022-12-01,2.5,2.5,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2023-01-01,3.2,3.2,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2023-02-01,2.75,2.75,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2023-03-01,3.0,3.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2023-04-01,3.8,3.8,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2023-05-01,3.75,3.75,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2023-06-01,3.25,3.25,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2023-07-01,4.2,4.2,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2023-08-01,3.5,3.5,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2023-09-01,3.75,3.75,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2023-10-01,3.2,3.2,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2023-11-01,3.5,3.5,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2023-12-01,3.4,3.4,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2024-01-01,3.5,3.5,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2024-02-01,3.75,3.75,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2024-03-01,2.8,2.8,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2024-04-01,3.25,3.25,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2024-05-01,3.75,3.75,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2024-06-01,3.6,3.6,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2024-07-01,2.75,2.75,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2024-08-01,5.25,5.25,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2024-09-01,4.2,4.2,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2024-10-01,5.0,5.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2024-11-01,4.25,4.25,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2024-12-01,3.6,3.6,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2025-01-01,3.25,3.25,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2025-02-01,4.0,4.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Boulder,2025-03-01,3.6,3.6,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2021-08-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2021-09-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2021-10-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2021-11-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2021-12-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2022-01-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2022-02-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2022-03-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2022-04-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2022-05-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2022-06-01,0.25,0.25,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2022-07-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2022-08-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2022-09-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2022-10-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2022-11-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2022-12-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2023-01-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2023-02-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2023-03-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2023-04-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2023-05-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2023-06-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2023-07-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2023-08-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2023-09-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2023-10-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2023-11-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2023-12-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2024-01-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2024-02-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2024-03-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2024-04-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2024-05-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2024-06-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2024-07-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2024-08-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2024-09-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2024-10-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2024-11-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2024-12-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2025-01-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2025-02-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Burts,2025-03-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2021-08-01,25.0,25.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2021-09-01,30.0,30.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2021-10-01,38.8,38.8,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2021-11-01,38.25,38.25,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2021-12-01,48.25,48.25,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2022-01-01,42.4,42.4,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2022-02-01,40.5,40.5,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2022-03-01,41.25,41.25,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2022-04-01,47.5,47.5,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2022-05-01,51.8,51.8,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2022-06-01,55.75,55.75,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2022-07-01,54.0,54.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2022-08-01,52.0,52.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2022-09-01,46.75,46.75,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2022-10-01,43.4,43.4,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2022-11-01,50.5,50.5,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2022-12-01,59.5,59.5,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2023-01-01,47.4,47.4,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2023-02-01,41.0,41.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2023-03-01,45.0,45.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2023-04-01,53.0,53.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2023-05-01,55.25,55.25,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2023-06-01,58.5,58.5,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2023-07-01,52.2,52.2,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2023-08-01,50.75,50.75,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2023-09-01,47.5,47.5,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2023-10-01,53.0,53.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2023-11-01,67.0,67.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2023-12-01,70.6,70.6,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2024-01-01,53.25,53.25,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2024-02-01,44.0,44.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2024-03-01,52.2,52.2,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2024-04-01,62.0,62.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2024-05-01,60.75,60.75,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2024-06-01,64.0,64.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2024-07-01,64.75,64.75,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2024-08-01,56.5,56.5,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2024-09-01,59.4,59.4,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2024-10-01,57.5,57.5,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2024-11-01,68.5,68.5,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2024-12-01,74.0,74.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2025-01-01,59.25,59.25,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2025-02-01,54.0,54.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Kettle,2025-03-01,53.6,53.6,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2021-08-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2021-09-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2021-10-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2021-11-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2021-12-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2022-01-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2022-02-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2022-03-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2022-04-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2022-05-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2022-06-01,0.25,0.25,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2022-07-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2022-08-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2022-09-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2022-10-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2022-11-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2022-12-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2023-01-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2023-02-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2023-03-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2023-04-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2023-05-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2023-06-01,0.25,0.25,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2023-07-01,0.2,0.2,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2023-08-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2023-09-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2023-10-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2023-11-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2023-12-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2024-01-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2024-02-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2024-03-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2024-04-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2024-05-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2024-06-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2024-07-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2024-08-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2024-09-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2024-10-01,0.25,0.25,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2024-11-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2024-12-01,0.2,0.2,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2025-01-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2025-02-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Proper Crisps,2025-03-01,0.0,0.0,0,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2021-08-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2021-09-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2021-10-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2021-11-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2021-12-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2022-01-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2022-02-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2022-03-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2022-04-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2022-05-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2022-06-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2022-07-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2022-08-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2022-09-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2022-10-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2022-11-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2022-12-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2023-01-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2023-02-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2023-03-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2023-04-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2023-05-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2023-06-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2023-07-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2023-08-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2023-09-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2023-10-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2023-11-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2023-12-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2024-01-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2024-02-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2024-03-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2024-04-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2024-05-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2024-06-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2024-07-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2024-08-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2024-09-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2024-10-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2024-11-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2024-12-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2025-01-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2025-02-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Snacka Changi,2025-03-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2021-08-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2021-09-01,5.75,5.75,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2021-10-01,0.8,0.8,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2021-11-01,29.5,29.5,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2021-12-01,2.75,2.75,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2022-01-01,1.0,1.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2022-02-01,3.0,3.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2022-03-01,3.0,3.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2022-04-01,4.0,4.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2022-05-01,3.8,3.8,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2022-06-01,1.0,1.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2022-07-01,3.2,3.2,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2022-08-01,4.5,4.5,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2022-09-01,4.0,4.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2022-10-01,4.2,4.2,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2022-11-01,2.5,2.5,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2022-12-01,3.25,3.25,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2023-01-01,2.6,2.6,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2023-02-01,2.25,2.25,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2023-03-01,0.0,0.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2023-04-01,2.2,2.2,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2023-05-01,1.0,1.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2023-06-01,5.25,5.25,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2023-07-01,4.2,4.2,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2023-08-01,4.25,4.25,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2023-09-01,4.5,4.5,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2023-10-01,3.4,3.4,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2023-11-01,1.25,1.25,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2023-12-01,4.6,4.6,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2024-01-01,3.5,3.5,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2024-02-01,3.25,3.25,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2024-03-01,2.6,2.6,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2024-04-01,3.25,3.25,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2024-05-01,2.5,2.5,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2024-06-01,2.4,2.4,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2024-07-01,4.75,4.75,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2024-08-01,4.25,4.25,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2024-09-01,4.2,4.2,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2024-10-01,3.75,3.75,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2024-11-01,4.25,4.25,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2024-12-01,5.0,5.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2025-01-01,3.0,3.0,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2025-02-01,4.75,4.75,1,,anchor-zero
+"Chips, Crisps, Crackers",Tyrells,2025-03-01,1.2,1.2,1,,anchor-zero

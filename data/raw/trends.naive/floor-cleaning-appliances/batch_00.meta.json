@@ -1,0 +1,20 @@
+{
+ "category": "Floor Cleaning Appliances",
+ "batch": 0,
+ "brands": [
+  "Dyson",
+  "Bissell",
+  "Hoover",
+  "Kärcher",
+  "Shark"
+ ],
+ "tokens": [
+  "/m/05cskg",
+  "/g/11bc64qnlg",
+  "/m/0vv4xct",
+  "/m/085rqy",
+  "/g/113lpmjx_"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

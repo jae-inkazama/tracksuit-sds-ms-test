@@ -1,0 +1,20 @@
+{
+ "category": "Coupons, Discounts and Vouchers",
+ "batch": 0,
+ "brands": [
+  "Groupon",
+  "Cashrewards",
+  "EatClub",
+  "Entertainment",
+  "First Table"
+ ],
+ "tokens": [
+  "/m/0rzpt9x",
+  "/g/11hz8jx70t",
+  "/g/11p99vk520",
+  "/m/02jjt",
+  "/g/11kpf1crkj"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

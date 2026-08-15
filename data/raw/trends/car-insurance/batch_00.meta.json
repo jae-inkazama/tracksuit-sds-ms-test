@@ -1,0 +1,20 @@
+{
+ "category": "Car Insurance",
+ "batch": 0,
+ "brands": [
+  "AAMI",
+  "Bingle",
+  "Budget Direct",
+  "Huddle",
+  "Koba"
+ ],
+ "tokens": [
+  "/m/0wjlg1s",
+  "/m/0_gwsxz",
+  "/m/0k9h0sg",
+  "huddle insurance",
+  "koba insurance"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

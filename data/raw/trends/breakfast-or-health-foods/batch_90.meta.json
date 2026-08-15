@@ -1,0 +1,20 @@
+{
+ "category": "Breakfast or Health Foods",
+ "batch": 90,
+ "brands": [
+  "Uncle Tobys",
+  "Blue Frog Breakfast",
+  "Freshness Fine Foods",
+  "Hubbards",
+  "Morning Sun"
+ ],
+ "tokens": [
+  "/m/0696s6",
+  "Blue Frog Breakfast",
+  "Freshness Fine Foods",
+  "Hubbards",
+  "Morning Sun"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

@@ -1,0 +1,20 @@
+{
+ "category": "Mattresses, beds, and pillows",
+ "batch": 1,
+ "brands": [
+  "Koala",
+  "Noa",
+  "SleepMaker",
+  "Sleeping Duck",
+  "Sleepyhead"
+ ],
+ "tokens": [
+  "/g/11mv_h76n8",
+  "noa mattress",
+  "sleepmaker",
+  "sleeping duck mattress",
+  "sleepyhead mattress"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

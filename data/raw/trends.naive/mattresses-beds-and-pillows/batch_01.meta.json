@@ -1,0 +1,20 @@
+{
+ "category": "Mattresses, beds, and pillows",
+ "batch": 1,
+ "brands": [
+  "Snooze",
+  "Koala",
+  "Noa",
+  "SleepMaker",
+  "Sleeping Duck"
+ ],
+ "tokens": [
+  "/g/11zjwfnmpy",
+  "/m/04cp_",
+  "/g/113l75180",
+  "/g/11dxd2_rjj",
+  "/g/11nlg33l2d"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

@@ -1,0 +1,14 @@
+{
+ "category": "Liquor Retailer",
+ "batch": 90,
+ "brands": [
+  "Dan Murphy's",
+  "Liquorland"
+ ],
+ "tokens": [
+  "Dan Murphy's",
+  "Liquorland"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

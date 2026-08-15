@@ -1,0 +1,20 @@
+{
+ "category": "Fresh Milk (Dairy)",
+ "batch": 0,
+ "brands": [
+  "Dairy Farmers",
+  "Farmhouse Gold",
+  "Norco",
+  "PURA",
+  "Pauls"
+ ],
+ "tokens": [
+  "/m/0d_7rj",
+  "Farmhouse Gold",
+  "/g/11bx9klh7l",
+  "/g/11syfss0f2",
+  "Pauls"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

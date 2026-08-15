@@ -1,0 +1,20 @@
+{
+ "category": "Holiday Destinations",
+ "batch": 0,
+ "brands": [
+  "Bali",
+  "Byron Bay, New South Wales",
+  "Margaret River Region, Western Australia",
+  "Noosa, Queensland",
+  "Port Douglas, Queensland"
+ ],
+ "tokens": [
+  "/g/121hxh1j",
+  "/g/11z74t3y_2",
+  "Margaret River Region, Western Australia",
+  "Noosa, Queensland",
+  "/m/069m0g"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

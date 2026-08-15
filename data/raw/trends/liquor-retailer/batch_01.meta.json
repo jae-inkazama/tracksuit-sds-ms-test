@@ -1,0 +1,20 @@
+{
+ "category": "Liquor Retailer",
+ "batch": 1,
+ "brands": [
+  "Dan Murphy's",
+  "Harry Brown",
+  "Liquor Legends",
+  "Liquorland",
+  "SipnSave"
+ ],
+ "tokens": [
+  "Dan Murphy's",
+  "harry brown liquor",
+  "liquor legends",
+  "/g/11sn_6c21s",
+  "sip n save"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

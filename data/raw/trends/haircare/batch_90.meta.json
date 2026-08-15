@@ -1,0 +1,16 @@
+{
+ "category": "Haircare",
+ "batch": 90,
+ "brands": [
+  "Palmolive",
+  "Fruits",
+  "My Soda"
+ ],
+ "tokens": [
+  "/g/1218rvl2",
+  "Fruits",
+  "My Soda"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

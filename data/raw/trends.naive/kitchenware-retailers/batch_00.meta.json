@@ -1,0 +1,20 @@
+{
+ "category": "Kitchenware Retailers",
+ "batch": 0,
+ "brands": [
+  "Myer",
+  "Everten",
+  "House",
+  "Kitchen Warehouse",
+  "Kitchenware"
+ ],
+ "tokens": [
+  "/g/11c6ty6z4g",
+  "/g/1tgdnp_k",
+  "/g/11j0ygcxjm",
+  "/g/11h4q8clfq",
+  "/g/11g6qhrmbn"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

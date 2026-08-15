@@ -1,0 +1,20 @@
+{
+ "category": "Social Media Platforms",
+ "batch": 90,
+ "brands": [
+  "Facebook",
+  "Bluesky",
+  "Pinterest",
+  "RedNote",
+  "Snapchat"
+ ],
+ "tokens": [
+  "Facebook",
+  "Bluesky",
+  "Pinterest",
+  "RedNote",
+  "Snapchat"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

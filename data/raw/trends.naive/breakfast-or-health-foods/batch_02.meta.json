@@ -1,0 +1,18 @@
+{
+ "category": "Breakfast or Health Foods",
+ "batch": 2,
+ "brands": [
+  "Uncle Tobys",
+  "Morning Sun",
+  "Pure Delish",
+  "Sonoma Bakery"
+ ],
+ "tokens": [
+  "/m/0696s6",
+  "/g/11h4q9gk8x",
+  "/g/11vhq7_m7f",
+  "/g/11t5x6khkn"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

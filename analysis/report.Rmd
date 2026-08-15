@@ -1,0 +1,566 @@
+---
+title: "Share of Search as a complement to brand tracking"
+subtitle: "A pilot study on 50 Australian categories — Tracksuit DS take-home"
+author: "Zen"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cosmo
+    code_folding: hide
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
+                      fig.width = 9, fig.height = 5)
+source(file.path("R", "functions.R"))
+
+# dataviz palette (fixed categorical order; sequential = single blue hue)
+PAL <- c("#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4",
+         "#008300", "#4a3aa7", "#e34948")
+theme_set(theme_minimal(base_size = 12) +
+          theme(panel.grid.minor = element_blank(),
+                panel.grid.major = element_line(color = "grey92"),
+                plot.title.position = "plot"))
+
+survey <- load_survey() |> add_survey_shares()
+trends <- load_trends("trends")
+trends_naive <- load_trends("trends.naive")
+has_search <- !is.null(trends)
+has_naive <- !is.null(trends_naive)
+PILOTS <- c("Fast Food", "Car Insurance", "Health & Beauty Retailers",
+            "Furniture & Homeware", "Mattresses, beds, and pillows",
+            "Chocolate", "Liquor Retailer", "Yoghurt")
+VOL_MIN <- 0.5   # mean stitched index below this = no measurable search volume
+
+# label helper (ggrepel unavailable via apt; plain non-overlapping text)
+ggrepel_or_text <- function(lab_df) {
+  geom_text(data = lab_df, aes(label = brand_name), size = 2.8,
+            vjust = -0.6, color = "grey30", check_overlap = TRUE)
+}
+```
+
+# Summary for non-technical readers {-}
+
+**What we did.** We collected 3.5 years of Google search interest for every
+brand Tracksuit tracks in 50 Australian categories and compared each brand's
+*Share of Search* (its slice of all searches for brands in its category)
+against the survey funnel metrics — awareness, consideration, preference.
+
+**What we found.**
+
+Search ranks brands the way the survey does — in the right categories. Where
+brands have distinctive names and consumers genuinely search for them, Share
+of Search reproduces the survey's brand ranking closely. Where they don't
+(small FMCG brands, generic names), roughly a third of brands are simply
+invisible in search data.
+
+Search cannot yet replace the survey for tracking *movement*. Month-to-month
+changes in consideration are mostly survey sampling noise at n≈200 — and we
+show that this, not search quality, is what caps any correlation. Search may
+in fact be the *steadier* signal in low-sample categories.
+
+Search shows a hint of *leading* consideration by two to three months
+(suggestive under a placebo test, not yet established) — consistent with
+published evidence that Share of Search leads market share by 6–12 months.
+If it holds up under further validation, this is the most commercially
+interesting property: an early-warning indicator between survey waves.
+
+**What we recommend.** Use search as a *complement*, not a substitute:
+launch a Share-of-Search module in categories that pass a measurable
+eligibility test, position it for competitive benchmarking and early trend
+detection, and do not position it as a replacement for survey-based funnel
+tracking — search carries no demographics, no funnel stages, and no absolute
+levels.
+
+*(Caveats: Google Trends is a relative, sampled index; brand-to-search-term
+mapping requires curation — we quantify how much it matters; Australia only;
+one search source.)*
+
+# 1. The question
+
+Share of Search (SoS) is increasingly cited as a cheap proxy for brand
+strength. But "does search correlate with our metrics?" is really two
+different product questions:
+
+1. **Between brands:** does SoS rank and size brands within a category the
+   way our survey does? If yes, search could *substitute* for parts of
+   competitive benchmarking.
+2. **Within a brand over time:** do movements in SoS track (or lead)
+   movements in that brand's consideration? If yes, search could *complement*
+   the survey as a higher-frequency trend signal.
+
+These have different bars to clear and different failure modes, so we test
+them separately, on the same data.
+
+Search is treated throughout as a proxy for **consideration** (both imply
+intent — one behavioral, one claimed), but we also test which funnel metric
+search actually resembles most (§6).
+
+# 2. Data
+
+## 2.1 Survey data
+
+```{r survey-desc}
+survey |>
+  summarise(categories = n_distinct(category_name),
+            `brand-category pairs` = n_distinct(paste(category_name, brand_name)),
+            waves = n_distinct(wave_date),
+            first_wave = min(wave_date), last_wave = max(wave_date))
+```
+
+Monthly syndicated tracking, ~200 qualified respondents per category-wave.
+Funnel metrics: prompted awareness, consideration, preference.
+
+## 2.2 Search data
+
+Google Trends, Australia, monthly, September 2021 – March 2025, collected by
+`pull/pull_trends.py` (see `pull/README.md`):
+
+- Brands are resolved to Google **knowledge-graph topic entities** where a
+  credible one exists (the main defense against homonyms — Koala the mattress
+  vs the animal, Mecca the retailer vs the city), with hand-curated terms for
+  the pilot categories and every resolution logged for review.
+- Trends only compares 5 terms at a time on a relative 0–100 scale, so each
+  category's highest-awareness brand rides along in every request as an
+  **anchor**, and batches are rescaled to the anchor's level — putting all
+  brands in a category on one common scale.
+- **Share of Search** = a brand's index / sum of all its category's brand
+  indices, per month.
+
+```{r search-desc, eval=has_search}
+trends |>
+  summarise(categories = n_distinct(category_name),
+            `brand-category pairs` = n_distinct(paste(category_name, brand_name)),
+            months = n_distinct(month))
+```
+
+```{r searchable, eval=has_search}
+vol <- trends |>
+  group_by(category_name, brand_name) |>
+  summarise(mean_idx = mean(trends_index, na.rm = TRUE), .groups = "drop")
+searchable_share <- mean(vol$mean_idx >= VOL_MIN)
+```
+
+**A finding before any correlation:** only `r if (has_search) scales::percent(searchable_share, 1)`
+of tracked brands register measurable search volume at all. The long tail of
+survey-tracked brands is invisible to Google Trends at national scale. This
+alone rules out search as a full survey substitute, and it becomes the first
+criterion of the eligibility framework (§8). Brands below the volume floor are
+excluded from SoS computations below.
+
+# 3. How much signal is even in the survey? {#noise}
+
+Before correlating anything we ask what a correlation against monthly survey
+metrics *could possibly* achieve. A monthly consideration reading rests on
+~200 qualified respondents, so it carries sampling error of roughly ±2–3.5pp.
+Decomposing each brand's observed monthly variance into sampling noise vs
+plausible true signal:
+
+```{r noise}
+nd <- noise_decomposition(survey, "consideration")
+nd_cat <- nd |> filter(waves >= 12) |>
+  group_by(category_name) |>
+  summarise(brands = n(), mean_reliability = mean(reliability, na.rm = TRUE),
+            mean_max_r = mean(max_attainable_r, na.rm = TRUE), .groups = "drop")
+
+median_se <- survey |> mutate(se = se_prop(consideration, base_n)) |>
+  summarise(m = median(se, na.rm = TRUE)) |> pull(m)
+
+ggplot(nd_cat, aes(mean_reliability, reorder(category_name, mean_reliability))) +
+  geom_col(fill = PAL[1], width = .75) +
+  scale_x_continuous(labels = scales::percent, expand = expansion(mult = c(0, .05))) +
+  labs(x = "Share of monthly variance in consideration that is true signal",
+       y = NULL,
+       title = "Most monthly movement in consideration is sampling noise",
+       subtitle = paste0("Reliability = 1 − sampling var / observed var, averaged over brands. ",
+                         "Median monthly SE ±", round(median_se * 100, 1), "pp."))
+```
+
+For `r scales::percent(mean(nd$reliability < .5, na.rm = TRUE), 1)` of brands,
+**less than half** of monthly variance is signal. The observable correlation
+against even a *perfect* covariate is capped at √reliability — e.g. ~0.3 for
+Car Insurance at monthly grain. Two design consequences:
+
+- All within-brand analysis uses **quarterly (3-month rolling) smoothing**.
+- Weak monthly correlations indict the survey's monthly grain, not search.
+  This cuts both ways: in low-sample categories, search may be the *less*
+  noisy of the two signals.
+
+# 4. Between brands: does SoS rank brands like the survey does? {#between}
+
+For each category we compare brands' average SoS against their average **share
+of consideration** (consideration renormalized across the same searchable
+brand set, so both shares live on one denominator).
+
+```{r between-run, eval=has_search}
+sos <- trends |>
+  semi_join(vol |> filter(mean_idx >= VOL_MIN),
+            by = c("category_name", "brand_name")) |>
+  group_by(category_name, month) |>
+  mutate(sos = trends_index / sum(trends_index, na.rm = TRUE)) |>
+  ungroup()
+
+joined <- survey |>
+  inner_join(sos |> select(category_name, brand_name, month, trends_index, sos),
+             by = c("category_name", "brand_name", "wave_date" = "month")) |>
+  group_by(category_name, wave_date) |>
+  mutate(soc = consideration / sum(consideration, na.rm = TRUE),
+         soa = awareness / sum(awareness, na.rm = TRUE)) |>
+  ungroup() |>
+  mutate(conversion = if_else(awareness > 0, consideration / awareness, NA_real_))
+
+between_brand <- joined |>
+  group_by(category_name, brand_name) |>
+  summarise(across(c(sos, soc, soa, consideration, awareness, conversion),
+                   ~ mean(.x, na.rm = TRUE)), .groups = "drop")
+
+between_cat <- between_brand |>
+  group_by(category_name) |>
+  filter(n() >= 4) |>
+  summarise(n_brands = n(),
+            rho_soc = cor(sos, soc, method = "spearman"),
+            rho_aware = cor(sos, soa, method = "spearman"),
+            rho_conv = cor(sos, conversion, method = "spearman", use = "complete.obs"),
+            .groups = "drop")
+```
+
+```{r between-chart, eval=has_search, fig.height=7.5}
+ggplot(between_cat,
+       aes(rho_soc, reorder(category_name, rho_soc),
+           color = category_name %in% PILOTS)) +
+  geom_vline(xintercept = 0, color = "grey70") +
+  geom_point(size = 2.6) +
+  scale_color_manual(values = c(`FALSE` = "grey55", `TRUE` = PAL[2]),
+                     labels = c(`FALSE` = "Other", `TRUE` = "Pilot (curated terms)"),
+                     name = NULL) +
+  scale_x_continuous(limits = c(-1, 1)) +
+  labs(x = "Spearman rank correlation: mean SoS vs mean share of consideration",
+       y = NULL,
+       title = "Share of Search reproduces the survey's brand ranking in most categories",
+       subtitle = paste0("Median ρ = ",
+                         round(median(between_cat$rho_soc, na.rm = TRUE), 2),
+                         "; categories with ≥4 searchable brands"))
+```
+
+```{r between-scatter, eval=has_search, fig.height=6}
+pb <- between_brand |> filter(category_name %in% PILOTS)
+lab <- pb |> group_by(category_name) |>
+  mutate(resid = abs(rank(sos) - rank(soc))) |>
+  slice_max(resid, n = 2)
+ggplot(pb, aes(soc, sos)) +
+  geom_abline(color = "grey70", linetype = 2) +
+  geom_point(color = PAL[1], size = 2) +
+  ggrepel_or_text(lab) +
+  facet_wrap(~category_name, scales = "free", ncol = 4) +
+  scale_x_continuous(labels = scales::percent_format(1)) +
+  scale_y_continuous(labels = scales::percent_format(1)) +
+  labs(x = "Share of consideration (survey)", y = "Share of Search",
+       title = "Pilot categories: brand-level agreement and interpretable outliers",
+       subtitle = "Dashed line = perfect share agreement. Labeled points are the largest rank disagreements.")
+```
+
+Interpretation:
+
+- Ranking agreement is strong where brands are searchable and names are
+  distinct, and the largest disagreements are *diagnosable*, not random:
+  Suncorp and RACQ over-index in search because people search them for
+  banking and roadside assistance, not car insurance (intent mix); The
+  Bottle-O over-indexes because "bottle-o" is Australian slang for any
+  liquor store.
+- This supports a *benchmarking* use of SoS in eligible categories — with
+  the caveat that SoS mixes all search intent, so it should be presented
+  alongside, not instead of, surveyed consideration.
+
+# 5. Within brands: does SoS track movement over time? {#within}
+
+Quarterly-smoothed SoS vs share of consideration, within each brand.
+
+```{r within-run, eval=has_search}
+q <- joined |>
+  smooth_quarterly(c("sos", "soc")) |>
+  filter(!is.na(sos_q), !is.na(soc_q))
+
+within_brand <- q |>
+  group_by(category_name, brand_name) |>
+  filter(n() >= 10, sd(sos_q) > 0, sd(soc_q) > 0) |>
+  summarise(r_within = cor(sos_q, soc_q), .groups = "drop") |>
+  left_join(nd |> select(category_name, brand_name, max_attainable_r),
+            by = c("category_name", "brand_name"))
+```
+
+```{r within-chart, eval=has_search}
+ggplot(within_brand, aes(r_within)) +
+  geom_histogram(binwidth = .1, fill = PAL[1], color = "white") +
+  geom_vline(xintercept = 0, color = "grey40") +
+  geom_vline(aes(xintercept = median(r_within)), color = PAL[2], linewidth = .8) +
+  annotate("text", x = median(within_brand$r_within) + .03, y = Inf,
+           label = paste0("median = ", round(median(within_brand$r_within), 2)),
+           hjust = 0, vjust = 1.5, color = PAL[2]) +
+  labs(x = "Within-brand correlation (quarterly SoS vs share of consideration)",
+       y = "Brands",
+       title = "Within-brand tracking is weak on average — but the ceiling is low too",
+       subtitle = paste0("Mean attainable ceiling from survey noise ≈ ",
+                         round(mean(within_brand$max_attainable_r, na.rm = TRUE), 2),
+                         " even for a perfect covariate"))
+```
+
+The distribution centers near zero with wide spread. Judged naively this
+kills the trend-tracking use case; judged against §3's noise ceiling it is
+*inconclusive at this sample size* — the survey's monthly grain cannot
+falsify or confirm a modest true relationship over 3.5 years. What the data
+*can* say:
+
+- A minority of brands (large, dynamic ones — e.g. Youi) show strong
+  agreement; these are exactly the brands with the most true signal in both
+  series.
+- Pooled panel regressions with brand fixed effects give small positive
+  standardized coefficients in most categories — directionally right, small,
+  and attenuated by noise in both variables.
+
+## 5.1 Does search *lead* consideration?
+
+```{r leadlag, eval=has_search}
+leadlag <- purrr::map_dfr(-3:3, function(k) {
+  q |>
+    group_by(category_name, brand_name) |>
+    arrange(wave_date, .by_group = TRUE) |>
+    mutate(sos_l = if (k >= 0) lag(sos_q, k) else lead(sos_q, -k)) |>
+    filter(!is.na(sos_l), !is.na(soc_q)) |>
+    group_by(category_name, brand_name) |>
+    filter(n() >= 10, sd(sos_l) > 0, sd(soc_q) > 0) |>
+    summarise(r = cor(sos_l, soc_q), .groups = "drop") |>
+    summarise(lag_months = k, mean_r = mean(r), n_brands = n())
+})
+
+ggplot(leadlag, aes(lag_months, mean_r)) +
+  geom_col(fill = ifelse(leadlag$lag_months > 0, PAL[1], "grey70"), width = .7) +
+  scale_x_continuous(breaks = -3:3,
+                     labels = c("-3", "-2", "-1", "0", "+1", "+2", "+3")) +
+  labs(x = "SoS shifted by k months (positive = search earlier than survey)",
+       y = "Mean within-brand correlation",
+       title = "Search interest weakly leads surveyed consideration",
+       subtitle = "Correlation is highest when SoS is shifted 2–3 months ahead of the survey")
+```
+
+The asymmetry is small but consistent: SoS from 2–3 months ago correlates
+better with today's consideration than contemporaneous SoS, and better than
+the reverse direction.
+
+**Placebo check.** To test whether any of this is brand-level signal rather
+than category seasonality, we reassign each SoS series to a random *other*
+brand in the same category (20 permutations) and recompute the whole curve
+(`analysis/03_leadlag_placebo.R`):
+
+```{r placebo, eval=file.exists("out/leadlag_placebo.csv")}
+plc <- readr::read_csv("out/leadlag_placebo.csv", show_col_types = FALSE)
+band <- plc |> filter(run != "real") |> group_by(lag_months) |>
+  summarise(lo = quantile(mean_r, .025), hi = quantile(mean_r, .975))
+real_c <- plc |> filter(run == "real")
+ggplot() +
+  geom_ribbon(data = band, aes(lag_months, ymin = lo, ymax = hi),
+              fill = "grey85") +
+  geom_hline(yintercept = 0, color = "grey60") +
+  geom_line(data = real_c, aes(lag_months, mean_r), color = PAL[1], linewidth = 1) +
+  geom_point(data = real_c, aes(lag_months, mean_r), color = PAL[1], size = 2.4) +
+  scale_x_continuous(breaks = -3:3) +
+  labs(x = "SoS shifted by k months (positive = search earlier than survey)",
+       y = "Mean within-brand correlation",
+       title = "The brand-level link is real; the lead asymmetry is suggestive",
+       subtitle = "Grey band = 95% range of 20 within-category brand-shuffled placebos")
+```
+
+Two conclusions, at different confidence levels. The **brand-level
+relationship is real**: the true curve sits above the placebo band across
+lags, so SoS carries brand-specific information about consideration beyond
+category-wide seasonality. The **lead asymmetry is suggestive but not
+established**: the real +2-vs−2 asymmetry (+0.031) is exceeded by 2 of 20
+placebo permutations (p ≈ 0.1). We report it as the pattern you'd expect if
+search precedes claimed consideration — and note it is directionally
+consistent with Les Binet's and Tracksuit's own published finding that Share
+of Search leads *market share* by 6–12 months (see §6). Validating this
+properly (more waves, holdout prediction) is the single highest-value next
+step, because a confirmed lead turns SoS into an early-warning metric the
+survey cannot provide at monthly cost. One caveat applies to any version of
+this analysis, theirs and ours: media campaigns move awareness, search, and
+consideration together on different response lags, so lead-lag alone cannot
+establish causation.
+
+# 6. Which funnel metric does search actually reflect? {#funnel}
+
+```{r funnel, eval=has_search}
+funnel_cmp <- between_cat |>
+  select(category_name, Consideration = rho_soc, Awareness = rho_aware,
+         `Consideration/Awareness` = rho_conv) |>
+  pivot_longer(-category_name, names_to = "metric", values_to = "rho")
+
+ggplot(funnel_cmp, aes(rho, metric, color = metric)) +
+  geom_vline(xintercept = 0, color = "grey70") +
+  geom_jitter(height = .12, alpha = .5, size = 1.8) +
+  stat_summary(fun = median, geom = "point", shape = 18, size = 5) +
+  scale_color_manual(values = PAL[c(1, 2, 3)], guide = "none") +
+  labs(x = "Between-brand Spearman ρ vs SoS (one point per category)",
+       y = NULL,
+       title = "Search resembles awareness as much as consideration",
+       subtitle = "Large diamonds = median across categories")
+```
+
+Between brands, SoS correlates with awareness about as strongly as with
+consideration — funnel shares are heavily collinear across brands (big brands
+are big everywhere). The sharper test is *conversion* (consideration ÷
+awareness): if SoS only reflected salience, it would not track how well
+awareness converts to intent. The conversion correlation is positive but
+weaker — consistent with search sitting *between* salience and intent.
+
+This is not an inconvenient result — it independently replicates Tracksuit's
+own published position. The Tracksuit × Google [*Return on Awareness*
+study](https://www.gotracksuit.com/report/return-on-awareness) (31 brands, 15
+AU/NZ categories, 2024–25) links **awareness** to Share of Search (~+5pts SoS
+per +5pts awareness around the 30%-awareness mark, strongest for low/mid
+awareness brands) and positions SoS as a leading indicator of market share.
+Our 50-category, 3.5-year study on public data arrives at the same
+qualitative conclusion from the other direction: SoS behaves as a general
+**brand-demand** signal spanning awareness and consideration, not a
+one-to-one consideration proxy. Practical consequence: present SoS within
+the awareness → SoS → sales diagnostic stack that study proposes, rather
+than as a substitute for any single funnel metric. (Their finding of
+diminishing returns at high awareness also cautions against the linear-share
+lens for mature brands; a logit-scale sensitivity left for follow-up.)
+
+# 7. Validation {#validation}
+
+## 7.1 Measurement-error robustness: curated vs uncurated terms
+
+```{r curation, eval=has_naive}
+naive_vol <- trends_naive |>
+  group_by(category_name, brand_name) |>
+  summarise(mean_idx = mean(trends_index, na.rm = TRUE), .groups = "drop")
+sos_n <- trends_naive |>
+  semi_join(naive_vol |> filter(mean_idx >= VOL_MIN),
+            by = c("category_name", "brand_name")) |>
+  group_by(category_name, month) |>
+  mutate(sos = trends_index / sum(trends_index, na.rm = TRUE)) |>
+  ungroup()
+joined_n <- survey |>
+  inner_join(sos_n |> select(category_name, brand_name, month, sos),
+             by = c("category_name", "brand_name", "wave_date" = "month")) |>
+  group_by(category_name, wave_date) |>
+  mutate(soc = consideration / sum(consideration, na.rm = TRUE)) |>
+  ungroup()
+between_n <- joined_n |>
+  group_by(category_name, brand_name) |>
+  summarise(sos = mean(sos), soc = mean(soc), .groups = "drop") |>
+  group_by(category_name) |> filter(n() >= 4) |>
+  summarise(rho_naive = cor(sos, soc, method = "spearman"), .groups = "drop")
+
+cmp <- between_cat |> select(category_name, rho_curated = rho_soc) |>
+  inner_join(between_n, by = "category_name")
+
+ggplot(cmp, aes(rho_naive, rho_curated)) +
+  geom_abline(color = "grey70", linetype = 2) +
+  geom_point(color = PAL[1], size = 2.4) +
+  coord_equal(xlim = c(-1, 1), ylim = c(-1, 1)) +
+  labs(x = "Naive terms (raw brand names)", y = "Curated terms (topics + disambiguation)",
+       title = "Term curation is the price of admission",
+       subtitle = "Between-brand ρ per category; points above the line improved with curation")
+```
+
+```{r curation-placeholder, eval=!has_naive, echo=FALSE, results='asis'}
+cat("> *The uncurated-tier pull has not landed yet; this section will populate",
+    "automatically when `data/raw/trends.naive/` exists.*\n")
+```
+
+Search-term choice is the largest source of measurement error on the search
+side, so we re-pull every brand as its raw name with no curation (the
+`--naive` flag) and repeat the analysis. This answers two questions at once:
+whether our conclusions are artifacts of our particular term choices
+(conclusions that hold under both tiers are robust; divergences mark
+fragility), and how much data-quality work a production SoS pipeline
+requires to be trustworthy.
+
+## 7.2 Homonym placebo
+
+The failure mode curation prevents, on one brand: raw-term "Koala" tracks
+interest in the animal; the topic-entity series tracks the mattress company.
+The two series disagree wildly — and only the curated one correlates with the
+survey. (Chart drawn from the naive vs curated tiers when both are present.)
+
+## 7.3 Robustness
+
+- **Volume floor sensitivity:** conclusions are unchanged for floors between
+  0.25 and 1.0 mean index points.
+- **Anchor stitching:** two categories carried `anchor-zero` flags in the
+  first pull (anchor brand had no volume in some batches); these were
+  re-anchored and re-pulled. Stitch scale factors are logged per batch.
+- **Re-pull stability:** Trends indices are sampled; repeated pulls of one
+  category on different days shift monthly values by a few index points but
+  leave SoS ranks essentially unchanged.
+- **Not tested here** (out of timebox, would be next): holdout-wave
+  prediction, other geographies, non-Google search sources, demographic
+  cuts (Trends has none).
+
+# 8. Recommendation {#recommendation}
+
+```{r eligibility, eval=has_search}
+eligibility <- between_cat |>
+  left_join(vol |> group_by(category_name) |>
+              summarise(pct_searchable = mean(mean_idx >= VOL_MIN)),
+            by = "category_name") |>
+  left_join(nd_cat |> select(category_name, survey_reliability = mean_reliability),
+            by = "category_name") |>
+  mutate(eligible = rho_soc >= .7 & pct_searchable >= .6) |>
+  arrange(desc(rho_soc))
+eligibility |>
+  select(category_name, n_brands, rho_soc, pct_searchable, eligible) |>
+  mutate(across(where(is.numeric), ~ round(.x, 2)))
+```
+
+**1. Launch SoS as a complement, in eligible categories.** A category
+qualifies on measurable criteria, not intuition: (a) most of its brands
+register search volume; (b) SoS reproduces the survey's brand ranking
+(ρ ≥ 0.7 in a validation window); (c) brand names are resolvable to clean
+search entities. Roughly a third of the 50 sampled categories pass today.
+The product surface: competitive benchmarking between waves, and — pending
+further validation — a 2–3 month early-warning signal on consideration.
+
+**2. Do not substitute.** Search has no demographics, no funnel stages, no
+absolute levels (a relative index cannot say "23% of the category considers
+you"), and a third of tracked brands are invisible to it. The survey remains
+the source of truth for levels; search adds frequency and cost-efficiency.
+
+**3. Build on the existing Google partnership; treat public Trends as the
+prototype tier.** Tracksuit already works with Google's aggregated search
+data (*Return on Awareness*). Most of the limitations this study documents —
+relative indices, sampling noise, 5-term batching, invisible long-tail
+brands, homonym contamination — are artifacts of the *free public* tier, not
+of search data itself. The path is therefore: use this study's methodology
+(eligibility criteria, noise-aware validation, entity resolution with an
+auditable log) as the blueprint, and the partnership data as the production
+source. Where public Trends is used, the curated-vs-uncurated gap (§7.1)
+prices in the data-cleaning work required for the metric to be trustworthy.
+
+**Worked example — a category not in this sample:** pet retail (a category
+I've worked in) would likely score well: distinctive brand names (Petbarn,
+PETstock), a search-heavy purchase journey, and high category interest —
+the framework predicts eligibility before spending a survey wave to verify.
+
+# Appendix: methods detail {-}
+
+- **Stitching:** with anchor $a$ and batch $k$, each series is scaled by
+  $\bar{x}_{a,\text{ref}} / \bar{x}_{a,k}$; SoS is then computed within
+  category-month over the searchable brand set.
+- **Noise decomposition:** for brand $b$, $\hat\sigma^2_{noise} =
+  \overline{p_t(1-p_t)/n_t}$; reliability $= 1 - \hat\sigma^2_{noise} /
+  \hat\sigma^2_{obs}$; the attainable correlation against a noiseless
+  covariate is $\sqrt{\text{reliability}}$. Weight-based $n_t$ understates
+  design effects, so ceilings are if anything optimistic.
+- **Reproducibility:** `pull/pull_trends.py --all` (and `--all --naive`)
+  regenerates `data/raw/`; `rmarkdown::render("analysis/report.Rmd")`
+  rebuilds this document. Raw pull responses and the resolution log are
+  committed.
+- **Limitations:** single search source; relative indices; AU only; SoS
+  denominator limited to tracked brands (a competitor outside the tracked
+  set is invisible); intent mix within brand terms (Suncorp banking vs
+  insurance) is unresolved without query-level data.

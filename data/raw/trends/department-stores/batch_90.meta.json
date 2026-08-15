@@ -1,0 +1,18 @@
+{
+ "category": "Department Stores",
+ "batch": 90,
+ "brands": [
+  "Kmart",
+  "Big W",
+  "David Jones",
+  "Myer"
+ ],
+ "tokens": [
+  "/g/11b827g0wh",
+  "Big W",
+  "David Jones",
+  "Myer"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

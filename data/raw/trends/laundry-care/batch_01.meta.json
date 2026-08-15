@@ -1,0 +1,20 @@
+{
+ "category": "Laundry Care",
+ "batch": 1,
+ "brands": [
+  "OMO",
+  "Dynamo",
+  "Earth Choice",
+  "Earthwise",
+  "Ecostore"
+ ],
+ "tokens": [
+  "/g/11h6w3lrr7",
+  "/g/11cp7jc53y",
+  "/g/11t9trnjst",
+  "/g/11xlgq_c9p",
+  "/g/11cmjy7r03"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

@@ -1,0 +1,18 @@
+{
+ "category": "Cafes",
+ "batch": 90,
+ "brands": [
+  "Starbucks",
+  "Gloria Jeans",
+  "Krispy Kreme",
+  "Zarraffa's"
+ ],
+ "tokens": [
+  "/g/12nwwykv1",
+  "Gloria Jeans",
+  "Krispy Kreme",
+  "Zarraffa's"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

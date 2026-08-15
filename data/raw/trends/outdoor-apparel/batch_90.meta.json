@@ -1,0 +1,20 @@
+{
+ "category": "Outdoor Apparel",
+ "batch": 90,
+ "brands": [
+  "R.M.Williams",
+  "Gazman",
+  "Glue Store",
+  "Paddy Pallin",
+  "Superdry"
+ ],
+ "tokens": [
+  "/g/11h3qrq5_y",
+  "Gazman",
+  "Glue Store",
+  "Paddy Pallin",
+  "Superdry"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

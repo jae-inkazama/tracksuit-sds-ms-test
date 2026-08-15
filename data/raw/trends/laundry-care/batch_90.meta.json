@@ -1,0 +1,20 @@
+{
+ "category": "Laundry Care",
+ "batch": 90,
+ "brands": [
+  "OMO",
+  "Biozet Attack",
+  "Calgon",
+  "Earthwise",
+  "Ecostore"
+ ],
+ "tokens": [
+  "/g/11h6w3lrr7",
+  "Biozet Attack",
+  "Calgon",
+  "Earthwise",
+  "Ecostore"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

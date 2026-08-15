@@ -1,0 +1,20 @@
+{
+ "category": "Cafes",
+ "batch": 0,
+ "brands": [
+  "Starbucks",
+  "Cafe 63",
+  "Gloria Jeans",
+  "Jamaica Blue",
+  "Krispy Kreme"
+ ],
+ "tokens": [
+  "/g/12nwwykv1",
+  "/g/11h6ys1g6h",
+  "/g/11c0xrvrv9",
+  "/g/11b7c8xt70",
+  "/g/11sbl1nhng"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

@@ -1,0 +1,441 @@
+category_name,brand_name,month,trends_index,raw_index,batch,scale_factor,stitch_flag
+"Mattresses, beds, and pillows",Snooze,2021-08-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2021-09-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2021-10-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2021-11-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2021-12-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2022-01-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2022-02-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2022-03-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2022-04-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2022-05-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2022-06-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2022-07-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2022-08-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2022-09-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2022-10-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2022-11-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2022-12-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2023-01-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2023-02-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2023-03-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2023-04-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2023-05-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2023-06-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2023-07-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2023-08-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2023-09-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2023-10-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2023-11-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2023-12-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2024-01-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2024-02-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2024-03-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2024-04-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2024-05-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2024-06-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2024-07-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2024-08-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2024-09-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2024-10-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2024-11-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2024-12-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2025-01-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2025-02-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Snooze,2025-03-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2021-08-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2021-09-01,0.5,0.5,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2021-10-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2021-11-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2021-12-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2022-01-01,1.6,1.6,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2022-02-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2022-03-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2022-04-01,1.75,1.75,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2022-05-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2022-06-01,2.0,2.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2022-07-01,1.8,1.8,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2022-08-01,2.0,2.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2022-09-01,2.0,2.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2022-10-01,1.2,1.2,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2022-11-01,1.75,1.75,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2022-12-01,1.25,1.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2023-01-01,1.2,1.2,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2023-02-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2023-03-01,1.5,1.5,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2023-04-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2023-05-01,1.25,1.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2023-06-01,1.75,1.75,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2023-07-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2023-08-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2023-09-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2023-10-01,1.4,1.4,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2023-11-01,1.75,1.75,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2023-12-01,1.4,1.4,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2024-01-01,1.5,1.5,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2024-02-01,1.25,1.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2024-03-01,1.8,1.8,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2024-04-01,2.0,2.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2024-05-01,2.0,2.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2024-06-01,2.4,2.4,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2024-07-01,2.0,2.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2024-08-01,2.0,2.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2024-09-01,2.0,2.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2024-10-01,2.25,2.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2024-11-01,3.0,3.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2024-12-01,2.6,2.6,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2025-01-01,2.5,2.5,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2025-02-01,2.25,2.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Ecosa,2025-03-01,2.2,2.2,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2021-08-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2021-09-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2021-10-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2021-11-01,1.25,1.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2021-12-01,1.25,1.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2022-01-01,1.4,1.4,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2022-02-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2022-03-01,1.5,1.5,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2022-04-01,1.25,1.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2022-05-01,1.6,1.6,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2022-06-01,2.25,2.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2022-07-01,2.0,2.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2022-08-01,1.75,1.75,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2022-09-01,2.0,2.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2022-10-01,2.0,2.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2022-11-01,2.75,2.75,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2022-12-01,2.5,2.5,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2023-01-01,2.2,2.2,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2023-02-01,1.75,1.75,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2023-03-01,2.0,2.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2023-04-01,1.8,1.8,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2023-05-01,1.75,1.75,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2023-06-01,2.5,2.5,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2023-07-01,2.0,2.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2023-08-01,2.0,2.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2023-09-01,2.0,2.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2023-10-01,1.8,1.8,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2023-11-01,3.0,3.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2023-12-01,2.6,2.6,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2024-01-01,1.75,1.75,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2024-02-01,1.75,1.75,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2024-03-01,1.4,1.4,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2024-04-01,1.25,1.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2024-05-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2024-06-01,1.8,1.8,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2024-07-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2024-08-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2024-09-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2024-10-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2024-11-01,2.0,2.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2024-12-01,1.4,1.4,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2025-01-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2025-02-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Emma,2025-03-01,1.0,1.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2021-08-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2021-09-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2021-10-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2021-11-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2021-12-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2022-01-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2022-02-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2022-03-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2022-04-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2022-05-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2022-06-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2022-07-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2022-08-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2022-09-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2022-10-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2022-11-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2022-12-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2023-01-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2023-02-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2023-03-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2023-04-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2023-05-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2023-06-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2023-07-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2023-08-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2023-09-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2023-10-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2023-11-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2023-12-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2024-01-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2024-02-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2024-03-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2024-04-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2024-05-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2024-06-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2024-07-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2024-08-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2024-09-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2024-10-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2024-11-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2024-12-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2025-01-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2025-02-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Eva,2025-03-01,0.0,0.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2021-08-01,57.0,57.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2021-09-01,59.25,59.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2021-10-01,60.0,60.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2021-11-01,60.75,60.75,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2021-12-01,72.75,72.75,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2022-01-01,75.6,75.6,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2022-02-01,69.25,69.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2022-03-01,73.0,73.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2022-04-01,92.75,92.75,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2022-05-01,79.8,79.8,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2022-06-01,85.5,85.5,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2022-07-01,75.0,75.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2022-08-01,70.25,70.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2022-09-01,57.5,57.5,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2022-10-01,50.0,50.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2022-11-01,48.25,48.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2022-12-01,52.5,52.5,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2023-01-01,52.4,52.4,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2023-02-01,42.5,42.5,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2023-03-01,31.75,31.75,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2023-04-01,35.6,35.6,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2023-05-01,31.5,31.5,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2023-06-01,27.5,27.5,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2023-07-01,35.0,35.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2023-08-01,17.25,17.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2023-09-01,16.25,16.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2023-10-01,17.0,17.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2023-11-01,21.25,21.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2023-12-01,43.0,43.0,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2024-01-01,39.25,39.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2024-02-01,35.75,35.75,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2024-03-01,29.4,29.4,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2024-04-01,20.5,20.5,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2024-05-01,17.25,17.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2024-06-01,21.8,21.8,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2024-07-01,36.75,36.75,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2024-08-01,29.25,29.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2024-09-01,32.2,32.2,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2024-10-01,24.75,24.75,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2024-11-01,28.75,28.75,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2024-12-01,42.2,42.2,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2025-01-01,32.25,32.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2025-02-01,20.25,20.25,0,,anchor-zero
+"Mattresses, beds, and pillows",Ikea,2025-03-01,27.8,27.8,0,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2021-08-01,58.0,58.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2021-09-01,60.25,60.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2021-10-01,42.6,42.6,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2021-11-01,38.5,38.5,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2021-12-01,35.25,35.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2022-01-01,34.8,34.8,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2022-02-01,45.25,45.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2022-03-01,64.75,64.75,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2022-04-01,71.5,71.5,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2022-05-01,79.6,79.6,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2022-06-01,81.5,81.5,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2022-07-01,78.0,78.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2022-08-01,79.25,79.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2022-09-01,71.0,71.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2022-10-01,68.0,68.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2022-11-01,73.0,73.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2022-12-01,62.25,62.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2023-01-01,61.0,61.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2023-02-01,58.75,58.75,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2023-03-01,78.25,78.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2023-04-01,67.4,67.4,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2023-05-01,76.5,76.5,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2023-06-01,79.25,79.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2023-07-01,75.6,75.6,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2023-08-01,83.25,83.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2023-09-01,74.75,74.75,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2023-10-01,70.8,70.8,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2023-11-01,85.0,85.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2023-12-01,63.8,63.8,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2024-01-01,53.0,53.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2024-02-01,58.25,58.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2024-03-01,64.2,64.2,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2024-04-01,57.25,57.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2024-05-01,64.0,64.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2024-06-01,68.6,68.6,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2024-07-01,60.0,60.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2024-08-01,69.75,69.75,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2024-09-01,68.2,68.2,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2024-10-01,69.0,69.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2024-11-01,87.75,87.75,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2024-12-01,71.8,71.8,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2025-01-01,61.5,61.5,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2025-02-01,61.75,61.75,1,,anchor-zero
+"Mattresses, beds, and pillows",Koala,2025-03-01,72.0,72.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2021-08-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2021-09-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2021-10-01,0.2,0.2,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2021-11-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2021-12-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2022-01-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2022-02-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2022-03-01,0.75,0.75,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2022-04-01,0.5,0.5,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2022-05-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2022-06-01,0.25,0.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2022-07-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2022-08-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2022-09-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2022-10-01,0.2,0.2,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2022-11-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2022-12-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2023-01-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2023-02-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2023-03-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2023-04-01,0.4,0.4,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2023-05-01,0.25,0.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2023-06-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2023-07-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2023-08-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2023-09-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2023-10-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2023-11-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2023-12-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2024-01-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2024-02-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2024-03-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2024-04-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2024-05-01,0.5,0.5,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2024-06-01,1.0,1.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2024-07-01,0.25,0.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2024-08-01,0.25,0.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2024-09-01,0.6,0.6,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2024-10-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2024-11-01,0.75,0.75,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2024-12-01,0.8,0.8,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2025-01-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2025-02-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Noa,2025-03-01,0.8,0.8,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2021-08-01,2.0,2.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2021-09-01,2.25,2.25,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2021-10-01,3.0,3.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2021-11-01,3.75,3.75,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2021-12-01,2.5,2.5,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2022-01-01,3.4,3.4,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2022-02-01,2.5,2.5,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2022-03-01,3.0,3.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2022-04-01,3.0,3.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2022-05-01,2.8,2.8,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2022-06-01,3.5,3.5,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2022-07-01,3.0,3.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2022-08-01,2.0,2.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2022-09-01,2.0,2.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2022-10-01,2.4,2.4,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2022-11-01,3.0,3.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2022-12-01,2.5,2.5,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2023-01-01,3.0,3.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2023-02-01,2.5,2.5,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2023-03-01,2.0,2.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2023-04-01,2.2,2.2,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2023-05-01,2.0,2.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2023-06-01,3.0,3.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2023-07-01,2.4,2.4,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2023-08-01,2.25,2.25,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2023-09-01,2.25,2.25,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2023-10-01,2.0,2.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2023-11-01,2.5,2.5,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2023-12-01,2.6,2.6,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2024-01-01,2.5,2.5,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2024-02-01,2.25,2.25,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2024-03-01,2.0,2.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2024-04-01,2.0,2.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2024-05-01,2.0,2.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2024-06-01,2.4,2.4,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2024-07-01,2.75,2.75,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2024-08-01,2.0,2.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2024-09-01,2.0,2.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2024-10-01,2.75,2.75,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2024-11-01,2.75,2.75,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2024-12-01,2.6,2.6,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2025-01-01,2.5,2.5,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2025-02-01,2.0,2.0,1,,anchor-zero
+"Mattresses, beds, and pillows",SleepMaker,2025-03-01,2.0,2.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2021-08-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2021-09-01,3.25,3.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2021-10-01,1.8,1.8,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2021-11-01,0.75,0.75,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2021-12-01,0.0,0.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2022-01-01,1.4,1.4,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2022-02-01,7.25,7.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2022-03-01,9.5,9.5,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2022-04-01,10.5,10.5,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2022-05-01,8.2,8.2,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2022-06-01,7.0,7.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2022-07-01,8.2,8.2,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2022-08-01,8.25,8.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2022-09-01,8.75,8.75,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2022-10-01,6.4,6.4,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2022-11-01,9.0,9.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2022-12-01,8.25,8.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2023-01-01,8.8,8.8,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2023-02-01,6.75,6.75,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2023-03-01,7.0,7.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2023-04-01,8.4,8.4,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2023-05-01,7.5,7.5,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2023-06-01,8.75,8.75,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2023-07-01,6.2,6.2,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2023-08-01,6.5,6.5,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2023-09-01,6.0,6.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2023-10-01,6.0,6.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2023-11-01,8.5,8.5,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2023-12-01,7.2,7.2,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2024-01-01,7.25,7.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2024-02-01,5.0,5.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2024-03-01,5.0,5.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2024-04-01,5.0,5.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2024-05-01,6.75,6.75,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2024-06-01,8.0,8.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2024-07-01,5.25,5.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2024-08-01,5.5,5.5,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2024-09-01,6.4,6.4,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2024-10-01,6.25,6.25,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2024-11-01,8.75,8.75,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2024-12-01,7.6,7.6,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2025-01-01,6.75,6.75,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2025-02-01,6.5,6.5,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleeping Duck,2025-03-01,6.0,6.0,1,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2021-08-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2021-09-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2021-10-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2021-11-01,40.5,40.5,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2021-12-01,44.5,44.5,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2022-01-01,32.2,32.2,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2022-02-01,18.25,18.25,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2022-03-01,27.5,27.5,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2022-04-01,13.25,13.25,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2022-05-01,15.2,15.2,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2022-06-01,18.5,18.5,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2022-07-01,11.6,11.6,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2022-08-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2022-09-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2022-10-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2022-11-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2022-12-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2023-01-01,15.4,15.4,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2023-02-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2023-03-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2023-04-01,12.0,12.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2023-05-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2023-06-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2023-07-01,30.4,30.4,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2023-08-01,32.75,32.75,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2023-09-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2023-10-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2023-11-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2023-12-01,13.6,13.6,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2024-01-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2024-02-01,33.25,33.25,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2024-03-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2024-04-01,25.0,25.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2024-05-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2024-06-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2024-07-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2024-08-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2024-09-01,13.8,13.8,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2024-10-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2024-11-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2024-12-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2025-01-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2025-02-01,0.0,0.0,2,,anchor-zero
+"Mattresses, beds, and pillows",Sleepyhead,2025-03-01,0.0,0.0,2,,anchor-zero

@@ -1,0 +1,20 @@
+{
+ "category": "Fast Food",
+ "batch": 1,
+ "brands": [
+  "KFC",
+  "Mad Mex",
+  "McDonalds",
+  "Oporto",
+  "Red Rooster"
+ ],
+ "tokens": [
+  "/m/09b6t",
+  "/m/012vv24s",
+  "/m/07gyp7",
+  "/m/0b8dqr",
+  "/m/018_zw"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

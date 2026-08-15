@@ -1,0 +1,16 @@
+{
+ "category": "Cafes",
+ "batch": 1,
+ "brands": [
+  "Starbucks",
+  "The Coffee Club",
+  "Zarraffa's"
+ ],
+ "tokens": [
+  "/g/12nwwykv1",
+  "/m/0f27dm",
+  "/g/11spnlskgh"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

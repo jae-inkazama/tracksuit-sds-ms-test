@@ -1,0 +1,16 @@
+{
+ "category": "News or Media Sources",
+ "batch": 1,
+ "brands": [
+  "Nine",
+  "The Daily Aus",
+  "The Guardian"
+ ],
+ "tokens": [
+  "/g/11bc62gm7p",
+  "/g/11l34_dkt6",
+  "/m/0cnn5"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

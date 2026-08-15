@@ -1,0 +1,18 @@
+{
+ "category": "Chips, Crisps, Crackers",
+ "batch": 90,
+ "brands": [
+  "Red Rock Deli",
+  "Burts",
+  "Proper Crisps",
+  "Snacka Changi"
+ ],
+ "tokens": [
+  "Red Rock Deli",
+  "Burts",
+  "Proper Crisps",
+  "Snacka Changi"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

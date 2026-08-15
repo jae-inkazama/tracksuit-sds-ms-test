@@ -1,0 +1,20 @@
+{
+ "category": "Coffee",
+ "batch": 1,
+ "brands": [
+  "Vittoria Coffee",
+  "Industry Beans",
+  "ONA Coffee",
+  "Pablo & Rusty's",
+  "Padre Coffee"
+ ],
+ "tokens": [
+  "/m/0gx_p1d",
+  "/g/11rt_fsyjx",
+  "/g/11vqv5nqwl",
+  "/g/11gfh9tq99",
+  "/g/11zjn0fzb_"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

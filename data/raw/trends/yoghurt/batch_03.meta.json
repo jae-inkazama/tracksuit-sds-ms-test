@@ -1,0 +1,18 @@
+{
+ "category": "Yoghurt",
+ "batch": 3,
+ "brands": [
+  "Chobani",
+  "Yakult",
+  "YoPro",
+  "five:am organic"
+ ],
+ "tokens": [
+  "/m/0jt3njc",
+  "Yakult",
+  "yopro",
+  "five am yoghurt"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

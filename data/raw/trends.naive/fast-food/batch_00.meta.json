@@ -1,0 +1,20 @@
+{
+ "category": "Fast Food",
+ "batch": 0,
+ "brands": [
+  "KFC",
+  "FISHBOWL",
+  "Grill'd",
+  "Guzman y Gomez",
+  "Hungry Jack's"
+ ],
+ "tokens": [
+  "/m/09b6t",
+  "/g/11dxdm70my",
+  "/g/11r111x4wq",
+  "/g/11clhsb7s5",
+  "/g/11cn9spdrf"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

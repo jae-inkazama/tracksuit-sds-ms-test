@@ -1,0 +1,16 @@
+{
+ "category": "News or Media Sources",
+ "batch": 90,
+ "brands": [
+  "Nine",
+  "Shameless Media",
+  "The Daily Aus"
+ ],
+ "tokens": [
+  "/g/11bc62gm7p",
+  "Shameless Media",
+  "The Daily Aus"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

@@ -1,0 +1,20 @@
+{
+ "category": "Coffee",
+ "batch": 3,
+ "brands": [
+  "Vittoria Coffee",
+  "Seven Miles",
+  "Single O",
+  "Suntory Boss Coffee",
+  "Toby's Estate"
+ ],
+ "tokens": [
+  "/m/0gx_p1d",
+  "Seven Miles",
+  "/g/11v9x_shrv",
+  "Suntory Boss Coffee",
+  "/g/11yphtcqr5"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

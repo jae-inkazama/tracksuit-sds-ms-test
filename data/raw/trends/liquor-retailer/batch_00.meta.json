@@ -1,0 +1,20 @@
+{
+ "category": "Liquor Retailer",
+ "batch": 0,
+ "brands": [
+  "Dan Murphy's",
+  "BWS",
+  "Bottlemart",
+  "Cellarbrations",
+  "First Choice"
+ ],
+ "tokens": [
+  "Dan Murphy's",
+  "bws liquor",
+  "bottlemart",
+  "cellarbrations",
+  "first choice liquor"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

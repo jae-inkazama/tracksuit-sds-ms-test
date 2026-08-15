@@ -1,0 +1,20 @@
+{
+ "category": "Yoghurt",
+ "batch": 1,
+ "brands": [
+  "Chobani",
+  "Dairy Farmers",
+  "Danone",
+  "Gippsland Dairy",
+  "Nakula"
+ ],
+ "tokens": [
+  "/m/0jt3njc",
+  "dairy farmers yoghurt",
+  "/m/0257ck",
+  "gippsland dairy",
+  "nakula yoghurt"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

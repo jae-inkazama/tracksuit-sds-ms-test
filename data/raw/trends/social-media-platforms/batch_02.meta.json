@@ -1,0 +1,18 @@
+{
+ "category": "Social Media Platforms",
+ "batch": 2,
+ "brands": [
+  "Facebook",
+  "Twitch",
+  "Twitter",
+  "X"
+ ],
+ "tokens": [
+  "Facebook",
+  "/m/0hgpf7h",
+  "/m/0hn1vcg",
+  "/m/0289n8t"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

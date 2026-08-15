@@ -1,0 +1,16 @@
+{
+ "category": "Fast Food",
+ "batch": 3,
+ "brands": [
+  "KFC",
+  "Taco Bell",
+  "Zambrero"
+ ],
+ "tokens": [
+  "/g/11b7q_l184",
+  "/m/09cg6",
+  "/m/0134v2vl"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

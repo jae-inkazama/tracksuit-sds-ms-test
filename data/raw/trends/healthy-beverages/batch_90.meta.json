@@ -1,0 +1,20 @@
+{
+ "category": "Healthy Beverages",
+ "batch": 90,
+ "brands": [
+  "Bundaberg",
+  "LoBros",
+  "Remedy",
+  "Shine",
+  "Ārepa"
+ ],
+ "tokens": [
+  "/g/11c0xs13yp",
+  "LoBros",
+  "Remedy",
+  "Shine",
+  "Ārepa"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

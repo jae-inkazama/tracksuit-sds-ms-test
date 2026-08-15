@@ -1,0 +1,20 @@
+{
+ "category": "Yoghurt",
+ "batch": 2,
+ "brands": [
+  "Chobani",
+  "Tamar Valley",
+  "Ultimate",
+  "Vaalia",
+  "Vitasoy"
+ ],
+ "tokens": [
+  "/m/0jt3njc",
+  "tamar valley yoghurt",
+  "ultimate yoghurt",
+  "vaalia",
+  "/m/0bxkd7"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

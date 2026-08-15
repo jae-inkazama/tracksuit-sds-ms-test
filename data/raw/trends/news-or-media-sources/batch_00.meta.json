@@ -1,0 +1,20 @@
+{
+ "category": "News or Media Sources",
+ "batch": 0,
+ "brands": [
+  "Nine",
+  "Cheek Media Co.",
+  "Hack",
+  "Pedestrian",
+  "Shameless Media"
+ ],
+ "tokens": [
+  "/g/11bc62gm7p",
+  "Cheek Media Co.",
+  "/m/043384",
+  "/m/017r8p",
+  "/g/11trl80jx7"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

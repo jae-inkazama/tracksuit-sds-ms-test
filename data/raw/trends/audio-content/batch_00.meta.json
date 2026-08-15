@@ -1,0 +1,20 @@
+{
+ "category": "Audio Content",
+ "batch": 0,
+ "brands": [
+  "Spotify",
+  "ABC Listen",
+  "Apple Music",
+  "Audible",
+  "LiSTNR"
+ ],
+ "tokens": [
+  "/g/11fhwks2m1",
+  "/g/11xt_0j2bk",
+  "apple music",
+  "/m/05z2gj",
+  "listnr"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

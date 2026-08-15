@@ -1,0 +1,20 @@
+{
+ "category": "Online Outlet Retailer",
+ "batch": 0,
+ "brands": [
+  "David Jones",
+  "Ozsale",
+  "THE OUTNET",
+  "The Archive Place",
+  "The DOM"
+ ],
+ "tokens": [
+  "/g/11cn2yjw79",
+  "/g/11fy2dfdk6",
+  "/g/11f01jr1s6",
+  "The Archive Place",
+  "The DOM"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

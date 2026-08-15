@@ -1,0 +1,20 @@
+{
+ "category": "Asian Foods & Condiments",
+ "batch": 2,
+ "brands": [
+  "AYAM",
+  "Lucky Kitchen",
+  "Marion's Kitchen",
+  "Mr Chen's",
+  "Obento"
+ ],
+ "tokens": [
+  "ayam brand",
+  "Lucky Kitchen",
+  "Marion's Kitchen",
+  "mr chens",
+  "Obento"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

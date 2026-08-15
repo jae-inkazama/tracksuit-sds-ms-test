@@ -1,0 +1,18 @@
+{
+ "category": "Retail Establishments",
+ "batch": 1,
+ "brands": [
+  "Myer",
+  "The DOM",
+  "The Iconic",
+  "Westfield"
+ ],
+ "tokens": [
+  "/g/11c6ty6z4g",
+  "The DOM",
+  "/m/010pqcwy",
+  "/g/11b826qqzd"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}

@@ -1,0 +1,20 @@
+{
+ "category": "Packaged Snacks",
+ "batch": 90,
+ "brands": [
+  "Smith's",
+  "Arnott’s",
+  "Carman's",
+  "Olina's Bakehouse",
+  "Red Rock Deli"
+ ],
+ "tokens": [
+  "/m/011zrf",
+  "Arnott’s",
+  "Carman's",
+  "Olina's Bakehouse",
+  "Red Rock Deli"
+ ],
+ "timeframe": "2021-09-01 2025-03-31",
+ "geo": "AU"
+}
