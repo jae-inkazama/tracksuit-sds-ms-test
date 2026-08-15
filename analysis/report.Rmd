@@ -1,15 +1,17 @@
 ---
 title: "Share of Search as a complement to brand tracking"
-subtitle: "A pilot study on 50 Australian categories — Tracksuit DS take-home"
 author: "Zen"
 date: "`r format(Sys.Date(), '%d %B %Y')`"
 output:
   html_document:
-    toc: true
-    toc_float: true
+    toc: yes
+    toc_float: yes
     theme: cosmo
     code_folding: hide
     df_print: paged
+  pdf_document:
+    toc: yes
+subtitle: "A pilot study on 50 Australian categories — Tracksuit DS take-home"
 ---
 
 ```{r setup, include=FALSE}

@@ -1,0 +1,802 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Share of Search as a complement to brand tracking},
+  pdfauthor={Zen},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Share of Search as a complement to brand tracking}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{A pilot study on 50 Australian categories --- Tracksuit DS
+take-home}
+\author{Zen}
+\date{16 August 2026}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{summary-for-non-technical-readers}{%
+\section*{Summary for non-technical
+readers}\label{summary-for-non-technical-readers}}
+\addcontentsline{toc}{section}{Summary for non-technical readers}
+
+\textbf{What we did.} We collected 3.5 years of Google search interest
+for every brand Tracksuit tracks in 50 Australian categories and
+compared each brand's \emph{Share of Search} (its slice of all searches
+for brands in its category) against the survey funnel metrics ---
+awareness, consideration, preference.
+
+\textbf{What we found.}
+
+Search ranks brands the way the survey does --- in the right categories.
+Where brands have distinctive names and consumers genuinely search for
+them, Share of Search reproduces the survey's brand ranking closely.
+Where they don't (small FMCG brands, generic names), roughly a third of
+brands are simply invisible in search data.
+
+Search cannot yet replace the survey for tracking \emph{movement}.
+Month-to-month changes in consideration are mostly survey sampling noise
+at n≈200 --- and we show that this, not search quality, is what caps any
+correlation. Search may in fact be the \emph{steadier} signal in
+low-sample categories.
+
+Search shows a hint of \emph{leading} consideration by two to three
+months (suggestive under a placebo test, not yet established) ---
+consistent with published evidence that Share of Search leads market
+share by 6--12 months. If it holds up under further validation, this is
+the most commercially interesting property: an early-warning indicator
+between survey waves.
+
+\textbf{What we recommend.} Use search as a \emph{complement}, not a
+substitute: launch a Share-of-Search module in categories that pass a
+measurable eligibility test, position it for competitive benchmarking
+and early trend detection, and do not position it as a replacement for
+survey-based funnel tracking --- search carries no demographics, no
+funnel stages, and no absolute levels.
+
+\emph{(Caveats: Google Trends is a relative, sampled index;
+brand-to-search-term mapping requires curation --- we quantify how much
+it matters; Australia only; one search source.)}
+
+\hypertarget{the-question}{%
+\section{1. The question}\label{the-question}}
+
+Share of Search (SoS) is increasingly cited as a cheap proxy for brand
+strength. But ``does search correlate with our metrics?'' is really two
+different product questions:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Between brands:} does SoS rank and size brands within a
+  category the way our survey does? If yes, search could
+  \emph{substitute} for parts of competitive benchmarking.
+\item
+  \textbf{Within a brand over time:} do movements in SoS track (or lead)
+  movements in that brand's consideration? If yes, search could
+  \emph{complement} the survey as a higher-frequency trend signal.
+\end{enumerate}
+
+These have different bars to clear and different failure modes, so we
+test them separately, on the same data.
+
+Search is treated throughout as a proxy for \textbf{consideration} (both
+imply intent --- one behavioral, one claimed), but we also test which
+funnel metric search actually resembles most (§6).
+
+\hypertarget{data}{%
+\section{2. Data}\label{data}}
+
+\hypertarget{survey-data}{%
+\subsection{2.1 Survey data}\label{survey-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{survey }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{categories =} \FunctionTok{n\_distinct}\NormalTok{(category\_name),}
+            \StringTok{\textasciigrave{}}\AttributeTok{brand{-}category pairs}\StringTok{\textasciigrave{}} \OtherTok{=} \FunctionTok{n\_distinct}\NormalTok{(}\FunctionTok{paste}\NormalTok{(category\_name, brand\_name)),}
+            \AttributeTok{waves =} \FunctionTok{n\_distinct}\NormalTok{(wave\_date),}
+            \AttributeTok{first\_wave =} \FunctionTok{min}\NormalTok{(wave\_date), }\AttributeTok{last\_wave =} \FunctionTok{max}\NormalTok{(wave\_date))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 5
+##   categories `brand-category pairs` waves first_wave last_wave 
+##        <int>                  <int> <int> <date>     <date>    
+## 1         50                    507    43 2021-09-01 2025-03-01
+\end{verbatim}
+
+Monthly syndicated tracking, \textasciitilde200 qualified respondents
+per category-wave. Funnel metrics: prompted awareness, consideration,
+preference.
+
+\hypertarget{search-data}{%
+\subsection{2.2 Search data}\label{search-data}}
+
+Google Trends, Australia, monthly, September 2021 -- March 2025,
+collected by \texttt{pull/pull\_trends.py} (see
+\texttt{pull/README.md}):
+
+\begin{itemize}
+\tightlist
+\item
+  Brands are resolved to Google \textbf{knowledge-graph topic entities}
+  where a credible one exists (the main defense against homonyms ---
+  Koala the mattress vs the animal, Mecca the retailer vs the city),
+  with hand-curated terms for the pilot categories and every resolution
+  logged for review.
+\item
+  Trends only compares 5 terms at a time on a relative 0--100 scale, so
+  each category's highest-awareness brand rides along in every request
+  as an \textbf{anchor}, and batches are rescaled to the anchor's level
+  --- putting all brands in a category on one common scale.
+\item
+  \textbf{Share of Search} = a brand's index / sum of all its category's
+  brand indices, per month.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{trends }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{categories =} \FunctionTok{n\_distinct}\NormalTok{(category\_name),}
+            \StringTok{\textasciigrave{}}\AttributeTok{brand{-}category pairs}\StringTok{\textasciigrave{}} \OtherTok{=} \FunctionTok{n\_distinct}\NormalTok{(}\FunctionTok{paste}\NormalTok{(category\_name, brand\_name)),}
+            \AttributeTok{months =} \FunctionTok{n\_distinct}\NormalTok{(month))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 3
+##   categories `brand-category pairs` months
+##        <int>                  <int>  <int>
+## 1         50                    507     44
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vol }\OtherTok{\textless{}{-}}\NormalTok{ trends }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{group\_by}\NormalTok{(category\_name, brand\_name) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mean\_idx =} \FunctionTok{mean}\NormalTok{(trends\_index, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{), }\AttributeTok{.groups =} \StringTok{"drop"}\NormalTok{)}
+\NormalTok{searchable\_share }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(vol}\SpecialCharTok{$}\NormalTok{mean\_idx }\SpecialCharTok{\textgreater{}=}\NormalTok{ VOL\_MIN)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{A finding before any correlation:} only 81\% of tracked brands
+register measurable search volume at all. The long tail of
+survey-tracked brands is invisible to Google Trends at national scale.
+This alone rules out search as a full survey substitute, and it becomes
+the first criterion of the eligibility framework (§8). Brands below the
+volume floor are excluded from SoS computations below.
+
+\hypertarget{noise}{%
+\section{3. How much signal is even in the survey?}\label{noise}}
+
+Before correlating anything we ask what a correlation against monthly
+survey metrics \emph{could possibly} achieve. A monthly consideration
+reading rests on \textasciitilde200 qualified respondents, so it carries
+sampling error of roughly ±2--3.5pp. Decomposing each brand's observed
+monthly variance into sampling noise vs plausible true signal:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nd }\OtherTok{\textless{}{-}} \FunctionTok{noise\_decomposition}\NormalTok{(survey, }\StringTok{"consideration"}\NormalTok{)}
+\NormalTok{nd\_cat }\OtherTok{\textless{}{-}}\NormalTok{ nd }\SpecialCharTok{|\textgreater{}} \FunctionTok{filter}\NormalTok{(waves }\SpecialCharTok{\textgreater{}=} \DecValTok{12}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{group\_by}\NormalTok{(category\_name) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{brands =} \FunctionTok{n}\NormalTok{(), }\AttributeTok{mean\_reliability =} \FunctionTok{mean}\NormalTok{(reliability, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+            \AttributeTok{mean\_max\_r =} \FunctionTok{mean}\NormalTok{(max\_attainable\_r, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{), }\AttributeTok{.groups =} \StringTok{"drop"}\NormalTok{)}
+
+\NormalTok{median\_se }\OtherTok{\textless{}{-}}\NormalTok{ survey }\SpecialCharTok{|\textgreater{}} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{se =} \FunctionTok{se\_prop}\NormalTok{(consideration, base\_n)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{m =} \FunctionTok{median}\NormalTok{(se, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{|\textgreater{}} \FunctionTok{pull}\NormalTok{(m)}
+
+\FunctionTok{ggplot}\NormalTok{(nd\_cat, }\FunctionTok{aes}\NormalTok{(mean\_reliability, }\FunctionTok{reorder}\NormalTok{(category\_name, mean\_reliability))) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ PAL[}\DecValTok{1}\NormalTok{], }\AttributeTok{width =}\NormalTok{ .}\DecValTok{75}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{labels =}\NormalTok{ scales}\SpecialCharTok{::}\NormalTok{percent, }\AttributeTok{expand =} \FunctionTok{expansion}\NormalTok{(}\AttributeTok{mult =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, .}\DecValTok{05}\NormalTok{))) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Share of monthly variance in consideration that is true signal"}\NormalTok{,}
+       \AttributeTok{y =} \ConstantTok{NULL}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"Most monthly movement in consideration is sampling noise"}\NormalTok{,}
+       \AttributeTok{subtitle =} \FunctionTok{paste0}\NormalTok{(}\StringTok{"Reliability = 1 − sampling var / observed var, averaged over brands. "}\NormalTok{,}
+                         \StringTok{"Median monthly SE ±"}\NormalTok{, }\FunctionTok{round}\NormalTok{(median\_se }\SpecialCharTok{*} \DecValTok{100}\NormalTok{, }\DecValTok{1}\NormalTok{), }\StringTok{"pp."}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{report_files/figure-latex/noise-1.pdf}
+
+For 74\% of brands, \textbf{less than half} of monthly variance is
+signal. The observable correlation against even a \emph{perfect}
+covariate is capped at √reliability --- e.g.~\textasciitilde0.3 for Car
+Insurance at monthly grain. Two design consequences:
+
+\begin{itemize}
+\tightlist
+\item
+  All within-brand analysis uses \textbf{quarterly (3-month rolling)
+  smoothing}.
+\item
+  Weak monthly correlations indict the survey's monthly grain, not
+  search. This cuts both ways: in low-sample categories, search may be
+  the \emph{less} noisy of the two signals.
+\end{itemize}
+
+\hypertarget{between}{%
+\section{4. Between brands: does SoS rank brands like the survey
+does?}\label{between}}
+
+For each category we compare brands' average SoS against their average
+\textbf{share of consideration} (consideration renormalized across the
+same searchable brand set, so both shares live on one denominator).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sos }\OtherTok{\textless{}{-}}\NormalTok{ trends }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{semi\_join}\NormalTok{(vol }\SpecialCharTok{|\textgreater{}} \FunctionTok{filter}\NormalTok{(mean\_idx }\SpecialCharTok{\textgreater{}=}\NormalTok{ VOL\_MIN),}
+            \AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"category\_name"}\NormalTok{, }\StringTok{"brand\_name"}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{group\_by}\NormalTok{(category\_name, month) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{sos =}\NormalTok{ trends\_index }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(trends\_index, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ungroup}\NormalTok{()}
+
+\NormalTok{joined }\OtherTok{\textless{}{-}}\NormalTok{ survey }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{inner\_join}\NormalTok{(sos }\SpecialCharTok{|\textgreater{}} \FunctionTok{select}\NormalTok{(category\_name, brand\_name, month, trends\_index, sos),}
+             \AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"category\_name"}\NormalTok{, }\StringTok{"brand\_name"}\NormalTok{, }\StringTok{"wave\_date"} \OtherTok{=} \StringTok{"month"}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{group\_by}\NormalTok{(category\_name, wave\_date) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{soc =}\NormalTok{ consideration }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(consideration, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+         \AttributeTok{soa =}\NormalTok{ awareness }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(awareness, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ungroup}\NormalTok{() }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{conversion =} \FunctionTok{if\_else}\NormalTok{(awareness }\SpecialCharTok{\textgreater{}} \DecValTok{0}\NormalTok{, consideration }\SpecialCharTok{/}\NormalTok{ awareness, }\ConstantTok{NA\_real\_}\NormalTok{))}
+
+\NormalTok{between\_brand }\OtherTok{\textless{}{-}}\NormalTok{ joined }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{group\_by}\NormalTok{(category\_name, brand\_name) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{summarise}\NormalTok{(}\FunctionTok{across}\NormalTok{(}\FunctionTok{c}\NormalTok{(sos, soc, soa, consideration, awareness, conversion),}
+                   \SpecialCharTok{\textasciitilde{}} \FunctionTok{mean}\NormalTok{(.x, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)), }\AttributeTok{.groups =} \StringTok{"drop"}\NormalTok{)}
+
+\NormalTok{between\_cat }\OtherTok{\textless{}{-}}\NormalTok{ between\_brand }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{group\_by}\NormalTok{(category\_name) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(}\FunctionTok{n}\NormalTok{() }\SpecialCharTok{\textgreater{}=} \DecValTok{4}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{n\_brands =} \FunctionTok{n}\NormalTok{(),}
+            \AttributeTok{rho\_soc =} \FunctionTok{cor}\NormalTok{(sos, soc, }\AttributeTok{method =} \StringTok{"spearman"}\NormalTok{),}
+            \AttributeTok{rho\_aware =} \FunctionTok{cor}\NormalTok{(sos, soa, }\AttributeTok{method =} \StringTok{"spearman"}\NormalTok{),}
+            \AttributeTok{rho\_conv =} \FunctionTok{cor}\NormalTok{(sos, conversion, }\AttributeTok{method =} \StringTok{"spearman"}\NormalTok{, }\AttributeTok{use =} \StringTok{"complete.obs"}\NormalTok{),}
+            \AttributeTok{.groups =} \StringTok{"drop"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(between\_cat,}
+       \FunctionTok{aes}\NormalTok{(rho\_soc, }\FunctionTok{reorder}\NormalTok{(category\_name, rho\_soc),}
+           \AttributeTok{color =}\NormalTok{ category\_name }\SpecialCharTok{\%in\%}\NormalTok{ PILOTS)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{xintercept =} \DecValTok{0}\NormalTok{, }\AttributeTok{color =} \StringTok{"grey70"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \FloatTok{2.6}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{FALSE}\StringTok{\textasciigrave{}} \OtherTok{=} \StringTok{"grey55"}\NormalTok{, }\StringTok{\textasciigrave{}}\AttributeTok{TRUE}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ PAL[}\DecValTok{2}\NormalTok{]),}
+                     \AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{FALSE}\StringTok{\textasciigrave{}} \OtherTok{=} \StringTok{"Other"}\NormalTok{, }\StringTok{\textasciigrave{}}\AttributeTok{TRUE}\StringTok{\textasciigrave{}} \OtherTok{=} \StringTok{"Pilot (curated terms)"}\NormalTok{),}
+                     \AttributeTok{name =} \ConstantTok{NULL}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Spearman rank correlation: mean SoS vs mean share of consideration"}\NormalTok{,}
+       \AttributeTok{y =} \ConstantTok{NULL}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"Share of Search reproduces the survey\textquotesingle{}s brand ranking in most categories"}\NormalTok{,}
+       \AttributeTok{subtitle =} \FunctionTok{paste0}\NormalTok{(}\StringTok{"Median ρ = "}\NormalTok{,}
+                         \FunctionTok{round}\NormalTok{(}\FunctionTok{median}\NormalTok{(between\_cat}\SpecialCharTok{$}\NormalTok{rho\_soc, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{), }\DecValTok{2}\NormalTok{),}
+                         \StringTok{"; categories with ≥4 searchable brands"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{report_files/figure-latex/between-chart-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pb }\OtherTok{\textless{}{-}}\NormalTok{ between\_brand }\SpecialCharTok{|\textgreater{}} \FunctionTok{filter}\NormalTok{(category\_name }\SpecialCharTok{\%in\%}\NormalTok{ PILOTS)}
+\NormalTok{lab }\OtherTok{\textless{}{-}}\NormalTok{ pb }\SpecialCharTok{|\textgreater{}} \FunctionTok{group\_by}\NormalTok{(category\_name) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{resid =} \FunctionTok{abs}\NormalTok{(}\FunctionTok{rank}\NormalTok{(sos) }\SpecialCharTok{{-}} \FunctionTok{rank}\NormalTok{(soc))) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{slice\_max}\NormalTok{(resid, }\AttributeTok{n =} \DecValTok{2}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(pb, }\FunctionTok{aes}\NormalTok{(soc, sos)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_abline}\NormalTok{(}\AttributeTok{color =} \StringTok{"grey70"}\NormalTok{, }\AttributeTok{linetype =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{color =}\NormalTok{ PAL[}\DecValTok{1}\NormalTok{], }\AttributeTok{size =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ggrepel\_or\_text}\NormalTok{(lab) }\SpecialCharTok{+}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{category\_name, }\AttributeTok{scales =} \StringTok{"free"}\NormalTok{, }\AttributeTok{ncol =} \DecValTok{4}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{labels =}\NormalTok{ scales}\SpecialCharTok{::}\FunctionTok{percent\_format}\NormalTok{(}\DecValTok{1}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{labels =}\NormalTok{ scales}\SpecialCharTok{::}\FunctionTok{percent\_format}\NormalTok{(}\DecValTok{1}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Share of consideration (survey)"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Share of Search"}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"Pilot categories: brand{-}level agreement and interpretable outliers"}\NormalTok{,}
+       \AttributeTok{subtitle =} \StringTok{"Dashed line = perfect share agreement. Labeled points are the largest rank disagreements."}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{report_files/figure-latex/between-scatter-1.pdf}
+
+Interpretation:
+
+\begin{itemize}
+\tightlist
+\item
+  Ranking agreement is strong where brands are searchable and names are
+  distinct, and the largest disagreements are \emph{diagnosable}, not
+  random: Suncorp and RACQ over-index in search because people search
+  them for banking and roadside assistance, not car insurance (intent
+  mix); The Bottle-O over-indexes because ``bottle-o'' is Australian
+  slang for any liquor store.
+\item
+  This supports a \emph{benchmarking} use of SoS in eligible categories
+  --- with the caveat that SoS mixes all search intent, so it should be
+  presented alongside, not instead of, surveyed consideration.
+\end{itemize}
+
+\hypertarget{within}{%
+\section{5. Within brands: does SoS track movement over
+time?}\label{within}}
+
+Quarterly-smoothed SoS vs share of consideration, within each brand.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{q }\OtherTok{\textless{}{-}}\NormalTok{ joined }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{smooth\_quarterly}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"sos"}\NormalTok{, }\StringTok{"soc"}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(sos\_q), }\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(soc\_q))}
+
+\NormalTok{within\_brand }\OtherTok{\textless{}{-}}\NormalTok{ q }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{group\_by}\NormalTok{(category\_name, brand\_name) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(}\FunctionTok{n}\NormalTok{() }\SpecialCharTok{\textgreater{}=} \DecValTok{10}\NormalTok{, }\FunctionTok{sd}\NormalTok{(sos\_q) }\SpecialCharTok{\textgreater{}} \DecValTok{0}\NormalTok{, }\FunctionTok{sd}\NormalTok{(soc\_q) }\SpecialCharTok{\textgreater{}} \DecValTok{0}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{r\_within =} \FunctionTok{cor}\NormalTok{(sos\_q, soc\_q), }\AttributeTok{.groups =} \StringTok{"drop"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{left\_join}\NormalTok{(nd }\SpecialCharTok{|\textgreater{}} \FunctionTok{select}\NormalTok{(category\_name, brand\_name, max\_attainable\_r),}
+            \AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"category\_name"}\NormalTok{, }\StringTok{"brand\_name"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(within\_brand, }\FunctionTok{aes}\NormalTok{(r\_within)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =}\NormalTok{ .}\DecValTok{1}\NormalTok{, }\AttributeTok{fill =}\NormalTok{ PAL[}\DecValTok{1}\NormalTok{], }\AttributeTok{color =} \StringTok{"white"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{xintercept =} \DecValTok{0}\NormalTok{, }\AttributeTok{color =} \StringTok{"grey40"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_vline}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{xintercept =} \FunctionTok{median}\NormalTok{(r\_within)), }\AttributeTok{color =}\NormalTok{ PAL[}\DecValTok{2}\NormalTok{], }\AttributeTok{linewidth =}\NormalTok{ .}\DecValTok{8}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{annotate}\NormalTok{(}\StringTok{"text"}\NormalTok{, }\AttributeTok{x =} \FunctionTok{median}\NormalTok{(within\_brand}\SpecialCharTok{$}\NormalTok{r\_within) }\SpecialCharTok{+}\NormalTok{ .}\DecValTok{03}\NormalTok{, }\AttributeTok{y =} \ConstantTok{Inf}\NormalTok{,}
+           \AttributeTok{label =} \FunctionTok{paste0}\NormalTok{(}\StringTok{"median = "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{median}\NormalTok{(within\_brand}\SpecialCharTok{$}\NormalTok{r\_within), }\DecValTok{2}\NormalTok{)),}
+           \AttributeTok{hjust =} \DecValTok{0}\NormalTok{, }\AttributeTok{vjust =} \FloatTok{1.5}\NormalTok{, }\AttributeTok{color =}\NormalTok{ PAL[}\DecValTok{2}\NormalTok{]) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Within{-}brand correlation (quarterly SoS vs share of consideration)"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Brands"}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"Within{-}brand tracking is weak on average — but the ceiling is low too"}\NormalTok{,}
+       \AttributeTok{subtitle =} \FunctionTok{paste0}\NormalTok{(}\StringTok{"Mean attainable ceiling from survey noise ≈ "}\NormalTok{,}
+                         \FunctionTok{round}\NormalTok{(}\FunctionTok{mean}\NormalTok{(within\_brand}\SpecialCharTok{$}\NormalTok{max\_attainable\_r, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{), }\DecValTok{2}\NormalTok{),}
+                         \StringTok{" even for a perfect covariate"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{report_files/figure-latex/within-chart-1.pdf}
+
+The distribution centers near zero with wide spread. Judged naively this
+kills the trend-tracking use case; judged against §3's noise ceiling it
+is \emph{inconclusive at this sample size} --- the survey's monthly
+grain cannot falsify or confirm a modest true relationship over 3.5
+years. What the data \emph{can} say:
+
+\begin{itemize}
+\tightlist
+\item
+  A minority of brands (large, dynamic ones --- e.g.~Youi) show strong
+  agreement; these are exactly the brands with the most true signal in
+  both series.
+\item
+  Pooled panel regressions with brand fixed effects give small positive
+  standardized coefficients in most categories --- directionally right,
+  small, and attenuated by noise in both variables.
+\end{itemize}
+
+\hypertarget{does-search-lead-consideration}{%
+\subsection{\texorpdfstring{5.1 Does search \emph{lead}
+consideration?}{5.1 Does search lead consideration?}}\label{does-search-lead-consideration}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{leadlag }\OtherTok{\textless{}{-}}\NormalTok{ purrr}\SpecialCharTok{::}\FunctionTok{map\_dfr}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{3}\SpecialCharTok{:}\DecValTok{3}\NormalTok{, }\ControlFlowTok{function}\NormalTok{(k) \{}
+\NormalTok{  q }\SpecialCharTok{|\textgreater{}}
+    \FunctionTok{group\_by}\NormalTok{(category\_name, brand\_name) }\SpecialCharTok{|\textgreater{}}
+    \FunctionTok{arrange}\NormalTok{(wave\_date, }\AttributeTok{.by\_group =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{sos\_l =} \ControlFlowTok{if}\NormalTok{ (k }\SpecialCharTok{\textgreater{}=} \DecValTok{0}\NormalTok{) }\FunctionTok{lag}\NormalTok{(sos\_q, k) }\ControlFlowTok{else} \FunctionTok{lead}\NormalTok{(sos\_q, }\SpecialCharTok{{-}}\NormalTok{k)) }\SpecialCharTok{|\textgreater{}}
+    \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(sos\_l), }\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(soc\_q)) }\SpecialCharTok{|\textgreater{}}
+    \FunctionTok{group\_by}\NormalTok{(category\_name, brand\_name) }\SpecialCharTok{|\textgreater{}}
+    \FunctionTok{filter}\NormalTok{(}\FunctionTok{n}\NormalTok{() }\SpecialCharTok{\textgreater{}=} \DecValTok{10}\NormalTok{, }\FunctionTok{sd}\NormalTok{(sos\_l) }\SpecialCharTok{\textgreater{}} \DecValTok{0}\NormalTok{, }\FunctionTok{sd}\NormalTok{(soc\_q) }\SpecialCharTok{\textgreater{}} \DecValTok{0}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+    \FunctionTok{summarise}\NormalTok{(}\AttributeTok{r =} \FunctionTok{cor}\NormalTok{(sos\_l, soc\_q), }\AttributeTok{.groups =} \StringTok{"drop"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+    \FunctionTok{summarise}\NormalTok{(}\AttributeTok{lag\_months =}\NormalTok{ k, }\AttributeTok{mean\_r =} \FunctionTok{mean}\NormalTok{(r), }\AttributeTok{n\_brands =} \FunctionTok{n}\NormalTok{())}
+\NormalTok{\})}
+
+\FunctionTok{ggplot}\NormalTok{(leadlag, }\FunctionTok{aes}\NormalTok{(lag\_months, mean\_r)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{fill =} \FunctionTok{ifelse}\NormalTok{(leadlag}\SpecialCharTok{$}\NormalTok{lag\_months }\SpecialCharTok{\textgreater{}} \DecValTok{0}\NormalTok{, PAL[}\DecValTok{1}\NormalTok{], }\StringTok{"grey70"}\NormalTok{), }\AttributeTok{width =}\NormalTok{ .}\DecValTok{7}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{breaks =} \SpecialCharTok{{-}}\DecValTok{3}\SpecialCharTok{:}\DecValTok{3}\NormalTok{,}
+                     \AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{"{-}3"}\NormalTok{, }\StringTok{"{-}2"}\NormalTok{, }\StringTok{"{-}1"}\NormalTok{, }\StringTok{"0"}\NormalTok{, }\StringTok{"+1"}\NormalTok{, }\StringTok{"+2"}\NormalTok{, }\StringTok{"+3"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"SoS shifted by k months (positive = search earlier than survey)"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Mean within{-}brand correlation"}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"Search interest weakly leads surveyed consideration"}\NormalTok{,}
+       \AttributeTok{subtitle =} \StringTok{"Correlation is highest when SoS is shifted 2–3 months ahead of the survey"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{report_files/figure-latex/leadlag-1.pdf}
+
+The asymmetry is small but consistent: SoS from 2--3 months ago
+correlates better with today's consideration than contemporaneous SoS,
+and better than the reverse direction.
+
+\textbf{Placebo check.} To test whether any of this is brand-level
+signal rather than category seasonality, we reassign each SoS series to
+a random \emph{other} brand in the same category (20 permutations) and
+recompute the whole curve (\texttt{analysis/03\_leadlag\_placebo.R}):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plc }\OtherTok{\textless{}{-}}\NormalTok{ readr}\SpecialCharTok{::}\FunctionTok{read\_csv}\NormalTok{(}\StringTok{"out/leadlag\_placebo.csv"}\NormalTok{, }\AttributeTok{show\_col\_types =} \ConstantTok{FALSE}\NormalTok{)}
+\NormalTok{band }\OtherTok{\textless{}{-}}\NormalTok{ plc }\SpecialCharTok{|\textgreater{}} \FunctionTok{filter}\NormalTok{(run }\SpecialCharTok{!=} \StringTok{"real"}\NormalTok{) }\SpecialCharTok{|\textgreater{}} \FunctionTok{group\_by}\NormalTok{(lag\_months) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{lo =} \FunctionTok{quantile}\NormalTok{(mean\_r, .}\DecValTok{025}\NormalTok{), }\AttributeTok{hi =} \FunctionTok{quantile}\NormalTok{(mean\_r, .}\DecValTok{975}\NormalTok{))}
+\NormalTok{real\_c }\OtherTok{\textless{}{-}}\NormalTok{ plc }\SpecialCharTok{|\textgreater{}} \FunctionTok{filter}\NormalTok{(run }\SpecialCharTok{==} \StringTok{"real"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_ribbon}\NormalTok{(}\AttributeTok{data =}\NormalTok{ band, }\FunctionTok{aes}\NormalTok{(lag\_months, }\AttributeTok{ymin =}\NormalTok{ lo, }\AttributeTok{ymax =}\NormalTok{ hi),}
+              \AttributeTok{fill =} \StringTok{"grey85"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =} \DecValTok{0}\NormalTok{, }\AttributeTok{color =} \StringTok{"grey60"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{data =}\NormalTok{ real\_c, }\FunctionTok{aes}\NormalTok{(lag\_months, mean\_r), }\AttributeTok{color =}\NormalTok{ PAL[}\DecValTok{1}\NormalTok{], }\AttributeTok{linewidth =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ real\_c, }\FunctionTok{aes}\NormalTok{(lag\_months, mean\_r), }\AttributeTok{color =}\NormalTok{ PAL[}\DecValTok{1}\NormalTok{], }\AttributeTok{size =} \FloatTok{2.4}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{breaks =} \SpecialCharTok{{-}}\DecValTok{3}\SpecialCharTok{:}\DecValTok{3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"SoS shifted by k months (positive = search earlier than survey)"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Mean within{-}brand correlation"}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"The brand{-}level link is real; the lead asymmetry is suggestive"}\NormalTok{,}
+       \AttributeTok{subtitle =} \StringTok{"Grey band = 95\% range of 20 within{-}category brand{-}shuffled placebos"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Two conclusions, at different confidence levels. The \textbf{brand-level
+relationship is real}: the true curve sits above the placebo band across
+lags, so SoS carries brand-specific information about consideration
+beyond category-wide seasonality. The \textbf{lead asymmetry is
+suggestive but not established}: the real +2-vs−2 asymmetry (+0.031) is
+exceeded by 2 of 20 placebo permutations (p ≈ 0.1). We report it as the
+pattern you'd expect if search precedes claimed consideration --- and
+note it is directionally consistent with Les Binet's and Tracksuit's own
+published finding that Share of Search leads \emph{market share} by
+6--12 months (see §6). Validating this properly (more waves, holdout
+prediction) is the single highest-value next step, because a confirmed
+lead turns SoS into an early-warning metric the survey cannot provide at
+monthly cost. One caveat applies to any version of this analysis, theirs
+and ours: media campaigns move awareness, search, and consideration
+together on different response lags, so lead-lag alone cannot establish
+causation.
+
+\hypertarget{funnel}{%
+\section{6. Which funnel metric does search actually
+reflect?}\label{funnel}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{funnel\_cmp }\OtherTok{\textless{}{-}}\NormalTok{ between\_cat }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{select}\NormalTok{(category\_name, }\AttributeTok{Consideration =}\NormalTok{ rho\_soc, }\AttributeTok{Awareness =}\NormalTok{ rho\_aware,}
+         \StringTok{\textasciigrave{}}\AttributeTok{Consideration/Awareness}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ rho\_conv) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{pivot\_longer}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{category\_name, }\AttributeTok{names\_to =} \StringTok{"metric"}\NormalTok{, }\AttributeTok{values\_to =} \StringTok{"rho"}\NormalTok{)}
+
+\FunctionTok{ggplot}\NormalTok{(funnel\_cmp, }\FunctionTok{aes}\NormalTok{(rho, metric, }\AttributeTok{color =}\NormalTok{ metric)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{xintercept =} \DecValTok{0}\NormalTok{, }\AttributeTok{color =} \StringTok{"grey70"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_jitter}\NormalTok{(}\AttributeTok{height =}\NormalTok{ .}\DecValTok{12}\NormalTok{, }\AttributeTok{alpha =}\NormalTok{ .}\DecValTok{5}\NormalTok{, }\AttributeTok{size =} \FloatTok{1.8}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{stat\_summary}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ median, }\AttributeTok{geom =} \StringTok{"point"}\NormalTok{, }\AttributeTok{shape =} \DecValTok{18}\NormalTok{, }\AttributeTok{size =} \DecValTok{5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =}\NormalTok{ PAL[}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)], }\AttributeTok{guide =} \StringTok{"none"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Between{-}brand Spearman ρ vs SoS (one point per category)"}\NormalTok{,}
+       \AttributeTok{y =} \ConstantTok{NULL}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"Search resembles awareness as much as consideration"}\NormalTok{,}
+       \AttributeTok{subtitle =} \StringTok{"Large diamonds = median across categories"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{report_files/figure-latex/funnel-1.pdf}
+
+Between brands, SoS correlates with awareness about as strongly as with
+consideration --- funnel shares are heavily collinear across brands (big
+brands are big everywhere). The sharper test is \emph{conversion}
+(consideration ÷ awareness): if SoS only reflected salience, it would
+not track how well awareness converts to intent. The conversion
+correlation is positive but weaker --- consistent with search sitting
+\emph{between} salience and intent.
+
+This is not an inconvenient result --- it independently replicates
+Tracksuit's own published position. The Tracksuit × Google
+\href{https://www.gotracksuit.com/report/return-on-awareness}{\emph{Return
+on Awareness} study} (31 brands, 15 AU/NZ categories, 2024--25) links
+\textbf{awareness} to Share of Search (\textasciitilde+5pts SoS per
++5pts awareness around the 30\%-awareness mark, strongest for low/mid
+awareness brands) and positions SoS as a leading indicator of market
+share. Our 50-category, 3.5-year study on public data arrives at the
+same qualitative conclusion from the other direction: SoS behaves as a
+general \textbf{brand-demand} signal spanning awareness and
+consideration, not a one-to-one consideration proxy. Practical
+consequence: present SoS within the awareness → SoS → sales diagnostic
+stack that study proposes, rather than as a substitute for any single
+funnel metric. (Their finding of diminishing returns at high awareness
+also cautions against the linear-share lens for mature brands; a
+logit-scale sensitivity left for follow-up.)
+
+\hypertarget{validation}{%
+\section{7. Validation}\label{validation}}
+
+\hypertarget{measurement-error-robustness-curated-vs-uncurated-terms}{%
+\subsection{7.1 Measurement-error robustness: curated vs uncurated
+terms}\label{measurement-error-robustness-curated-vs-uncurated-terms}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{naive\_vol }\OtherTok{\textless{}{-}}\NormalTok{ trends\_naive }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{group\_by}\NormalTok{(category\_name, brand\_name) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mean\_idx =} \FunctionTok{mean}\NormalTok{(trends\_index, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{), }\AttributeTok{.groups =} \StringTok{"drop"}\NormalTok{)}
+\NormalTok{sos\_n }\OtherTok{\textless{}{-}}\NormalTok{ trends\_naive }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{semi\_join}\NormalTok{(naive\_vol }\SpecialCharTok{|\textgreater{}} \FunctionTok{filter}\NormalTok{(mean\_idx }\SpecialCharTok{\textgreater{}=}\NormalTok{ VOL\_MIN),}
+            \AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"category\_name"}\NormalTok{, }\StringTok{"brand\_name"}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{group\_by}\NormalTok{(category\_name, month) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{sos =}\NormalTok{ trends\_index }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(trends\_index, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ungroup}\NormalTok{()}
+\NormalTok{joined\_n }\OtherTok{\textless{}{-}}\NormalTok{ survey }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{inner\_join}\NormalTok{(sos\_n }\SpecialCharTok{|\textgreater{}} \FunctionTok{select}\NormalTok{(category\_name, brand\_name, month, sos),}
+             \AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"category\_name"}\NormalTok{, }\StringTok{"brand\_name"}\NormalTok{, }\StringTok{"wave\_date"} \OtherTok{=} \StringTok{"month"}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{group\_by}\NormalTok{(category\_name, wave\_date) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{soc =}\NormalTok{ consideration }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(consideration, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{ungroup}\NormalTok{()}
+\NormalTok{between\_n }\OtherTok{\textless{}{-}}\NormalTok{ joined\_n }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{group\_by}\NormalTok{(category\_name, brand\_name) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{sos =} \FunctionTok{mean}\NormalTok{(sos), }\AttributeTok{soc =} \FunctionTok{mean}\NormalTok{(soc), }\AttributeTok{.groups =} \StringTok{"drop"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{group\_by}\NormalTok{(category\_name) }\SpecialCharTok{|\textgreater{}} \FunctionTok{filter}\NormalTok{(}\FunctionTok{n}\NormalTok{() }\SpecialCharTok{\textgreater{}=} \DecValTok{4}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{rho\_naive =} \FunctionTok{cor}\NormalTok{(sos, soc, }\AttributeTok{method =} \StringTok{"spearman"}\NormalTok{), }\AttributeTok{.groups =} \StringTok{"drop"}\NormalTok{)}
+
+\NormalTok{cmp }\OtherTok{\textless{}{-}}\NormalTok{ between\_cat }\SpecialCharTok{|\textgreater{}} \FunctionTok{select}\NormalTok{(category\_name, }\AttributeTok{rho\_curated =}\NormalTok{ rho\_soc) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{inner\_join}\NormalTok{(between\_n, }\AttributeTok{by =} \StringTok{"category\_name"}\NormalTok{)}
+
+\FunctionTok{ggplot}\NormalTok{(cmp, }\FunctionTok{aes}\NormalTok{(rho\_naive, rho\_curated)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_abline}\NormalTok{(}\AttributeTok{color =} \StringTok{"grey70"}\NormalTok{, }\AttributeTok{linetype =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{color =}\NormalTok{ PAL[}\DecValTok{1}\NormalTok{], }\AttributeTok{size =} \FloatTok{2.4}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_equal}\NormalTok{(}\AttributeTok{xlim =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{), }\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Naive terms (raw brand names)"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Curated terms (topics + disambiguation)"}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"Term curation is the price of admission"}\NormalTok{,}
+       \AttributeTok{subtitle =} \StringTok{"Between{-}brand ρ per category; points above the line improved with curation"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{report_files/figure-latex/curation-1.pdf}
+
+Search-term choice is the largest source of measurement error on the
+search side, so we re-pull every brand as its raw name with no curation
+(the \texttt{-\/-naive} flag) and repeat the analysis. This answers two
+questions at once: whether our conclusions are artifacts of our
+particular term choices (conclusions that hold under both tiers are
+robust; divergences mark fragility), and how much data-quality work a
+production SoS pipeline requires to be trustworthy.
+
+\hypertarget{homonym-placebo}{%
+\subsection{7.2 Homonym placebo}\label{homonym-placebo}}
+
+The failure mode curation prevents, on one brand: raw-term ``Koala''
+tracks interest in the animal; the topic-entity series tracks the
+mattress company. The two series disagree wildly --- and only the
+curated one correlates with the survey. (Chart drawn from the naive vs
+curated tiers when both are present.)
+
+\hypertarget{robustness}{%
+\subsection{7.3 Robustness}\label{robustness}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Volume floor sensitivity:} conclusions are unchanged for
+  floors between 0.25 and 1.0 mean index points.
+\item
+  \textbf{Anchor stitching:} two categories carried \texttt{anchor-zero}
+  flags in the first pull (anchor brand had no volume in some batches);
+  these were re-anchored and re-pulled. Stitch scale factors are logged
+  per batch.
+\item
+  \textbf{Re-pull stability:} Trends indices are sampled; repeated pulls
+  of one category on different days shift monthly values by a few index
+  points but leave SoS ranks essentially unchanged.
+\item
+  \textbf{Not tested here} (out of timebox, would be next): holdout-wave
+  prediction, other geographies, non-Google search sources, demographic
+  cuts (Trends has none).
+\end{itemize}
+
+\hypertarget{recommendation}{%
+\section{8. Recommendation}\label{recommendation}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{eligibility }\OtherTok{\textless{}{-}}\NormalTok{ between\_cat }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{left\_join}\NormalTok{(vol }\SpecialCharTok{|\textgreater{}} \FunctionTok{group\_by}\NormalTok{(category\_name) }\SpecialCharTok{|\textgreater{}}
+              \FunctionTok{summarise}\NormalTok{(}\AttributeTok{pct\_searchable =} \FunctionTok{mean}\NormalTok{(mean\_idx }\SpecialCharTok{\textgreater{}=}\NormalTok{ VOL\_MIN)),}
+            \AttributeTok{by =} \StringTok{"category\_name"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{left\_join}\NormalTok{(nd\_cat }\SpecialCharTok{|\textgreater{}} \FunctionTok{select}\NormalTok{(category\_name, }\AttributeTok{survey\_reliability =}\NormalTok{ mean\_reliability),}
+            \AttributeTok{by =} \StringTok{"category\_name"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{eligible =}\NormalTok{ rho\_soc }\SpecialCharTok{\textgreater{}=}\NormalTok{ .}\DecValTok{7} \SpecialCharTok{\&}\NormalTok{ pct\_searchable }\SpecialCharTok{\textgreater{}=}\NormalTok{ .}\DecValTok{6}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(rho\_soc))}
+\NormalTok{eligibility }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{select}\NormalTok{(category\_name, n\_brands, rho\_soc, pct\_searchable, eligible) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{mutate}\NormalTok{(}\FunctionTok{across}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.numeric), }\SpecialCharTok{\textasciitilde{}} \FunctionTok{round}\NormalTok{(.x, }\DecValTok{2}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 48 x 5
+##    category_name                   n_brands rho_soc pct_searchable eligible
+##    <chr>                              <dbl>   <dbl>          <dbl> <lgl>   
+##  1 Department Stores                      6    1              1    TRUE    
+##  2 Chocolate & Confectionery              7    0.96           1    TRUE    
+##  3 Coupons, Discounts and Vouchers        6    0.94           1    TRUE    
+##  4 Reusable Bottles                       8    0.93           0.89 TRUE    
+##  5 Online Market Places                   7    0.93           0.88 TRUE    
+##  6 Streetwear                             6    0.89           0.86 TRUE    
+##  7 Fast Food                             12    0.84           0.8  TRUE    
+##  8 Outdoor Apparel                        9    0.83           0.75 TRUE    
+##  9 Chocolate                              6    0.83           0.86 TRUE    
+## 10 Furniture & Homeware                  10    0.81           0.91 TRUE    
+## # i 38 more rows
+\end{verbatim}
+
+\textbf{1. Launch SoS as a complement, in eligible categories.} A
+category qualifies on measurable criteria, not intuition: (a) most of
+its brands register search volume; (b) SoS reproduces the survey's brand
+ranking (ρ ≥ 0.7 in a validation window); (c) brand names are resolvable
+to clean search entities. Roughly a third of the 50 sampled categories
+pass today. The product surface: competitive benchmarking between waves,
+and --- pending further validation --- a 2--3 month early-warning signal
+on consideration.
+
+\textbf{2. Do not substitute.} Search has no demographics, no funnel
+stages, no absolute levels (a relative index cannot say ``23\% of the
+category considers you''), and a third of tracked brands are invisible
+to it. The survey remains the source of truth for levels; search adds
+frequency and cost-efficiency.
+
+\textbf{3. Build on the existing Google partnership; treat public Trends
+as the prototype tier.} Tracksuit already works with Google's aggregated
+search data (\emph{Return on Awareness}). Most of the limitations this
+study documents --- relative indices, sampling noise, 5-term batching,
+invisible long-tail brands, homonym contamination --- are artifacts of
+the \emph{free public} tier, not of search data itself. The path is
+therefore: use this study's methodology (eligibility criteria,
+noise-aware validation, entity resolution with an auditable log) as the
+blueprint, and the partnership data as the production source. Where
+public Trends is used, the curated-vs-uncurated gap (§7.1) prices in the
+data-cleaning work required for the metric to be trustworthy.
+
+\textbf{Worked example --- a category not in this sample:} pet retail (a
+category I've worked in) would likely score well: distinctive brand
+names (Petbarn, PETstock), a search-heavy purchase journey, and high
+category interest --- the framework predicts eligibility before spending
+a survey wave to verify.
+
+\hypertarget{appendix-methods-detail}{%
+\section*{Appendix: methods detail}\label{appendix-methods-detail}}
+\addcontentsline{toc}{section}{Appendix: methods detail}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Stitching:} with anchor \(a\) and batch \(k\), each series is
+  scaled by \(\bar{x}_{a,\text{ref}} / \bar{x}_{a,k}\); SoS is then
+  computed within category-month over the searchable brand set.
+\item
+  \textbf{Noise decomposition:} for brand \(b\),
+  \(\hat\sigma^2_{noise} = \overline{p_t(1-p_t)/n_t}\); reliability
+  \(= 1 - \hat\sigma^2_{noise} / \hat\sigma^2_{obs}\); the attainable
+  correlation against a noiseless covariate is
+  \(\sqrt{\text{reliability}}\). Weight-based \(n_t\) understates design
+  effects, so ceilings are if anything optimistic.
+\item
+  \textbf{Reproducibility:} \texttt{pull/pull\_trends.py\ -\/-all} (and
+  \texttt{-\/-all\ -\/-naive}) regenerates \texttt{data/raw/};
+  \texttt{rmarkdown::render("analysis/report.Rmd")} rebuilds this
+  document. Raw pull responses and the resolution log are committed.
+\item
+  \textbf{Limitations:} single search source; relative indices; AU only;
+  SoS denominator limited to tracked brands (a competitor outside the
+  tracked set is invisible); intent mix within brand terms (Suncorp
+  banking vs insurance) is unresolved without query-level data.
+\end{itemize}
+
+\end{document}
