@@ -1,17 +1,15 @@
 ---
 title: "Share of Search as a complement to brand tracking"
+subtitle: "A pilot study on 50 Australian categories — Tracksuit DS take-home"
 author: "Zen"
 date: "`r format(Sys.Date(), '%d %B %Y')`"
 output:
   html_document:
-    toc: yes
-    toc_float: yes
+    toc: true
+    toc_float: true
     theme: cosmo
     code_folding: hide
     df_print: paged
-  pdf_document:
-    toc: yes
-subtitle: "A pilot study on 50 Australian categories — Tracksuit DS take-home"
 ---
 
 ```{r setup, include=FALSE}
@@ -53,11 +51,13 @@ against the survey funnel metrics — awareness, consideration, preference.
 
 **What we found.**
 
-Search ranks brands the way the survey does — in the right categories. Where
-brands have distinctive names and consumers genuinely search for them, Share
-of Search reproduces the survey's brand ranking closely. Where they don't
-(small FMCG brands, generic names), roughly a third of brands are simply
-invisible in search data.
+Search ranks brands the way the survey does — but only in some categories.
+In about a third of the categories we tested, Share of Search reproduces the
+survey's competitive ranking closely; in another third it is essentially
+uninformative. Which is which is predictable in advance, and that
+predictability is what makes this usable: we set out measurable criteria for
+whether a category qualifies. About one brand in five has no measurable
+search demand at all.
 
 Search cannot yet replace the survey for tracking *movement*. Month-to-month
 changes in consideration are mostly survey sampling noise at n≈200 — and we
@@ -147,11 +147,17 @@ searchable_share <- mean(vol$mean_idx >= VOL_MIN)
 ```
 
 **A finding before any correlation:** only `r if (has_search) scales::percent(searchable_share, 1)`
-of tracked brands register measurable search volume at all. The long tail of
-survey-tracked brands is invisible to Google Trends at national scale. This
-alone rules out search as a full survey substitute, and it becomes the first
-criterion of the eligibility framework (§8). Brands below the volume floor are
-excluded from SoS computations below.
+of tracked brands register measurable search volume at all. Two failure modes
+are deliberately separated here. *Resolution failure* — a brand whose search
+entity can't be identified — is a fixable data problem, and the pipeline
+handles it automatically (a topic entity that returns an empty series is
+re-pulled as the raw brand name before we conclude anything). What remains is
+*genuine absence of search demand*: the long tail of survey-tracked brands
+that Australians simply do not search for at measurable volume. That is a
+property of the market, not the pipeline — it alone rules out search as a
+full survey substitute, and it becomes the first criterion of the
+eligibility framework (§8). Brands below the volume floor are excluded from
+SoS computations below.
 
 # 3. How much signal is even in the survey? {#noise}
 
@@ -266,15 +272,28 @@ ggplot(pb, aes(soc, sos)) +
 
 Interpretation:
 
-- Ranking agreement is strong where brands are searchable and names are
-  distinct, and the largest disagreements are *diagnosable*, not random:
-  Suncorp and RACQ over-index in search because people search them for
-  banking and roadside assistance, not car insurance (intent mix); The
-  Bottle-O over-indexes because "bottle-o" is Australian slang for any
-  liquor store.
-- This supports a *benchmarking* use of SoS in eligible categories — with
-  the caveat that SoS mixes all search intent, so it should be presented
-  alongside, not instead of, surveyed consideration.
+- **Agreement is category-specific, not general.** The median category sits
+  near ρ = 0.4, but the distribution is wide: roughly a third of categories
+  clear ρ ≥ 0.7 (Department Stores, Fast Food, Car Insurance, Online
+  Marketplaces — large brands, distinct names, real search demand), while a
+  tail sits at or below zero (Haircare, Men's Online Health Providers,
+  Healthy Beverages — thin, niche, own-brand-heavy fields where most brands
+  barely register). This spread *is* the finding: it is what makes an
+  eligibility framework (§8) necessary rather than a blanket rollout.
+- **The disagreements are diagnosable, not random.** Suncorp and RACQ
+  over-index in search because people search them for banking and roadside
+  assistance, not car insurance (intent mix); The Bottle-O over-indexes
+  because "bottle-o" is Australian slang for any liquor store. A brand's
+  residual from this line is itself interpretable, which is a feature: it
+  flags where search intent and brand intent diverge.
+- A methodological note worth stating plainly. An earlier iteration of this
+  analysis reported a *higher* median ρ (0.62) — because a data-quality bug
+  had silently zeroed out ~90 brands, which the volume floor then excluded.
+  Fixing the bug added those brands back, and they are precisely the small,
+  hard-to-rank ones. **Cleaner data produced a weaker headline number.**
+  That is the correct direction of travel: the earlier figure was a
+  selection artifact, and anyone benchmarking SoS should ask what was
+  dropped before believing a high correlation.
 
 # 5. Within brands: does SoS track movement over time? {#within}
 
@@ -318,9 +337,11 @@ falsify or confirm a modest true relationship over 3.5 years. What the data
 - A minority of brands (large, dynamic ones — e.g. Youi) show strong
   agreement; these are exactly the brands with the most true signal in both
   series.
-- Pooled panel regressions with brand fixed effects give small positive
-  standardized coefficients in most categories — directionally right, small,
-  and attenuated by noise in both variables.
+- Regressions on within-brand standardized series (each brand's SoS and
+  share-of-consideration centered and scaled before pooling — the demeaning
+  step of a brand fixed-effects estimator) give small positive coefficients
+  in most categories — directionally right, small, and attenuated by noise
+  in both variables.
 
 ## 5.1 Does search *lead* consideration?
 
@@ -353,7 +374,7 @@ the reverse direction.
 
 **Placebo check.** To test whether any of this is brand-level signal rather
 than category seasonality, we reassign each SoS series to a random *other*
-brand in the same category (20 permutations) and recompute the whole curve
+brand in the same category (100 permutations) and recompute the whole curve
 (`analysis/03_leadlag_placebo.R`):
 
 ```{r placebo, eval=file.exists("out/leadlag_placebo.csv")}
@@ -364,6 +385,8 @@ real_c <- plc |> filter(run == "real")
 ggplot() +
   geom_ribbon(data = band, aes(lag_months, ymin = lo, ymax = hi),
               fill = "grey85") +
+  annotate("text", x = -3, y = max(band$hi), hjust = 0, vjust = -0.4,
+           label = "placebo range", color = "grey45", size = 3.2) +
   geom_hline(yintercept = 0, color = "grey60") +
   geom_line(data = real_c, aes(lag_months, mean_r), color = PAL[1], linewidth = 1) +
   geom_point(data = real_c, aes(lag_months, mean_r), color = PAL[1], size = 2.4) +
@@ -371,15 +394,15 @@ ggplot() +
   labs(x = "SoS shifted by k months (positive = search earlier than survey)",
        y = "Mean within-brand correlation",
        title = "The brand-level link is real; the lead asymmetry is suggestive",
-       subtitle = "Grey band = 95% range of 20 within-category brand-shuffled placebos")
+       subtitle = "Grey band = 95% range of 100 within-category brand-shuffled placebos")
 ```
 
 Two conclusions, at different confidence levels. The **brand-level
 relationship is real**: the true curve sits above the placebo band across
 lags, so SoS carries brand-specific information about consideration beyond
 category-wide seasonality. The **lead asymmetry is suggestive but not
-established**: the real +2-vs−2 asymmetry (+0.031) is exceeded by 2 of 20
-placebo permutations (p ≈ 0.1). We report it as the pattern you'd expect if
+established**: the real +2-vs−2 asymmetry (+0.033) is exceeded by 14 of 100
+placebo permutations (p ≈ 0.14). We report it as the pattern you'd expect if
 search precedes claimed consideration — and note it is directionally
 consistent with Les Binet's and Tracksuit's own published finding that Share
 of Search leads *market share* by 6–12 months (see §6). Validating this
@@ -464,9 +487,9 @@ ggplot(cmp, aes(rho_naive, rho_curated)) +
   geom_abline(color = "grey70", linetype = 2) +
   geom_point(color = PAL[1], size = 2.4) +
   coord_equal(xlim = c(-1, 1), ylim = c(-1, 1)) +
-  labs(x = "Naive terms (raw brand names)", y = "Curated terms (topics + disambiguation)",
-       title = "Term curation is the price of admission",
-       subtitle = "Between-brand ρ per category; points above the line improved with curation")
+  labs(x = "Uncurated (raw brand names)", y = "Curated (entities + disambiguation)",
+       title = "Curation does not systematically improve category-level correlation",
+       subtitle = "Between-brand ρ per category; scatter around the line is large in both directions")
 ```
 
 ```{r curation-placeholder, eval=!has_naive, echo=FALSE, results='asis'}
@@ -475,27 +498,104 @@ cat("> *The uncurated-tier pull has not landed yet; this section will populate",
 ```
 
 Search-term choice is the largest source of measurement error on the search
-side, so we re-pull every brand as its raw name with no curation (the
-`--naive` flag) and repeat the analysis. This answers two questions at once:
-whether our conclusions are artifacts of our particular term choices
-(conclusions that hold under both tiers are robust; divergences mark
-fragility), and how much data-quality work a production SoS pipeline
-requires to be trustworthy.
+side, so we re-pull all 507 brands as raw names with no entity resolution and
+no curation (the `--naive` flag) and repeat the analysis. This tests whether
+our conclusions are artifacts of our particular term choices.
+
+**The result contradicted our expectation, and that is worth reporting
+plainly.** We expected curation to visibly lift category-level correlations.
+It does not: median between-brand ρ is 0.53 curated vs 0.55 uncurated, with
+curation ahead in 23 of 44 categories and a mean gain of +0.003 — a coin
+flip.
+
+Yet at the *brand* level the two tiers disagree violently, in both
+directions:
+
+```{r curation-brand, eval=has_naive}
+cv <- trends |> group_by(category_name, brand_name) |>
+  summarise(curated = mean(trends_index), .groups = "drop")
+nv <- trends_naive |> group_by(category_name, brand_name) |>
+  summarise(uncurated = mean(trends_index), .groups = "drop")
+cmp_b <- inner_join(cv, nv, by = c("category_name", "brand_name")) |>
+  mutate(ratio = (uncurated + .01) / (curated + .01))
+bind_rows(
+  cmp_b |> slice_max(ratio, n = 5) |>
+    mutate(failure = "Uncurated inflated (homonym)"),
+  cmp_b |> slice_min(ratio, n = 5) |>
+    mutate(failure = "Uncurated missed the brand (punctuation/accent)")
+) |>
+  select(failure, category_name, brand_name, curated, uncurated) |>
+  mutate(across(where(is.numeric), ~ round(.x, 2)))
+```
+
+Two distinct failure modes, each invisible in the aggregate. Uncurated terms
+*inflate* brands whose names are common words — "Ultimate" yoghurt picks up
+3,000× its real volume, "Software" skincare 1,900×, "Eva" mattresses, "Grill'd"
+fast food. They also *erase* brands whose literal survey spelling is not how
+people type: "Roll’d" (curly apostrophe), "Kärcher" (umlaut), "Bed Bath N’
+Table", "Temple & Webster" — all read as zero uncurated, all substantial
+brands in reality.
+
+Why doesn't this move the category correlations? Because Spearman ρ over 8–15
+brands is robust to a few misplaced ones, and the two error types partly
+offset. The honest conclusion is therefore split by use case:
+
+- **For research conclusions at category level** (this study's claims), the
+  findings are robust to term curation. We would have reached the same
+  verdict with raw terms.
+- **For any brand-level product** — a client dashboard reading "your Share of
+  Search is 12%" — curation is non-negotiable. An uncurated pipeline would
+  have told a yoghurt brand called Ultimate that it dominated its category,
+  and told Kärcher it did not exist.
+
+That distinction is itself the deliverable: it tells Tracksuit where the
+data-engineering budget has to go (customer-facing brand metrics) and where
+it does not (category screening and research).
 
 ## 7.2 Homonym placebo
 
-The failure mode curation prevents, on one brand: raw-term "Koala" tracks
-interest in the animal; the topic-entity series tracks the mattress company.
-The two series disagree wildly — and only the curated one correlates with the
-survey. (Chart drawn from the naive vs curated tiers when both are present.)
+The failure mode curation prevents, on one brand. Koala is an Australian
+furniture and mattress company; it is also an animal. The uncurated pull
+takes the raw term and measures the animal:
+
+```{r homonym, eval=has_naive, fig.height=4}
+hom <- bind_rows(
+  trends |> filter(category_name == "Furniture & Homeware", brand_name == "Koala") |>
+    mutate(tier = "Curated (topic entity: Koala Sleep Pty Ltd)"),
+  trends_naive |> filter(category_name == "Furniture & Homeware", brand_name == "Koala") |>
+    mutate(tier = "Uncurated (raw term: \"Koala\")")
+)
+ggplot(hom, aes(month, raw_index, color = tier)) +
+  geom_line(linewidth = .9) +
+  scale_color_manual(values = c(PAL[1], PAL[2]), name = NULL) +
+  theme(legend.position = "top") +
+  labs(x = NULL, y = "Google Trends index (raw, within batch)",
+       title = "The same brand name, two entirely different signals",
+       subtitle = "Uncurated 'Koala' tracks tourist and school-holiday interest in the animal")
+```
+
+The two series are barely related. Only the curated one is a measurement of
+the brand, and the difference is not subtle noise — it is a different subject
+entirely. Multiply this by the ~100 brands in this sample carrying a common
+noun, a place name, or a first name, and it is the single largest threat to
+naive Share-of-Search work.
 
 ## 7.3 Robustness
 
-- **Volume floor sensitivity:** conclusions are unchanged for floors between
-  0.25 and 1.0 mean index points.
-- **Anchor stitching:** two categories carried `anchor-zero` flags in the
-  first pull (anchor brand had no volume in some batches); these were
-  re-anchored and re-pulled. Stitch scale factors are logged per batch.
+- **Volume floor sensitivity:** the between-brand result is stable across
+  floors — median ρ = 0.44 / 0.46 / 0.47 / 0.46 at floors of 0.5 / 1 / 2 / 5
+  mean index points (410 / 392 / 342 / 267 brands). Excluding more marginal
+  brands does not manufacture a stronger relationship.
+- **Anchor stitching:** the pull flags any batch where the anchor brand has
+  no volume (`anchor-zero`), since the rescaling is then undefined; the
+  final dataset carries zero such flags. Stitch scale factors are logged per
+  batch for audit.
+- **Entity-resolution failure is detected, not assumed away:** any brand
+  whose topic entity returns an empty series is automatically re-pulled as a
+  raw term (110 brands in the final data), so "no search volume" means no
+  demand rather than a bad identifier. This check was added after QA found
+  ~90 well-known brands (Myer, Big W, TikTok, Liquorland) reading as zero
+  because Google's autocomplete had offered a dud duplicate entity.
 - **Re-pull stability:** Trends indices are sampled; repeated pulls of one
   category on different days shift monthly values by a few index points but
   leave SoS ranks essentially unchanged.
@@ -540,8 +640,9 @@ brands, homonym contamination — are artifacts of the *free public* tier, not
 of search data itself. The path is therefore: use this study's methodology
 (eligibility criteria, noise-aware validation, entity resolution with an
 auditable log) as the blueprint, and the partnership data as the production
-source. Where public Trends is used, the curated-vs-uncurated gap (§7.1)
-prices in the data-cleaning work required for the metric to be trustworthy.
+source. §7.1 sharpens where that engineering effort belongs: entity
+resolution is essential for *brand-level* client reporting and largely
+irrelevant for *category-level* screening.
 
 **Worked example — a category not in this sample:** pet retail (a category
 I've worked in) would likely score well: distinctive brand names (Petbarn,

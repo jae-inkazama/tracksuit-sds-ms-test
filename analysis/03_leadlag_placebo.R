@@ -44,7 +44,8 @@ leadlag_curve <- function(df) {
 real <- leadlag_curve(joined) |> mutate(run = "real")
 
 # Placebo: within each category, permute which brand each SoS series belongs to.
-placebos <- purrr::map_dfr(1:20, function(i) {
+N_PERM <- 100
+placebos <- purrr::map_dfr(seq_len(N_PERM), function(i) {
   perm <- joined |> distinct(category_name, brand_name) |>
     group_by(category_name) |>
     mutate(brand_shuffled = sample(brand_name)) |>
