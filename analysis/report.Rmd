@@ -1,6 +1,6 @@
 ---
-title: "Share of Search and the brand funnel"
-subtitle: "Can search data complement or substitute survey-based brand tracking? A pilot study across 50 Australian categories"
+title: "Can search data do the brand tracking job?"
+subtitle: "A weekend pilot on 50 Australian categories"
 author: "Zain Raza"
 date: "`r format(Sys.Date(), '%d %B %Y')`"
 output:
@@ -8,9 +8,10 @@ output:
     toc: true
     toc_float: true
     theme: cosmo
-    code_folding: show
+    code_folding: hide
     df_print: kable
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
@@ -143,23 +144,27 @@ consideration scores, no search. That settles the substitution question on its
 own: you can't track brands that are invisible.
 
 Collecting this was most of the work and none of the insight. Google caps
-comparisons at five terms per request, so 507 brands onto one scale needs
-stitched requests plus heavy disambiguation — "Koala" is an animal, "Mecca" is
-a city, "Ultimate" is a yoghurt. I used AI tooling throughout: the collection
-pipeline, resolving names to Google entity IDs, reviewing the log. That was a
-project in itself a few years ago; doing it in an afternoon is why this covers
-50 categories instead of five. The run takes 90 minutes against rate limits, so
-the raw data is committed — nobody needs to re-run it. Mechanics in Appendix A.
+comparisons at five terms per request and returns a relative index, so getting
+507 brands onto one scale needs stitched, rate-limited requests plus heavy
+disambiguation — "Koala" is an animal, "Mecca" is a city, "Ultimate" is a
+yoghurt. I used AI tooling for all of it: writing the collection pipeline,
+resolving brand names to Google's entity IDs, reviewing the log. That job would
+have been a project in itself a few years ago. Doing it in an afternoon is why
+this covers 50 categories instead of five. The full run takes about 90 minutes
+against Google's rate limits, so the raw data is committed — nobody needs to
+re-run it to check my numbers. Mechanics in Appendix A.
 
 # 3. How steady is the survey itself?
 
-Each brand's monthly score rests on the ~200 people who qualified for that
-category. That carries a margin of error of about ±3 points, so a brand moving
-25% to 28% is well inside sampling noise.
+Each brand's monthly score comes from the people who qualified for that
+category that month — about 200 of them. For a percentage based on 200 people,
+the margin of error is roughly ±3 points. A brand moving from 25% to 28% is
+well inside what sampling alone produces.
 
-Measured per brand: take how much consideration actually moved, subtract what
-sampling alone would produce, and what's left is real movement. One brand with
-its sampling margin drawn around it:
+I can measure this per brand: take how much a brand's consideration actually
+moved, subtract how much sampling alone would produce given its score and its
+sample size, and what's left is real movement. Here's one brand with its
+sampling margin drawn around it:
 
 ```{r noise-example, fig.height=4}
 eg <- survey |>
@@ -179,9 +184,11 @@ ggplot(eg, aes(wave_date, consideration)) +
        subtitle = "Grey: where the score could sit on sampling alone. Blue: the three-month average I use instead.")
 ```
 
-This isn't a criticism of the survey — it's about resolution. Ask 200 people
-and you can see a ten-point gap between brands; you can't see a two-point move
-in one brand month to month. So I compare quarters, not months.
+This isn't a criticism of the survey. The blue line is the best available
+estimate and the fieldwork is doing its job. It's about resolution. Ask 200
+people and you can see a ten-point gap between brands; you can't see a
+two-point move in one brand month to month. Treating every wiggle as real is
+what produces false alarms. So I compare quarters, not months.
 
 Across all brands, by category:
 
@@ -202,32 +209,35 @@ ggplot(nd_cat, aes(real)) +
        subtitle = "Each bar counts categories. Most sit between 20% and 30% real.")
 ```
 
-Each bar counts categories, and they pile up between 20% and 30%. In the
-typical category about a quarter of the movement is the brand; the rest is the
-sample changing.
+Each bar counts categories. They pile up between 20% and 30%. In the typical
+category, about a quarter of what you see moving is the brand moving. The rest
+is the sample changing.
 
 Two consequences.
 
 - I use **quarterly** figures. Averaging three waves roughly halves the noise.
 - There's a hard ceiling on how well *anything* can correlate with monthly
-  consideration. The maximum is the square root of the share that's real — a
-  quarter real caps you near 0.5, and across these brands it averages 0.48. A
-  second identical survey would hit the same ceiling against the first. So a
-  mediocre correlation says the ruler is wobbly, not that search is wrong.
+  consideration. If a quarter of the movement is real, a perfect predictor is
+  still chasing a mostly-noise target. The maximum correlation is the square
+  root of the share that's real — a quarter real caps you near 0.5, and across
+  these brands it averages 0.48. A second identical survey would hit the same
+  ceiling against the first. So a mediocre correlation tells you the ruler is
+  wobbly, not that search is wrong.
 
-The flip side: in small categories search may be the steadier measure. And if
-Trends exposed even coarse demographics — Google holds that signal, it's what
-powers ad targeting — this comparison would get far more interesting, because
-audience cuts are the survey's real advantage.
+The flip side: in small categories, search may be the steadier measure. And if
+Trends exposed even coarse demographics — Google clearly holds that signal,
+it's what powers ad targeting — this comparison would get far more interesting,
+because audience cuts are the survey's real advantage.
 
 # 4. Does search rank brands like the funnel does?
 
 For each category I compare brands on average share of search against average
-share of consideration and ask whether the orderings agree. Rank agreement
-(Spearman's ρ) rather than the shares themselves: the question is whether
-search puts brands in the same order, not whether it reproduces the
-percentages, which it can't. 1 means identical order, 0 none, negative
-reversed.
+share of consideration, and ask whether the orderings agree. I use rank
+agreement (Spearman's ρ) rather than comparing the shares directly: the
+question is whether search puts brands in the same order, not whether it
+reproduces the percentages, which it can't.
+
+1 means identical order, 0 means no relationship, negative means reversed.
 
 ```{r between, fig.height=6.8}
 between <- panel |>
@@ -273,28 +283,31 @@ between_cat |>
             `its consideration` = scales::percent(soc, 1))
 ```
 
-- **Haircare** isn't unsearched. A brand called *Fruits* takes 65% of category
-  search on 3% of consideration — "Fruits" is a word, and my automated matching
-  missed it. Same in **Healthy Beverages**: *Shine* and *Remedy* hold 92%
-  between them.
-- **Men's Online Health** includes a survey option called "Doctors (e.g. GP)"
-  with 37% of consideration. It can never have a search share. Survey design,
-  not a finding about search.
-- **Cafes** fails behaviourally: people find cafes through Maps and "near me",
-  not brand names. Krispy Kreme tops search here; Starbucks sits near the
-  bottom.
+- **Haircare** isn't unsearched. A brand called *Fruits* takes 65% of the
+  category's search on 3% of consideration. "Fruits" is a word, and my
+  automated matching didn't catch it. Same in **Healthy Beverages**, where
+  *Shine* and *Remedy* hold 92% between them.
+- **Men's Online Health** contains a survey option called "Doctors (e.g. GP)"
+  with 37% of consideration. It can never have a brand search share. That's
+  survey design, not a finding about search.
+- **Cafes** fails for a real behavioural reason: people find cafes through Maps
+  and "near me", not by typing brand names. Krispy Kreme tops search here — a
+  destination people look up — while Starbucks sits near the bottom.
 
-Three of the four are fixable with the tooling that collected the data —
-extending my hand-checked entity resolution to the other 42 categories, and
-excluding generic survey options from the share. Only Cafes is a real limit.
+Three of those four are fixable with the same tooling that collected the data.
+The name-matching failures need the entity resolution I applied to my eight
+hand-checked categories, extended to the other 42. The generic survey option
+needs excluding from the share calculation. Only Cafes is a genuine limit.
 
-Skincare settles the "nobody searches this" story: **Skincare 0.77, Body Care
-0.75**, but **Female Skincare 0.05** — dragged down by brands called *Software*
-and *Go-To*. Same shoppers, opposite scores. Measurement, not consumers.
+Skincare settles the "nobody searches this" story: **Skincare scores 0.77 and
+Body Care 0.75**, while **Female Skincare scores 0.05** — dragged down by
+brands called *Software* and *Go-To*. Same shoppers, opposite scores. The
+difference is measurement, not consumers.
 
-So the chart mixes three things: categories where search tracks the funnel,
-categories where the purchase isn't a branded search, and categories where my
-matching failed. The third has an obvious fingerprint, so it's screenable:
+So this chart mixes three things: categories where search genuinely tracks the
+funnel, categories where the purchase isn't a branded search, and categories
+where my matching failed. The third group has an obvious fingerprint, which
+makes it screenable:
 
 ```{r contamination-screen}
 # A brand holding a large share of search but almost no consideration is
@@ -328,32 +341,41 @@ tibble(version = c("As collected", "7 flagged brands removed"),
 ```
 
 Seven brands out of four hundred move the median from 0.44 to 0.59. Healthy
-Beverages goes −0.30 to 0.40, Garden Care 0.31 to 0.96, Female Skincare 0.05 to
-0.57.
+Beverages goes from −0.30 to 0.40, Garden Care from 0.31 to 0.96, Female
+Skincare from 0.05 to 0.57.
 
-The truth sits between the rows: 0.44 understates search because my matching
-failed, 0.59 overstates it because dropping a brand also removes a real
-competitor from the denominator. Either way the lesson holds — **the quality of
-a share-of-search metric is set by the name matching, not the statistics.**
+The truth sits between the two rows — 0.44 understates search because my
+matching failed, 0.59 overstates it because dropping a brand also removes a
+real competitor from the denominator. Either way, the lesson is the same: **the
+quality of a share-of-search metric is set by the name matching, not the
+statistics.**
 
-Outliers in *good* categories break the pattern for nameable reasons. Suncorp
-and RACQ pull more search than their insurance consideration warrants because
-people search them for banking and roadside assistance. The Bottle-O
-over-indexes because "bottle-o" is what Australians call any liquor store —
-not noise, but a brand that became the generic term, like googling or ubering.
-A brand well above the line is worth a conversation, not a correction.
+The brands that break the pattern in *good* categories break it for nameable
+reasons. Suncorp and RACQ pull more search than their insurance consideration
+warrants, because people search them for banking and roadside assistance. The
+Bottle-O over-indexes because "bottle-o" is what Australians call any liquor
+store — which isn't noise, it's a brand that became the generic term, like
+googling or ubering. A brand well above the line is worth a conversation, not a
+correction.
 
 **A parallel from a category not in this sample.** Pet retail isn't one of the
 50 here, but it looks like the categories at the top of this chart: a few
-well-known chains, distinctive names, a purchase people research online.
-Working in that category I saw a retailer whose share of search was falling
-while its tracked brand metrics dipped only slightly and its sales stayed flat.
-Search moved first, the survey barely registered it, and sales hadn't responded
-yet. Nothing was wrong with the survey — it was faithfully recording what
-people still said about a brand they were quietly searching for less. That's
-the exact gap a search-based early warning is for.
+well-known chains, distinctive names, a purchase people research online. I
+built a marketing mix model for a pet retail brand that was holding sales flat
+through promotional depth while quietly losing market share and share of voice.
+The sales line looked fine; the brand indicators underneath it were eroding,
+and the promotions masked that in the only number the business was watching.
 
+I used share of voice there as the leading indicator, and that is the same
+argument this study makes with search — share of search is the version you can
+get for every brand in a category without buying media data. It updates
+monthly, costs nothing, and doesn't depend on a competitor's spend being
+visible to you. That's the whole appeal: the early-warning logic already works,
+this is a cheaper way to observe it.
 
+> `[ZEN: rewrite the two paragraphs above in your own words — the one piece of
+> evidence here that no analysis could produce. Add which weak categories you'd
+> have predicted.]`
 
 # 5. Does search move with a brand over time?
 
@@ -386,13 +408,14 @@ ggplot(within_brand, aes(r)) +
 A weak result, and it should be read as one. Some brands track well, more sit
 near zero, plenty are negative.
 
-But a correlation this size isn't a conclusion either way. Quarterly survey
-figures still carry real noise (§3), and two noisy series can't correlate
-strongly however well connected the underlying things are. This rules out
-search as a tight substitute. It doesn't say search is uninformative.
+But a correlation this size isn't a conclusion either way. Section 3 showed
+quarterly survey figures still carry real noise, and two noisy series can't
+correlate strongly however well connected the underlying things are. This rules
+out search as a tight substitute for the survey. It doesn't say search is
+uninformative.
 
-Better to stop asking whether the lines move together, and ask what the
-distance between them means.
+The better move is to stop asking whether the lines move together and start
+asking what the distance between them means.
 
 # 6. The Gap/Opportunity Excess Share of Search {#esos}
 
@@ -473,11 +496,11 @@ behaving as you'd hope: people search, then consider, then prefer.
 
 **The obvious objection.** Share of consideration mean-reverts — a brand
 sitting high has more room to fall — and the gap is *mechanically* negative
-when consideration is high, so some of this could be regression to the mean in
-a costume. A second version: shares are zero-sum within a category, so one
-brand's gain is a rival's loss — competitive by design, but it means a brand
-can look like it's winning because a rival collapsed. Controlling for starting
-level and category:
+when consideration is high. So some of this could be regression to the mean in
+a costume. A second version: these are shares, so they're zero-sum within a
+category. One brand's gain is a rival's loss. That's what makes it competitive,
+but it also means a brand can look like it's winning because a competitor
+collapsed. Controlling for starting level and category:
 
 ```{r esos-models}
 # Plain regressions with controls, not a marketing mix model — that's §7.
@@ -496,13 +519,14 @@ Controlling for starting level shrinks the effect — so part of it *was* mean
 reversion — but it survives comfortably.
 
 **What the numbers mean.** The effect column is share points gained per share
-point of gap; the bottom row, 0.019, is the one to trust. Concretely: **a brand
+point of gap. The bottom row, 0.019, is the one to trust. Concretely: **a brand
 sitting 10 points of search share ahead of its consideration share gains about
-1/5 of a point of consideration share over six months** — 20% heads for 20.2%.
+1/5 of a point of consideration share over six months.** A brand on 20% heads
+for 20.2%.
 
-Small, and deliberately so. It's a direction indicator, not a forecast: "which
-way is this brand pointing", not "what number will we print". The gap has to be
-large and persistent to mean much, which is how excess share of voice is used
+Small. It's a direction indicator, not a forecast — useful for "which way is
+this brand pointing", not "what number will we print". The gap has to be large
+and persistent to mean much, which is exactly how excess share of voice is used
 in media planning.
 
 This lines up with Tracksuit's own [Return on
@@ -511,11 +535,12 @@ Google, which finds share of search running ahead of market share by 6–12
 months. Mine is the same story one step earlier: search runs ahead of
 consideration, which runs ahead of share.
 
-**Does this work for small brands?** Commercially the key question — small
-brands have the thinnest survey samples. My first cut said no: split by
-awareness, the gap looked twice as strong for large brands. That didn't survive
-checking. The flagged brands from §4 are small on consideration and huge on
-search by construction, so they sit in the small-brand half and drag it down.
+**Does this work for small brands?** Commercially this is the question that
+matters — small brands have the thinnest survey samples. My first cut said no:
+splitting by awareness, the gap looked twice as strong for large brands. That
+didn't survive checking. The flagged brands from §4 are small on consideration
+and huge on search by construction, so they sit in the small-brand half and
+drag it down.
 
 ```{r esos-by-size}
 sized <- esos |>
@@ -534,10 +559,10 @@ tibble(brands = c("Smaller", "Larger"),
 ```
 
 With those seven out, small and large brands behave almost identically. The
-apparent weakness was my measurement error, not a property of small brands —
-better news commercially, and a better fit with Return on Awareness, which
-finds the awareness-to-search link strongest among low and mid-awareness
-brands.
+apparent weakness on small brands was my measurement error, not a property of
+small brands. Better news commercially, and a better fit with Return on
+Awareness, which finds the awareness-to-search link strongest among low and
+mid-awareness brands.
 
 **The product version.** One flag on the brand dashboard — "search demand
 running ahead of consideration" — plus a quadrant chart placing every brand in
@@ -592,11 +617,11 @@ about three months and has largely faded by six.** That matches a separate,
 cruder check — shifting the search series forward two to three months is what
 maximises its agreement with consideration.
 
-Two limits. The variation explained is small, so the curve gives the *timing*
-far more confidently than the *size*. And with 14 quarters per brand this is
-near the edge of what the data can identify. A full marketing mix model — media
-spend, saturation curves, holdout testing — is the right tool for sizing it,
-and well beyond this scope.
+Two limits. The variation explained is small, so the curve tells you the
+*timing* far more confidently than the *size*. And with 14 quarters per brand
+this is near the edge of what the data can identify. A real marketing mix
+model — media spend, saturation curves, holdout testing — is the right tool for
+sizing it, and is well beyond a weekend.
 
 **Does this contradict Return on Awareness?** No. They find search leading
 *market share* by 6–12 months; I find it leading *consideration* by about
@@ -607,13 +632,14 @@ consideration follows within a quarter, market share follows over the year.
 # 8. Does it hold up?
 
 The obvious way this could be an illusion: if everyone searches ice cream in
-summer *and* considers it in summer, every brand looks connected without any
-brand-level signal.
+summer *and* considers ice cream in summer, every brand looks connected without
+any brand-level signal.
 
 So I broke the brand link deliberately. Each brand keeps its own consideration
-history but gets a *rival's* search history from the same category — keeping
-category seasonality, destroying the brand connection. A hundred runs gives the
-range of results the data produces when there's nothing real to find.
+history but gets a *rival's* search history from the same category — preserving
+category seasonality, destroying the brand connection. A hundred times over,
+that gives the range of results the data produces when there's nothing real to
+find.
 
 ```{r placebo, fig.height=4.2}
 # Grey band: 95% range across 100 brand-shuffled runs. Blue: the real result at
@@ -648,10 +674,10 @@ It doesn't. Supported.
 month lead, but about one in seven shuffles produces a tilt that large. So:
 direction supported, length unproven.
 
-One limitation: the shuffle stays inside the category, so if two brands
-genuinely move together the placebo inherits some of that. A conservative test
-— which is why I'm comfortable with the first claim and cautious on the
-second.
+One limitation of the test: the shuffle stays inside the category, so if two
+brands genuinely move together the placebo inherits some of that. It's a
+conservative test, which is why I'm comfortable with the first claim and
+cautious on the second.
 
 **Other checks.** Raising the search-volume bar doesn't change the ranking
 result (0.44 to 0.47 as the cut-off rises). The gap result holds within
@@ -661,100 +687,100 @@ plain name, so "no volume" means no demand rather than a lookup failure.
 
 **Next, in priority order:** test the prediction on later waves it hasn't seen;
 fix the name matching in the weak categories and re-run §4; check whether the
-gap predicts preference *conversion* rather than preference share. If I were
-picking these up at Tracksuit, the holdout test comes first — it's the one that
-decides whether this ships.
+gap predicts preference *conversion* rather than preference share.
 
 # 9. What I'd recommend
 
-If I join Tracksuit, this is where I'd start.
-
 **Ship search as a directional layer, not a replacement.** The survey says
 where a client stands; the gap says which way they're heading between waves.
-That's an addition to a tracker, not a cheaper version of one, and it answers a
-real frustration — waiting a month for a number that mostly moves on noise.
+That's an addition to a brand tracker, not a cheaper version of one, and it
+answers a real frustration — waiting a month for a number that mostly moves on
+noise.
 
-**Where it fills gaps.** It fills *time* well: continuous, covering the months
-between waves and flagging movement before the next wave confirms it. On
-*brands* the answer improved once I fixed the contamination — it works about as
-well for small brands as large ones, so this isn't a big-brands-only tool.
+**Where it fills gaps.** It fills *time* well: continuous, so it covers the
+months between waves and flags movement before the next wave confirms it. On
+*brands* the answer improved once I fixed the contamination — the gap works
+about as well for small brands as large ones, so this isn't a big-brands-only
+tool.
 
 The real brand-level limit is a reporting threshold, not missing demand. Trends
-rounds to 0–100 within each comparison, so a brand competing against a much
-larger rival reads as zero even with real, steady search. "Nobody searches this
-brand" and "this brand is too small to show up next to Bunnings" are different
-claims and public data can't separate them. Two things would: pulling small
-brands against each other rather than the category leader, and the granular
-volumes a partnership feed provides. So 1 in 5 is an upper bound on genuine
-invisibility, not a measurement of it.
+rounds to a 0–100 index within each comparison, so a brand competing against a
+much larger rival reads as zero even with real, steady search. "Nobody searches
+this brand" and "this brand is too small to show up next to Bunnings" are very
+different claims, and I can't separate them with public data. Two things would:
+pulling small brands against each other rather than the category leader, and
+the granular volumes a Google partnership feed provides. So 1 in 5 is an upper
+bound on genuine invisibility, not a measurement of it.
 
 **On qualifying categories.** A category qualifies when most of its brands have
 measurable search and search reproduces the funnel's ranking. About a third
-pass today, and a chunk of the rest fail on name matching rather than consumer
-behaviour — so that share rises with better data engineering.
+pass today — and a chunk of the rest fail on name matching, not consumer
+behaviour, so that share rises with better data engineering.
 
-I'd ship this narrow and early rather than wait for every category to work.
-A qualification gate is friction, but cheap friction — a query over data
-Tracksuit already holds — and it buys the freedom to put the metric in front of
-clients now. Shipping is also how the marketing science improves: a client who
-sees their gap turn negative, acts, and watches the next two waves is a natural
-experiment I can't run in a notebook. Ten of those beat another round of my own
-robustness checks.
+I'd ship this narrow and early rather than hold it back until every category
+works. A qualification gate is friction, but it's cheap friction — a query over
+data Tracksuit already holds — and it buys the freedom to put the metric in
+front of clients now. Shipping is also how the marketing science improves: a
+client who sees their gap turn negative, acts on it, and watches the next two
+waves is a natural experiment I can't run in a notebook. Ten of those beat
+another round of my own robustness checks.
 
-What needs protecting is the failure mode. Breaking things is fine when being
-wrong costs a shrug; it's expensive when a client opens the dashboard and sees
-a brand called *Fruits* leading haircare, because they then distrust every
+The one thing to protect is the failure mode. Breaking things is fine when
+being wrong costs a shrug. It's expensive when a client opens the dashboard and
+sees a brand called *Fruits* leading haircare, because they then distrust every
 number on the page. So: ship fast where it passes, label it directional, keep
 the contamination screen running.
 
 **What search can't do.** No funnel stages. No absolute levels — a relative
 index never says "23% of the category considers you". No audience cuts, at
-least from public data; Google holds demographic and location signal
-internally, so a partnership feed may differ. Those are the survey's
-advantages.
+least not from public data; Google holds demographic and location signal
+internally, so a partnership feed may look very different. Those are the
+survey's advantages.
 
 **Where this fits.** Tracksuit already has a Google partnership behind Return
-on Awareness. Most limits here — relative indices, sampling wobble,
-unidentifiable brands — come from using free public data, not search itself. So
-the useful part isn't my numbers. It's the method: how to decide where a search
-metric can be trusted, how to check it isn't measuring the wrong thing, and how
-to test whether the effect survives the obvious objections.
+on Awareness. Most limits here — relative indices, sampling wobble, brands that
+can't be identified — come from using free public data, not from search itself.
+So the useful part isn't my specific numbers. It's the method: how to decide
+where a search metric can be trusted, how to check it isn't measuring the wrong
+thing, and how to test whether the effect survives the obvious objections.
 
-**Packaging.** The directional flag belongs in the base tracker: it makes the
-product stickier between waves and costs almost nothing to produce. A higher
-tier is justified by the engineering behind a trustworthy version — curated
-term matching for a client's own competitive set, category qualification,
-alerting. Charging for the flag means charging for something nearly free;
-charging for the work that makes it reliable is defensible. That work is also
-getting cheaper: most of the matching here was AI-assisted and took an
-afternoon, so I'd measure what a curated competitive set costs to produce and
-maintain *now* before pricing it.
+**Packaging.** The directional flag belongs in the base tracker — it makes the
+product stickier between waves and costs almost nothing to produce. What
+justifies a higher tier is the engineering behind a trustworthy version:
+curated brand-term matching for a client's own competitive set, category
+qualification, alerting. Charging for the flag would be charging for something
+nearly free. Charging for the work that makes it reliable is defensible. or have better prompting
+in AI to do it and see how much it costs.
+
+
+> ZEN: yup add that in i made an edit above as well]`
 
 # Appendix A: getting the data {-}
 
-Google Trends compares at most five terms per request and scales the index
-within that request only. To put every brand in a category on one scale, the
-best-known brand rides along in every request as an anchor and each batch is
-rescaled to it.
+Google Trends compares at most five terms per request and returns an index
+scaled within that request only. To put every brand in a category on one scale,
+the best-known brand rides along in every request as an anchor, and each batch
+is rescaled to it.
 
 The harder problem is knowing what to search for. "Koala" is a mattress company
 and an animal; "Mecca" is a beauty retailer and a city. Where Google's
 knowledge graph has an entry for the brand I use that instead of the words,
-with hand-written rules for the rest and every decision logged.
+with hand-written rules for the rest, and every decision written to a log.
 
-I hand-checked terms for eight categories and let automation handle the rest —
-exactly where §4's weakest categories came from, and the first thing I'd fix.
+I hand-checked terms for eight categories and let automation handle the rest.
+That's exactly where §4's weakest categories came from. A deliberate trade to
+keep this inside a weekend, and the first thing I'd fix.
 
-Re-running everything on raw brand names with no cleaning barely changes the
-category-level answers: median rank agreement 0.55 uncurated versus 0.53
-curated, across the 44 categories where both have enough brands. Rank
-comparisons forgive a few misplaced brands. At brand level the errors are wild
-in both directions — uncurated, "Ultimate" yoghurt looks thousands of times
-bigger than it is, while Kärcher and Roll'd vanish over an umlaut and an
+Re-running everything on raw brand names with no cleaning changes the
+category-level answers very little: median rank agreement 0.55 uncurated versus
+0.53 curated, across the 44 categories where both versions have enough brands.
+Rank comparisons forgive a few misplaced brands. At brand level the errors are
+wild in both directions — uncurated, "Ultimate" yoghurt looks thousands of
+times bigger than it is, while Kärcher and Roll'd vanish over an umlaut and an
 apostrophe.
 
-So cleaning barely matters for category research, and is essential for anything
-a client sees with their own brand's name on it.
+So the cleaning barely matters for category research, and is essential for
+anything a client sees with their own brand's name on it.
 
 # Appendix B: method notes {-}
 
