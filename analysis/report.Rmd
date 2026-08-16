@@ -58,9 +58,9 @@ out <- function(f) readr::read_csv(file.path("out", f), show_col_types = FALSE)
 
 # Summary {-}
 
-Tracksuit's survey asks people what they *say*: have you heard of this brand,
-would you consider it, do you prefer it. Search asks nothing — it records what
-people *do*. This study asks how much of the saying the doing can replace.
+Tracksuit's survey asks people what they *say*: heard of this brand, would you
+consider it, do you prefer it. Search asks nothing. It just records what people
+*do*. I wanted to know how much of the saying the doing can replace.
 
 **Three findings.**
 
@@ -74,11 +74,11 @@ consideration carries a margin of error of about ±3 points. In the typical
 category only a quarter of the monthly movement is real. Nothing correlates
 well with a number that unsteady.
 
-Scale is the real trade. Surveys scale, but every extra brand, category or
-country costs sample, and precision comes from sample *per cell* — so scaling
-out makes each number shakier, not steadier. Search scales the opposite way:
-adding brands and countries is nearly free and it never runs out of
-respondents. What it costs is control. You can't ask it a question and you
+Scale is the real trade here. Surveys do scale, but every extra brand,
+category or country costs sample, and precision comes from sample *per cell*.
+Scale out and each number gets shakier, not steadier. Search is the opposite:
+adding brands and countries is nearly free, and it never runs out of
+respondents. What you give up is control. You can't ask it a question, and you
 can't cut it by audience.
 
 **3. The useful signal is the gap between the two, not the correlation between
@@ -86,10 +86,10 @@ them.** Brands searched for more than their consideration share implies gain
 consideration, and preference, over the next six months. Brands searched for
 less lose it.
 
-**Recommendation.** Ship search as a directional early-warning layer on the
-funnel. The survey says where a brand stands; the gap says which way it's
+**Recommendation.** Ship search as a directional early-warning layer on top of
+the funnel. The survey says where a brand stands. The gap says which way it's
 heading between waves. It won't replace the survey — no demographics, no funnel
-stages, no absolute levels. And it can't be assembled casually: seven badly
+stages, no absolute levels. And you can't throw it together: seven badly
 matched brand names swung my headline result by 15 points. That's a data
 engineering job, not a research one.
 
@@ -108,11 +108,10 @@ The funnel is awareness → consideration → preference. Each step is a claim a
 respondent makes about themselves.
 
 A search is a behaviour, and it sits between the first two steps. You can't
-search for a brand you've never heard of, so search needs awareness. Typing a
-brand name takes more effort than recognising a logo, so it implies something
-closer to intent. If that's right, share of search reads the top half of the
-funnel behaviourally — and moves before the survey, because people act before
-they're asked.
+search a brand you've never heard of, so search needs awareness. And typing a
+brand name is more effort than recognising a logo, so it's closer to intent. If
+that's right, share of search reads the top of the funnel behaviourally — and
+should move before the survey, because people act before they get asked.
 
 Two product questions, different bars:
 
@@ -145,15 +144,14 @@ even with real, steady search (§9 returns to this). Either way the direction is
 clear enough to settle the substitution question — you can't run a tracker on
 brands you can't see.
 
-Collecting this was most of the work and none of the insight. Google caps
-comparisons at five terms per request and returns a relative index, so getting
-507 brands onto one scale needs stitched, rate-limited requests plus heavy
+Collecting this was most of the work and none of the insight. Google compares
+five terms per request and scales the index inside each one, so getting 507
+brands onto a single scale takes stitched, rate-limited requests plus a lot of
 disambiguation — "Koala" is an animal, "Mecca" is a city, "Ultimate" is a
-yoghurt. I automated the collection, entity resolution and QA so the study
-could cover 50 categories within the timebox rather than the five I could have
-checked by hand. The full run takes about 90 minutes against Google's rate
-limits, so the raw data is committed — nobody needs to re-run it to check my
-numbers. Mechanics in Appendix A.
+yoghurt. I automated the collection, entity resolution and QA so this could
+cover 50 categories in the time available instead of the five I'd have checked
+by hand. The full run takes about 90 minutes, so the raw data is committed —
+nobody has to re-run it to check my numbers. Mechanics in Appendix A.
 
 # 3. How steady is the survey itself?
 
@@ -261,11 +259,11 @@ ggplot(between_cat, aes(rho, reorder(category_name, rho))) +
                          " across ", nrow(between_cat), " categories"))
 ```
 
-The spread is the finding, so it's worth being precise about both ends.
+The spread is the finding, so both ends are worth being precise about.
 
-**At the top**, search reproduces the funnel's order almost exactly: department
-stores, online marketplaces, chocolate, streetwear. Categories where the brand
-name *is* the search — you type "Kmart" because you're going to Kmart.
+**At the top**, search gets the order almost exactly right: department stores,
+online marketplaces, chocolate, streetwear. Categories where the brand name *is*
+the search — you type "Kmart" because you're going to Kmart.
 
 **At the bottom**, my first explanation was that nobody searches these
 categories. That's wrong, and the real reasons are more useful:
@@ -303,7 +301,7 @@ needs excluding from the share calculation. Only Cafes is a genuine limit.
 Skincare settles the "nobody searches this" story: **Skincare scores 0.77 and
 Body Care 0.75**, while **Female Skincare scores 0.05** — dragged down by
 brands called *Software* and *Go-To*. Same shoppers, opposite scores. The
-difference is measurement, not consumers.
+difference looks like measurement rather than consumer behaviour.
 
 So this chart mixes three things: categories where search genuinely tracks the
 funnel, categories where the purchase isn't a branded search, and categories
@@ -418,7 +416,7 @@ asking what the distance between them means.
 
 Marketers already trust a version of this. Binet and Field's excess share of
 voice rule: a brand advertising at a bigger share than its market share tends
-to grow, one under-investing tends to shrink. The gap predicts direction.
+to grow, one under-investing tends to shrink. The gap points the direction.
 (Summary and sources in [`assumptions.md`](assumptions.md).)
 
 Search gives the same shape of measure without buying media data:
@@ -428,9 +426,9 @@ Search gives the same shape of measure without buying media data:
 > consideration implies. Negative: the brand is claimed in surveys more than
 > it's sought out in real life.
 
-One difference from Binet and Field. Share of voice is an input a brand
-controls; share of search is an output of everything it has already done. So
-the gap is a symptom, not a lever.
+One difference from Binet and Field: share of voice is an input a brand
+controls, share of search is an output of everything it's already done. The gap
+is a symptom, not a lever.
 
 Does today's gap predict where consideration goes over six months?
 
@@ -528,20 +526,34 @@ specs <- list(
   "+ starting level"   = d_soc ~ esos + soc,
   "+ category effects" = d_soc ~ esos + soc + factor(category_name))
 
+# Two-way clustering (Cameron, Gelbach & Miller): brands repeat over time AND
+# brands within a category move together, so I want both. The variance is
+# V(brand) + V(category) - V(brand-and-category), which stops the overlap
+# being counted twice.
+se_two_way <- function(fit, a, b) {
+  v <- cluster_se(fit, a)^2 + cluster_se(fit, b)^2 -
+       cluster_se(fit, paste(a, b))^2
+  sqrt(pmax(v, 0))
+}
+
 purrr::imap_dfr(specs, function(f, nm) {
   fit <- lm(f, data = esos)
   b <- coef(fit)[["esos"]]
   tibble(model = nm, effect = round(b, 3),
          `t, plain` = round(b / summary(fit)$coefficients["esos", 2], 2),
-         `t, clustered by brand` = round(b / cluster_se(fit, esos$brand_id)[["esos"]], 2))
+         `t, by brand` = round(b / cluster_se(fit, esos$brand_id)[["esos"]], 2),
+         `t, brand + category` = round(
+           b / se_two_way(fit, esos$brand_id, esos$category_name)[["esos"]], 2))
 })
 ```
 
-Two columns, because the difference matters. Each brand appears about seven
-times in this data, and brands in a category move together, so plain standard
-errors treat correlated rows as independent and overstate the precision.
-Clustering by brand roughly doubles them. **The effect survives — it's just
-less impressive than it first looked**, which is the honest version.
+Three columns, because the difference matters. Each brand appears about seven
+times here, and brands in a category also move together — shared seasonality,
+competitor moves, the same fieldwork. Plain standard errors treat all of that
+as independent and overstate the precision. Clustering by brand roughly doubles
+them; clustering by brand *and* category widens them again. **The effect
+survives all three**, which is the honest version — it's just far less
+impressive than the plain numbers suggest.
 
 Controlling for the starting level also shrinks the effect, so part of the raw
 relationship was mean reversion.
@@ -631,6 +643,7 @@ mid-awareness brands.
 running ahead of consideration" — plus a quadrant chart placing every brand in
 the category on search surplus against consideration. The step after that is
 translating the gap into dollar terms through a marketing mix model — which is where a CMO can defend or argue for an investment level in a board meeting, and where brand measurement starts behaving like financial reporting.
+
 # 7. How long does search take to show up?
 
 If search leads consideration, by how long? Marketing mix models answer this
@@ -743,13 +756,25 @@ brands genuinely move together the placebo inherits some of that. It's a
 conservative test, which is why I'm comfortable with the first claim and
 cautious on the second.
 
+**How much weight each finding carries**, because they aren't equal:
+
+| Finding | Evidence |
+|---|---|
+| Search carries brand-level information beyond category seasonality | Strong |
+| Brands with a search surplus tend to gain consideration afterwards | Moderate — holds between brands with clustered errors, not within a brand |
+| Search leads consideration by 2–3 months | Exploratory — direction consistent, size not established |
+
+I'd defend the first anywhere. The second I'd ship as a directional product
+with a holdout test running behind it. The third is a hypothesis worth testing,
+not a result.
+
 **Other checks.** Raising the search-volume bar doesn't change the ranking
 result (0.44 to 0.47 as the cut-off rises). The gap result holds within
 categories as well as across them, and at both funnel stages. Every brand whose
 search identifier came back empty was automatically re-collected under its
 plain name, so "no volume" means no demand rather than a lookup failure.
 
-**Next, in priority order:** test the prediction on later waves it hasn't seen;
+**Next, in priority order:** test the signal on later waves it hasn't seen;
 fix the name matching in the weak categories and re-run §4; check whether the
 gap predicts preference *conversion* rather than preference share.
 
@@ -790,8 +815,9 @@ works. A qualification gate is friction, but it's cheap friction — a query ove
 data Tracksuit already holds — and it buys the freedom to put the metric in
 front of clients now. Shipping is also how the marketing science improves: a
 client who sees their gap turn negative, acts on it, and watches the next two
-waves is a natural experiment I can't run in a notebook. Ten of those beat
-another round of my own robustness checks.
+waves gives me forward-looking validation I can't get from a historical
+dataset. Not a clean experiment — they chose when to act — but ten of those
+beat another round of my own robustness checks.
 
 The one thing to protect is the failure mode. Breaking things is fine when
 being wrong costs a shrug. It's expensive when a client opens the dashboard and
@@ -817,8 +843,9 @@ product stickier between waves and costs almost nothing to produce. What
 justifies a higher tier is the engineering behind a trustworthy version:
 curated brand-term matching for a client's own competitive set, category
 qualification, alerting. Charging for the flag would be charging for something
-nearly free. Charging for the work that makes it reliable is defensible. or have better prompting
-in AI to do it and see how much it costs.
+nearly free. Charging for the work that makes it reliable is defensible — and
+that work is getting cheaper, so I'd re-measure what a curated competitive set
+costs to build and maintain today before pricing it off last year's number.
 
 # Appendix A: getting the data {-}
 
