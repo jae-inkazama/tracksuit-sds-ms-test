@@ -8,20 +8,30 @@ survey-based brand tracking, using the 50 Australian categories in
 `sample-category-data.csv` and Google Trends data collected for all 507
 brand-category pairs (Sep 2021 – Mar 2025).
 
-## Headline
+## Three findings
 
-- **Ranking (between brands):** Share of Search reproduces the survey's
-  competitive ranking well in roughly a third of categories and poorly in
-  another third. Which is which is predictable, so the deliverable is a
-  category *eligibility framework*, not a blanket yes/no.
-- **Tracking (within brands over time):** inconclusive at monthly grain — and
-  the binding constraint is the survey, not search. With ~200 respondents per
-  category-wave, most monthly movement in consideration is sampling noise,
-  capping the attainable correlation against *any* covariate at ≈0.48.
-- **Leading indicator:** search leads consideration by 2–3 months. A
-  100-permutation placebo test confirms the brand-level link is real but
-  leaves the lead asymmetry suggestive (p ≈ 0.14), not established.
-- **Recommendation:** complement, not substitute. Details and caveats in §8.
+1. **Search reproduces the competitive ranking in some categories, and not in
+   others.** It works well in roughly a third of the 50 categories and poorly
+   in another third. Which is which is predictable in advance, so what this
+   produces is a qualification test rather than a blanket yes or no.
+
+2. **Monthly tracking is limited by the survey, not by search.** With about 200
+   respondents per category-wave, only around a quarter of the month-to-month
+   movement in consideration is real. Quarterly comparisons are the defensible
+   unit, and a weak monthly correlation says more about the survey's resolution
+   than about search.
+
+3. **The useful signal is the gap between the two.** Brands that are
+   persistently searched more than their consideration share implies tend to
+   gain consideration, and preference, over the following six months. This is a
+   between-brand positioning signal rather than a within-brand timing one, and
+   that distinction determines what can actually be shipped.
+
+Search appears to precede consideration, but the exact lag is exploratory
+rather than established.
+
+**Recommendation:** complement, not substitute. Details and caveats in §9 of
+the report.
 
 ## Repository layout
 
