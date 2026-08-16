@@ -1,6 +1,6 @@
 ---
-title: "Can search data do the brand tracking job?"
-subtitle: "A weekend pilot on 50 Australian categories"
+title: "Share of Search and the brand funnel"
+subtitle: "Can search data complement or substitute survey-based brand tracking? A pilot study across 50 Australian categories"
 author: "Zain Raza"
 date: "`r format(Sys.Date(), '%d %B %Y')`"
 output:
@@ -8,10 +8,9 @@ output:
     toc: true
     toc_float: true
     theme: cosmo
-    code_folding: hide
+    code_folding: show
     df_print: kable
 ---
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
@@ -120,7 +119,7 @@ Two product questions, different bars:
 | Question | If yes, search is | What has to be true |
 |---|---|---|
 | Does search rank brands like the funnel does? | a benchmarking layer | search ranks brands like consideration |
-| Does search move *before* the funnel? | an early-warning layer | today's search predicts tomorrow's consideration |
+| Does search move *before* the funnel? | an early-warning layer | today's search carries information about tomorrow's consideration |
 
 Theory and assumptions are in [`assumptions.md`](assumptions.md).
 
@@ -139,20 +138,22 @@ tibble(categories = n_distinct(panel$category_name),
 ```
 
 One number is a finding on its own. Of the 507 brands tracked here, 97 — about
-1 in 5 — never register enough search volume to measure. Real brands, real
-consideration scores, no search. That settles the substitution question on its
-own: you can't track brands that are invisible.
+1 in 5 — never register enough search volume to measure. Read that as an upper
+bound rather than a count: Trends rounds to a 0–100 index within each
+comparison, so a small brand sitting beside a category giant can read as zero
+even with real, steady search (§9 returns to this). Either way the direction is
+clear enough to settle the substitution question — you can't run a tracker on
+brands you can't see.
 
 Collecting this was most of the work and none of the insight. Google caps
 comparisons at five terms per request and returns a relative index, so getting
 507 brands onto one scale needs stitched, rate-limited requests plus heavy
 disambiguation — "Koala" is an animal, "Mecca" is a city, "Ultimate" is a
-yoghurt. I used AI tooling for all of it: writing the collection pipeline,
-resolving brand names to Google's entity IDs, reviewing the log. That job would
-have been a project in itself a few years ago. Doing it in an afternoon is why
-this covers 50 categories instead of five. The full run takes about 90 minutes
-against Google's rate limits, so the raw data is committed — nobody needs to
-re-run it to check my numbers. Mechanics in Appendix A.
+yoghurt. I automated the collection, entity resolution and QA so the study
+could cover 50 categories within the timebox rather than the five I could have
+checked by hand. The full run takes about 90 minutes against Google's rate
+limits, so the raw data is committed — nobody needs to re-run it to check my
+numbers. Mechanics in Appendix A.
 
 # 3. How steady is the survey itself?
 
@@ -373,10 +374,6 @@ monthly, costs nothing, and doesn't depend on a competitor's spend being
 visible to you. That's the whole appeal: the early-warning logic already works,
 this is a cheaper way to observe it.
 
-> `[ZEN: rewrite the two paragraphs above in your own words — the one piece of
-> evidence here that no analysis could produce. Add which weak categories you'd
-> have predicted.]`
-
 # 5. Does search move with a brand over time?
 
 Ranking brands against each other is static. The harder question is whether one
@@ -491,8 +488,10 @@ tibble(stage = c("Consideration", "Preference"),
   mutate(across(where(is.numeric), ~ round(.x, 2)))
 ```
 
-A search surplus today shows up at both stages six months later. The funnel
-behaving as you'd hope: people search, then consider, then prefer.
+A search surplus is associated with subsequent movement at both stages —
+consistent with the funnel sequence the study assumes, though association is as
+far as this design goes. Nothing here rules out a campaign lifting search,
+consideration and preference together on different lags.
 
 **The obvious objection.** Share of consideration mean-reverts — a brand
 sitting high has more room to fall — and the gap is *mechanically* negative
@@ -503,31 +502,95 @@ but it also means a brand can look like it's winning because a competitor
 collapsed. Controlling for starting level and category:
 
 ```{r esos-models}
-# Plain regressions with controls, not a marketing mix model — that's §7.
-models <- list(
-  "Gap alone"                   = lm(d_soc ~ esos, data = esos),
-  "+ starting level"            = lm(d_soc ~ esos + soc, data = esos),
-  "+ starting level + category" = lm(d_soc ~ esos + soc + factor(category_name),
-                                     data = esos))
-purrr::imap_dfr(models, ~ tibble(
-  model = .y, effect = coef(.x)[["esos"]],
-  `std errors from 0` = summary(.x)$coefficients["esos", 3])) |>
-  mutate(across(where(is.numeric), ~ round(.x, 3)))
+# Cluster-robust standard errors. Each brand contributes ~7 quarterly
+# observations, and brands in a category share seasonality, competitor moves
+# and fieldwork effects — so ordinary standard errors treat correlated
+# observations as independent and come out too small. This is the standard CR1
+# sandwich estimator, written out rather than imported so the adjustment is
+# visible: bread * meat * bread, with clusters summed inside the meat.
+cluster_se <- function(fit, cluster) {
+  X <- model.matrix(fit); u <- residuals(fit); bread <- solve(crossprod(X))
+  cluster <- as.factor(cluster)
+  G <- nlevels(cluster); n <- nrow(X); k <- ncol(X)
+  meat <- matrix(0, k, k)
+  for (g in levels(cluster)) {
+    idx <- which(cluster == g)
+    score <- crossprod(X[idx, , drop = FALSE], u[idx])
+    meat <- meat + tcrossprod(score)
+  }
+  sqrt(diag(bread %*% meat %*% bread) * (G / (G - 1)) * ((n - 1) / (n - k)))
+}
+
+esos <- esos |> mutate(brand_id = paste(category_name, brand_name))
+
+specs <- list(
+  "Gap alone"          = d_soc ~ esos,
+  "+ starting level"   = d_soc ~ esos + soc,
+  "+ category effects" = d_soc ~ esos + soc + factor(category_name))
+
+purrr::imap_dfr(specs, function(f, nm) {
+  fit <- lm(f, data = esos)
+  b <- coef(fit)[["esos"]]
+  tibble(model = nm, effect = round(b, 3),
+         `t, plain` = round(b / summary(fit)$coefficients["esos", 2], 2),
+         `t, clustered by brand` = round(b / cluster_se(fit, esos$brand_id)[["esos"]], 2))
+})
 ```
 
-Controlling for starting level shrinks the effect — so part of it *was* mean
-reversion — but it survives comfortably.
+Two columns, because the difference matters. Each brand appears about seven
+times in this data, and brands in a category move together, so plain standard
+errors treat correlated rows as independent and overstate the precision.
+Clustering by brand roughly doubles them. **The effect survives — it's just
+less impressive than it first looked**, which is the honest version.
+
+Controlling for the starting level also shrinks the effect, so part of the raw
+relationship was mean reversion.
+
+**Where the signal actually lives.** Pushing further, the relationship is
+*between* brands rather than *within* one over time:
+
+```{r esos-between-within}
+# Between: collapse each brand to its averages — one row per brand, so no
+# repeated observations at all. Within: subtract each brand's own average, so
+# only its quarter-to-quarter deviations remain.
+between_b <- esos |> group_by(brand_id) |>
+  summarise(across(c(esos, d_soc, soc), mean), .groups = "drop")
+within_b <- esos |> group_by(brand_id) |>
+  mutate(across(c(esos, d_soc, soc), ~ .x - mean(.x))) |> ungroup()
+
+purrr::imap_dfr(
+  list("Between brands (one row per brand)" = between_b,
+       "Within a brand over time"           = within_b),
+  function(d, nm) {
+    fit <- lm(d_soc ~ esos + soc, data = d)
+    tibble(comparison = nm, effect = round(coef(fit)[["esos"]], 3),
+           t = round(summary(fit)$coefficients["esos", 3], 2))
+  })
+```
+
+Collapsing to one row per brand removes the repeated-observation problem
+entirely, and the effect holds: brands that sit persistently above their
+category on search relative to consideration go on to gain consideration share.
+
+Within a brand it does not hold. A given brand's quarter-to-quarter wobble
+around its own average gap tells you nothing useful about its own next move —
+if anything it points the other way. That is disappointing but consistent with
+§5: a single brand's quarterly series is mostly noise, and no amount of
+rearranging fixes that.
+
+**So this is a positioning signal, not a timing signal.** It can say *which
+brands in a category look poised to gain or lose*. It cannot say *this quarter
+your gap widened, so you're about to grow*. Getting that distinction wrong
+would be the easiest way to ship a metric that embarrasses everyone, so it
+belongs in the product spec, not a footnote.
 
 **What the numbers mean.** The effect column is share points gained per share
-point of gap. The bottom row, 0.019, is the one to trust. Concretely: **a brand
-sitting 10 points of search share ahead of its consideration share gains about
-1/5 of a point of consideration share over six months.** A brand on 20% heads
-for 20.2%.
-
-Small. It's a direction indicator, not a forecast — useful for "which way is
-this brand pointing", not "what number will we print". The gap has to be large
-and persistent to mean much, which is exactly how excess share of voice is used
-in media planning.
+point of gap. Concretely, using the between-brand figure: **a brand sitting 10
+points of search share above its consideration share gains something like 0.15
+of a point of consideration share over six months** — 20% heading for 20.15%.
+Small, and deliberately reported as small. It's a directional indicator, not a
+forecast, and the gap needs to be large and persistent to mean anything, which
+is exactly how excess share of voice is used in media planning.
 
 This lines up with Tracksuit's own [Return on
 Awareness](https://www.gotracksuit.com/report/return-on-awareness) work with
@@ -567,9 +630,7 @@ mid-awareness brands.
 **The product version.** One flag on the brand dashboard — "search demand
 running ahead of consideration" — plus a quadrant chart placing every brand in
 the category on search surplus against consideration. The step after that is
-translating the gap into dolalr terms via a marketing mix model, which is where a CMO can defend or ask for the right investment levels inboard meetings land. which is the ultimate aim for Tracksuit 
-
-
+translating the gap into dollar terms through a marketing mix model — which is where a CMO can defend or argue for an investment level in a board meeting, and where brand measurement starts behaving like financial reporting.
 # 7. How long does search take to show up?
 
 If search leads consideration, by how long? Marketing mix models answer this
@@ -611,11 +672,14 @@ ggplot(carry, aes(carryover, strength)) +
        subtitle = "Strongest when about half of last quarter's search still counts (orange point)")
 ```
 
-The best fit carries about half of last quarter's search into this one. In
-practice: **a surge in search does most of its work on consideration within
-about three months and has largely faded by six.** That matches a separate,
-cruder check — shifting the search series forward two to three months is what
-maximises its agreement with consideration.
+The best fit carries about half of last quarter's search into this one, which
+would put most of a search surge's association with consideration inside about
+three months. Treat that as an **exploratory timing estimate**, not a
+measurement: I picked the carryover rate by seeing which of ten values fitted
+this same data best, so the winner is partly a property of the search rather
+than of the world. It agrees with a separate, cruder check — shifting the
+search series forward two to three months maximises its agreement with
+consideration — which is reassuring but not independent evidence.
 
 Two limits. The variation explained is small, so the curve tells you the
 *timing* far more confidently than the *size*. And with 14 quarters per brand
@@ -713,7 +777,11 @@ the granular volumes a Google partnership feed provides. So 1 in 5 is an upper
 bound on genuine invisibility, not a measurement of it.
 
 **On qualifying categories.** A category qualifies when most of its brands have
-measurable search and search reproduces the funnel's ranking. About a third
+measurable search and search reproduces the funnel's ranking. The 0.7 rank
+agreement I use as the line is an operational threshold, not a statistically
+optimised one — it's roughly where a category's top few brands come out in the
+right order, which is what a client actually looks at. It should be calibrated
+against client outcomes rather than my judgement. About a third
 pass today — and a chunk of the rest fail on name matching, not consumer
 behaviour, so that share rises with better data engineering.
 
@@ -751,9 +819,6 @@ curated brand-term matching for a client's own competitive set, category
 qualification, alerting. Charging for the flag would be charging for something
 nearly free. Charging for the work that makes it reliable is defensible. or have better prompting
 in AI to do it and see how much it costs.
-
-
-> ZEN: yup add that in i made an edit above as well]`
 
 # Appendix A: getting the data {-}
 
