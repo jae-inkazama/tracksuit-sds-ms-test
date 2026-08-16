@@ -82,9 +82,9 @@ respondents. What you give up is control. You can't ask it a question, and you
 can't cut it by audience.
 
 **3. The useful signal is the gap between the two, not the correlation between
-them.** Brands searched for more than their consideration share implies gain
-consideration, and preference, over the next six months. Brands searched for
-less lose it.
+them.** Brands searched for more than their consideration share implies tend to
+gain consideration, and preference, over the next six months. Brands searched
+for less tend to lose it.
 
 **Recommendation.** Ship search as a directional early-warning layer on top of
 the funnel. The survey says where a brand stands. The gap says which way it's
@@ -212,7 +212,7 @@ Each bar counts categories. They pile up between 20% and 30%. In the typical
 category, about a quarter of what you see moving is the brand moving. The rest
 is the sample changing.
 
-Two consequences.
+This has two consequences.
 
 - I use **quarterly** figures. Averaging three waves roughly halves the noise.
 - There's a hard ceiling on how well *anything* can correlate with monthly
@@ -300,8 +300,11 @@ needs excluding from the share calculation. Only Cafes is a genuine limit.
 
 Skincare settles the "nobody searches this" story: **Skincare scores 0.77 and
 Body Care 0.75**, while **Female Skincare scores 0.05** — dragged down by
-brands called *Software* and *Go-To*. Same shoppers, opposite scores. The
-difference looks like measurement rather than consumer behaviour.
+brands called *Software* and *Go-To*. These are the same shoppers behaving the
+same way in both categories, and the scores come out opposite. The brands
+dragging Female Skincare down are ordinary words that Google cannot tell apart
+from the brand, so the most likely explanation is my measurement rather than
+anything about the consumers.
 
 So this chart mixes three things: categories where search genuinely tracks the
 funnel, categories where the purchase isn't a branded search, and categories
@@ -412,25 +415,32 @@ uninformative.
 The better move is to stop asking whether the lines move together and start
 asking what the distance between them means.
 
-# 6. The Gap/Opportunity Excess Share of Search {#esos}
+# 6. Demand a brand hasn't converted yet {#esos}
 
-Marketers already trust a version of this. Binet and Field's excess share of
-voice rule: a brand advertising at a bigger share than its market share tends
-to grow, one under-investing tends to shrink. The gap points the direction.
-(Summary and sources in [`assumptions.md`](assumptions.md).)
+Marketers already trust a version of this idea. Binet and Field's excess share
+of voice rule says a brand advertising at a bigger share than its market share
+tends to grow, and a brand under-investing tends to shrink. The gap between the
+two points the direction. (Summary and sources in
+[`assumptions.md`](assumptions.md).)
 
-Search gives the same shape of measure without buying media data:
+Search gives the same shape of measure without having to buy media data:
 
 > **Excess Share of Search = share of search − share of consideration.**
-> Positive: more people are actively looking for the brand than its
-> consideration implies. Negative: the brand is claimed in surveys more than
-> it's sought out in real life.
+> Positive means more people are actively looking for the brand than its
+> consideration score implies. Negative means the brand is being claimed in
+> surveys more than it is being sought out in real life.
 
-One difference from Binet and Field: share of voice is an input a brand
-controls, share of search is an output of everything it's already done. The gap
-is a symptom, not a lever.
+For a CMO the two signs mean different things. A positive gap is an
+opportunity: there is demand out there that the brand has not yet converted
+into stated consideration, and it is usually cheaper to convert interest that
+already exists than to create it. A negative gap is a warning: the brand is
+living off reputation that is no longer showing up in behaviour.
 
-Does today's gap predict where consideration goes over six months?
+One difference from Binet and Field is worth naming. Share of voice is an input
+a brand controls. Share of search is an output of everything the brand has
+already done. So the gap is a symptom to read, not a dial to turn.
+
+Does today's gap tell us where consideration goes over the next six months?
 
 ```{r esos-split}
 esos <- q |>
@@ -467,10 +477,11 @@ esos |>
        subtitle = "Each point is a tenth of the sample; bars show the range the average could sit in")
 ```
 
-The direction holds across the range: biggest search surplus gains most,
-biggest deficit loses most. It isn't a clean straight line, and the two end
-groups sit furthest from it — but they follow the same trend, so this isn't one
-extreme group dragging the result.
+The direction holds across the whole range. The group with the biggest search
+surplus gains the most and the group with the biggest deficit loses the most.
+It is not a clean straight line, and the two end groups sit furthest from it,
+but they follow the same trend. That matters, because it means the result is
+not being dragged along by one extreme group.
 
 **Does the gap also predict preference?** It should, if search picks up
 something real rather than a quirk of the consideration question. It does,
@@ -547,13 +558,13 @@ purrr::imap_dfr(specs, function(f, nm) {
 })
 ```
 
-Three columns, because the difference matters. Each brand appears about seven
-times here, and brands in a category also move together — shared seasonality,
-competitor moves, the same fieldwork. Plain standard errors treat all of that
-as independent and overstate the precision. Clustering by brand roughly doubles
-them; clustering by brand *and* category widens them again. **The effect
-survives all three**, which is the honest version — it's just far less
-impressive than the plain numbers suggest.
+Three columns because the standard errors matter here. Each brand shows up
+about seven times, and brands in the same category move together through shared
+seasonality, competitor activity and the same fieldwork. Plain standard errors
+treat all of those rows as independent, so they come out too small. Clustering
+by brand roughly doubles them. Clustering by brand and category widens them
+again. The effect holds in all three columns, but it is much less dramatic than
+the plain numbers make it look.
 
 Controlling for the starting level also shrinks the effect, so part of the raw
 relationship was mean reversion.
@@ -584,23 +595,24 @@ Collapsing to one row per brand removes the repeated-observation problem
 entirely, and the effect holds: brands that sit persistently above their
 category on search relative to consideration go on to gain consideration share.
 
-Within a brand it does not hold. A given brand's quarter-to-quarter wobble
-around its own average gap tells you nothing useful about its own next move —
-if anything it points the other way. That is disappointing but consistent with
-§5: a single brand's quarterly series is mostly noise, and no amount of
-rearranging fixes that.
+Within a brand it does not hold. A single brand's quarter-to-quarter movement
+around its own average gap tells you nothing useful about where that brand goes
+next, and if anything it points the other way. This is disappointing, but it is
+consistent with what section 5 found. A single brand's quarterly series is
+mostly noise, and no amount of rearranging the data fixes that.
 
-**So this is a positioning signal, not a timing signal.** It can say *which
-brands in a category look poised to gain or lose*. It cannot say *this quarter
-your gap widened, so you're about to grow*. Getting that distinction wrong
-would be the easiest way to ship a metric that embarrasses everyone, so it
-belongs in the product spec, not a footnote.
+**So this is a positioning signal, not a timing signal.** It can tell you which
+brands in a category look poised to gain or lose ground. It cannot tell you
+that your gap widened this quarter and therefore your brand is about to grow.
+That distinction belongs in the product spec rather than a footnote, because
+getting it wrong is the easiest way to ship a metric that embarrasses
+everyone.
 
 **What the numbers mean.** The effect column is share points gained per share
 point of gap. Concretely, using the between-brand figure: **a brand sitting 10
 points of search share above its consideration share gains something like 0.15
 of a point of consideration share over six months** — 20% heading for 20.15%.
-Small, and deliberately reported as small. It's a directional indicator, not a
+That is a small effect and I am reporting it as one. It is a directional indicator, not a
 forecast, and the gap needs to be large and persistent to mean anything, which
 is exactly how excess share of voice is used in media planning.
 
@@ -745,7 +757,7 @@ Two claims here, with different strength.
 **The brand-level signal is real.** The blue line sits above the grey band at
 every shift. If this were only category seasonality, swapping in a rival's
 search history would cost nothing and the blue line would sit inside the band.
-It doesn't. Supported.
+It does not, so I am comfortable with this claim.
 
 **The 2–3 month lead is not proven.** The line does peak at a two-to-three
 month lead, but about one in seven shuffles produces a tilt that large. So:
@@ -756,7 +768,8 @@ brands genuinely move together the placebo inherits some of that. It's a
 conservative test, which is why I'm comfortable with the first claim and
 cautious on the second.
 
-**How much weight each finding carries**, because they aren't equal:
+The three findings do not carry equal weight, so it is worth setting them out
+side by side:
 
 | Finding | Evidence |
 |---|---|
@@ -764,9 +777,9 @@ cautious on the second.
 | Brands with a search surplus tend to gain consideration afterwards | Moderate — holds between brands with clustered errors, not within a brand |
 | Search leads consideration by 2–3 months | Exploratory — direction consistent, size not established |
 
-I'd defend the first anywhere. The second I'd ship as a directional product
-with a holdout test running behind it. The third is a hypothesis worth testing,
-not a result.
+The first result is solid on this data. The second is strong enough to build a
+directional product on, provided a holdout test runs alongside it. The third is
+a hypothesis worth testing rather than a finding.
 
 **Other checks.** Raising the search-volume bar doesn't change the ranking
 result (0.44 to 0.47 as the cut-off rises). The gap result holds within
@@ -778,13 +791,16 @@ plain name, so "no volume" means no demand rather than a lookup failure.
 fix the name matching in the weak categories and re-run §4; check whether the
 gap predicts preference *conversion* rather than preference share.
 
-# 9. What I'd recommend
+# 9. Next potential steps
 
-**Ship search as a directional layer, not a replacement.** The survey says
-where a client stands; the gap says which way they're heading between waves.
-That's an addition to a brand tracker, not a cheaper version of one, and it
-answers a real frustration — waiting a month for a number that mostly moves on
-noise.
+Taking this from a pilot to something usable, in roughly the order the work
+would need to happen.
+
+**A directional layer rather than a replacement.** The survey says where a
+client stands. The gap says which way they are heading between waves. That is
+an addition to a brand tracker rather than a cheaper version of one, and it
+answers a real frustration, which is waiting a month for a number that mostly
+moves on noise.
 
 **Where it fills gaps.** It fills *time* well: continuous, so it covers the
 months between waves and flags movement before the next wave confirms it. On
@@ -810,20 +826,21 @@ against client outcomes rather than my judgement. About a third
 pass today — and a chunk of the rest fail on name matching, not consumer
 behaviour, so that share rises with better data engineering.
 
-I'd ship this narrow and early rather than hold it back until every category
-works. A qualification gate is friction, but it's cheap friction — a query over
-data Tracksuit already holds — and it buys the freedom to put the metric in
-front of clients now. Shipping is also how the marketing science improves: a
+The case for shipping narrow and early is stronger than holding it back until
+every category works. A qualification gate is friction, but it is cheap
+friction, since it is a query over data Tracksuit already holds, and it buys
+the freedom to put the metric in front of clients now. Shipping is also how the marketing science improves: a
 client who sees their gap turn negative, acts on it, and watches the next two
 waves gives me forward-looking validation I can't get from a historical
 dataset. Not a clean experiment — they chose when to act — but ten of those
 beat another round of my own robustness checks.
 
-The one thing to protect is the failure mode. Breaking things is fine when
-being wrong costs a shrug. It's expensive when a client opens the dashboard and
-sees a brand called *Fruits* leading haircare, because they then distrust every
-number on the page. So: ship fast where it passes, label it directional, keep
-the contamination screen running.
+The thing worth protecting is the failure mode. Breaking things is fine when
+being wrong costs a shrug. It gets expensive when a client opens the dashboard
+and sees a brand called *Fruits* leading haircare, because they then stop
+trusting every other number on the page. Shipping fast where the category
+passes, labelling it directional, and keeping the contamination screen running
+covers most of that risk.
 
 **What search can't do.** No funnel stages. No absolute levels — a relative
 index never says "23% of the category considers you". No audience cuts, at
