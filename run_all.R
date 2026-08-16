@@ -6,7 +6,8 @@
 root <- normalizePath(dirname(sub("--file=", "",
   grep("--file=", commandArgs(FALSE), value = TRUE)[1])), mustWork = TRUE)
 
-for (s in c("01_survey_noise.R", "02_search_analysis.R", "03_leadlag_placebo.R")) {
+for (s in c("01_survey_noise.R", "02_search_analysis.R", "03_leadlag_placebo.R",
+            "04_esos_carryover.R")) {
   message("\n=== ", s, " ===")
   system2("Rscript", file.path(root, "analysis", s))
 }
