@@ -1,2 +1,8 @@
 __pycache__/
 *.pyc
+
+# knitr/LaTeX build artifacts
+analysis/*.tex
+analysis/*.log
+analysis/*.aux
+analysis/report_files/
