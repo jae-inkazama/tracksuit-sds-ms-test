@@ -259,6 +259,16 @@ ggplot(between_cat, aes(rho, reorder(category_name, rho))) +
                          " across ", nrow(between_cat), " categories"))
 ```
 
+Two things about testing this, before reading the chart. Individual categories
+have a median of 8 brands, which is far too few for any single category's
+correlation to be significant on its own — only 4 of the 48 survive a
+multiple-testing correction, which is about what you would expect from
+underpowered tests rather than from absent relationships. The evidence is in
+the distribution instead: 44 of 48 categories sit above zero, and a signed-rank
+test on the 48 correlations gives p < 0.001. Search ranking brands like the
+survey is a real pattern across categories; no individual category's number
+should be quoted as established on its own.
+
 The spread is the finding, so both ends are worth being precise about.
 
 **At the top**, search gets the order almost exactly right: department stores,
@@ -547,14 +557,22 @@ se_two_way <- function(fit, a, b) {
   sqrt(pmax(v, 0))
 }
 
+# Degrees of freedom matter once errors are clustered: the reference
+# distribution is t with (number of clusters - 1), not the residual df. With
+# 409 brands that barely bites; with 50 categories it does.
+n_brand <- n_distinct(esos$brand_id); n_cat <- n_distinct(esos$category_name)
+
 purrr::imap_dfr(specs, function(f, nm) {
   fit <- lm(f, data = esos)
   b <- coef(fit)[["esos"]]
+  t_brand <- b / cluster_se(fit, esos$brand_id)[["esos"]]
+  t_two   <- b / se_two_way(fit, esos$brand_id, esos$category_name)[["esos"]]
   tibble(model = nm, effect = round(b, 3),
          `t, plain` = round(b / summary(fit)$coefficients["esos", 2], 2),
-         `t, by brand` = round(b / cluster_se(fit, esos$brand_id)[["esos"]], 2),
-         `t, brand + category` = round(
-           b / se_two_way(fit, esos$brand_id, esos$category_name)[["esos"]], 2))
+         `t, by brand` = round(t_brand, 2),
+         `p, by brand` = round(2 * pt(-abs(t_brand), n_brand - 1), 3),
+         `t, two-way` = round(t_two, 2),
+         `p, two-way` = round(2 * pt(-abs(t_two), n_cat - 1), 3))
 })
 ```
 
@@ -645,11 +663,13 @@ tibble(brands = c("Smaller", "Larger"),
          eff(anti_join(large, flagged, by = c("category_name", "brand_name")))))
 ```
 
-With those seven out, small and large brands behave almost identically. The
-apparent weakness on small brands was my measurement error, not a property of
-small brands. Better news commercially, and a better fit with Return on
-Awareness, which finds the awareness-to-search link strongest among low and
-mid-awareness brands.
+With those seven out, small and large brands behave almost identically. Fitting
+the difference directly as an interaction says the same thing: the gap between
+the two groups is 0.001 with p = 0.89, so there is no detectable difference by
+brand size. The apparent weakness on small brands was my measurement error
+rather than a property of small brands. That is better news commercially, and a
+better fit with Return on Awareness, which finds the awareness-to-search link
+strongest among low and mid-awareness brands.
 
 **The product version.** One flag on the brand dashboard — "search demand
 running ahead of consideration" — plus a quadrant chart placing every brand in
@@ -717,6 +737,21 @@ sizing it, and is well beyond a weekend.
 three. Consideration is earlier and faster-moving than sales, so a shorter lead
 is what you'd expect. Together they describe one chain: search moves first,
 consideration follows within a quarter, market share follows over the year.
+
+**A fair objection to the whole idea of a lead.** You could argue that people
+have to be considering a brand before they search for it, in which case search
+cannot precede consideration at all. I think that objection is right about the
+consumer and wrong about the measurement. Searching a brand probably *is*
+consideration, expressed as behaviour rather than as a survey answer. The
+survey then asks about that same mental state weeks later, on a monthly wave,
+and averages it across 200 people. Both stories produce the lag I observe, and
+this data cannot separate them.
+
+For the product it does not matter much which is true. Whether search leads
+consideration or simply observes it earlier and more cheaply, the practical
+consequence is the same: you see the movement sooner. It matters a lot for how
+the finding gets described, though, which is why I am not calling search a
+cause of anything.
 
 # 8. Does it hold up?
 
@@ -787,9 +822,43 @@ categories as well as across them, and at both funnel stages. Every brand whose
 search identifier came back empty was automatically re-collected under its
 plain name, so "no volume" means no demand rather than a lookup failure.
 
+## What would actually establish cause
+
+Nothing here is causal, and it is worth being specific about why, because
+"observational study" on its own is not much of an explanation.
+
+Three things block it. Campaigns move search and consideration together on
+different lags, so a common driver produces the pattern I see. Causation could
+run the other way, since a brand people already consider is a brand people
+search. And as section 7 argues, searching a brand may simply *be* consideration
+observed earlier, in which case there is no sequence to explain.
+
+What would settle it, roughly in order of strength:
+
+- **Geo or matched-market experiments.** Run brand activity in some regions and
+  not others, then watch both search and the survey in each. Randomised
+  exposure, so the comparison is clean. Tracksuit is well placed for this
+  because it already fields the survey by market.
+- **Brand lift studies.** Randomised exposure at the individual level, which
+  answers whether the activity moved the metric, though not directly whether
+  search precedes consideration.
+- **Difference-in-differences around known campaign launches.** No experiment
+  required — compare a brand's search and consideration before and after a
+  launch against similar brands that did not launch. Weaker than randomisation
+  and it needs a defensible control group, but it can be run on data Tracksuit
+  already holds.
+
+**Where marketing mix modelling fits.** An MMM would attribute movement to
+spend while controlling for other drivers, and would put a dollar figure on the
+gap, which is what makes it useful to a CMO. But it is still observational: its
+causal claim rests on the model being specified correctly, not on randomisation.
+So MMM is how you would *value* this effect. Experiments are how you would
+*prove* it. Both are worth doing, in that order, and neither fits in a pilot.
+
 **Next, in priority order:** test the signal on later waves it hasn't seen;
-fix the name matching in the weak categories and re-run §4; check whether the
-gap predicts preference *conversion* rather than preference share.
+fix the name matching in the weak categories and re-run §4; re-collect search
+at weekly granularity so the lag can be estimated properly; and check whether
+the gap predicts preference *conversion* rather than preference share.
 
 # 9. Next potential steps
 
@@ -878,7 +947,21 @@ with hand-written rules for the rest, and every decision written to a log.
 
 I hand-checked terms for eight categories and let automation handle the rest.
 That's exactly where §4's weakest categories came from. A deliberate trade to
-keep this inside a weekend, and the first thing I'd fix.
+keep this inside the time available, and the first thing I'd fix.
+
+**Granularity.** Google decides what frequency it returns based on the window
+you ask for, and a 43-month window comes back monthly. So monthly is what I
+have, and it is Google's aggregation rather than mine. Pulling in shorter
+windows would return weekly or daily data that I could aggregate myself, which
+is the better habit — smooth late, not early.
+
+For the main results this changes nothing. I compare quarters anyway, and the
+survey only exists monthly, so no information is being lost on the side that
+binds. It does matter for section 7. With weekly search I could estimate the
+lag in weeks rather than whole months, and the timing estimate is the weakest
+part of this study. The cost is roughly six times the requests, or about nine
+hours instead of ninety minutes, which is why it did not happen here. If the
+timing question mattered commercially, this is the change I would make first.
 
 Re-running everything on raw brand names with no cleaning changes the
 category-level answers very little: median rank agreement 0.55 uncurated versus

@@ -1,37 +1,36 @@
-# Share of Search vs brand tracking — Tracksuit DS take-home
+# Search + brand tracking — Tracksuit DS take-home 17-08-2026
 
 **[▶ Read the report](https://jae-inkazama.github.io/tracksuit-sds-ms-test/)**
 · [source (`analysis/report.Rmd`)](analysis/report.Rmd)
 
-A pilot study on whether Google search behaviour can complement or substitute
-survey-based brand tracking, using the 50 Australian categories in
+A study on whether Google search behaviour can complement or substitute
+survey-based brand tracking, using the Australian Brasnd Retail categories in
 `sample-category-data.csv` and Google Trends data collected for all 507
 brand-category pairs (Sep 2021 – Mar 2025).
 
-## Three findings
+## My Main Insights/PArtial Insights
 
 1. **Search reproduces the competitive ranking in some categories, and not in
-   others.** It works well in roughly a third of the 50 categories and poorly
-   in another third. Which is which is predictable in advance, so what this
+   others.** It works well in roughly a third of the 50 categories and poorly in
+   another third. Which is which is predictable in advance, so what this
    produces is a qualification test rather than a blanket yes or no.
 
-2. **Monthly tracking is limited by the survey, not by search.** With about 200
-   respondents per category-wave, only around a quarter of the month-to-month
-   movement in consideration is real. Quarterly comparisons are the defensible
-   unit, and a weak monthly correlation says more about the survey's resolution
-   than about search.
+2. **Month-to-month comparisons are too noisy to test on.** At around 200
+   respondents a wave, about a quarter of the monthly movement in consideration
+   is real brand movement. So I compare quarters. That is the resolution any
+   monthly sample this size gives you, and it applies to anything you test
+   against it, search included.
 
-3. **The useful signal is the gap between the two.** Brands that are
-   persistently searched more than their consideration share implies tend to
-   gain consideration, and preference, over the following six months. This is a
-   between-brand positioning signal rather than a within-brand timing one, and
-   that distinction determines what can actually be shipped.
+3. **There is a useful signal in the gap between the two.** Brands searched
+   more than their consideration share implies tend to gain consideration, and
+   preference, over the next six months. It shows up between brands, not within
+   a single brand over time, and that decides what you could actually build.
 
-Search appears to precede consideration, but the exact lag is exploratory
-rather than established.
+Search may run ahead of consideration, but this data cannot prove it. It is
+also arguable that searching a brand *is* consideration, expressed as behaviour
+rather than a survey answer. Either way, search sees the movement sooner.
 
-**Recommendation:** complement, not substitute. Details and caveats in §9 of
-the report.
+**Recommendation:** complement, not substitute. Details and caveats in §9.
 
 ## Repository layout
 
