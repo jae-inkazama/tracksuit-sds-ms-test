@@ -1,28 +1,24 @@
 # Search + brand tracking — Tracksuit DS take-home 17-08-2026
 
 **[▶ Read the report](https://jae-inkazama.github.io/tracksuit-sds-ms-test/)**
-· [source (`analysis/report.Rmd`)](analysis/report.Rmd)
+· [source (](analysis/report.Rmd)`analysis/report.Rmd`[)](analysis/report.Rmd)
 
-A study on whether Google search behaviour can complement or substitute
-survey-based brand tracking, using the Australian Brasnd Retail categories in
-`sample-category-data.csv` and Google Trends data collected for all 507
+A study on whether Google search behaviour can complement or substitute survey-based brand tracking, using the Australian Brasnd categories in `sample-category-data.csv` and Google Trends data collected for all 507
 brand-category pairs (Sep 2021 – Mar 2025).
 
 ## My Main Insights/PArtial Insights
 
 1. **Search reproduces the competitive ranking in some categories, and not in
-   others.** It works well in roughly a third of the 50 categories and poorly in
+  others.** It works well in roughly a third of the 50 categories and poorly in
    another third. Which is which is predictable in advance, so what this
    produces is a qualification test rather than a blanket yes or no.
-
 2. **Month-to-month comparisons are too noisy to test on.** At around 200
-   respondents a wave, about a quarter of the monthly movement in consideration
+  respondents a wave, about a quarter of the monthly movement in consideration
    is real brand movement. So I compare quarters. That is the resolution any
    monthly sample this size gives you, and it applies to anything you test
    against it, search included.
-
 3. **There is a useful signal in the gap between the two.** Brands searched
-   more than their consideration share implies tend to gain consideration, and
+  more than their consideration share implies tend to gain consideration, and
    preference, over the next six months. It shows up between brands, not within
    a single brand over time, and that decides what you could actually build.
 
@@ -34,17 +30,21 @@ rather than a survey answer. Either way, search sees the movement sooner.
 
 ## Repository layout
 
-| Path | What it is |
-|---|---|
+
+| Path                                  | What it is                                                                                |
+| ------------------------------------- | ----------------------------------------------------------------------------------------- |
 | `analysis/report.Rmd` → `report.html` | The study. Non-technical summary first, then method, results, validation, recommendation. |
-| `analysis/R/functions.R` | Shared loaders, noise decomposition, SoS and smoothing helpers. |
-| `analysis/01_survey_noise.R` | Survey-side noise/reliability decomposition (runs without search data). |
-| `analysis/02_search_analysis.R` | Between-brand, within-brand, lead-lag, eligibility. Writes `analysis/out/*.csv`. |
-| `analysis/03_leadlag_placebo.R` | 100-permutation brand-shuffle placebo for the lead-lag claim. |
-| `pull/pull_trends.py` | Google Trends collection: entity resolution, anchor stitching, checkpointing. |
-| `pull/terms_overrides.yaml` | Hand-curated search terms and rationale, per brand. |
-| `data/raw/trends/` | Curated-tier pull: raw batch responses, per-category stitched series, resolution log. |
-| `data/raw/trends.naive/` | Uncurated ablation (raw brand names) used in §7.1. |
+| `analysis/R/functions.R`              | Shared loaders, noise decomposition, SoS and smoothing helpers.                           |
+| `analysis/01_survey_noise.R`          | Survey-side noise/reliability decomposition (runs without search data).                   |
+| `analysis/02_search_analysis.R`       | Between-brand, within-brand, lead-lag, eligibility. Writes `analysis/out/*.csv`.          |
+| `analysis/03_leadlag_placebo.R`       | 100-permutation brand-shuffle placebo for the lead-lag claim.                             |
+| `pull/pull_trends.py`                 | Google Trends collection: entity resolution, anchor stitching, checkpointing.             |
+| `pull/terms_overrides.yaml`           | Hand-curated search terms and rationale, per brand.                                       |
+| `data/raw/trends/`                    | Curated-tier pull: raw batch responses, per-category stitched series, resolution log.     |
+| `data/raw/trends.naive/`              | Uncurated ablation (raw brand names) used in §7.1.                                        |
+
+
+
 
 ## Reproducing
 
@@ -77,7 +77,7 @@ Rscript -e 'rmarkdown::render("analysis/report.Rmd")'
 ```
 
 Exact package versions used are recorded in
-[`analysis/session-info.txt`](analysis/session-info.txt). The scripts are
+`[analysis/session-info.txt](analysis/session-info.txt)`. The scripts are
 order-dependent (02 and 03 write the CSVs the report reads) and locate the
 repo root themselves, so they can be run from any working directory.
 

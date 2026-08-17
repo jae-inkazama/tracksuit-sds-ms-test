@@ -609,9 +609,14 @@ purrr::imap_dfr(
   })
 ```
 
-Collapsing to one row per brand removes the repeated-observation problem
-entirely, and the effect holds: brands that sit persistently above their
-category on search relative to consideration go on to gain consideration share.
+Collapsing to one row per brand removes the repeated-observation problem, and
+the effect holds: brands that sit persistently above their category on search
+relative to consideration go on to gain consideration share. It does not make
+the rows fully independent, though — brands are still nested inside categories.
+Clustering this model by category as well takes it from t = 3.77 to t = 2.10
+(p = 0.04), so it survives, but the panel model with two-way clustering is the
+better place to hang the inference. This decomposition is here to show *where*
+the relationship lives, not to carry the significance claim.
 
 Within a brand it does not hold. A single brand's quarter-to-quarter movement
 around its own average gap tells you nothing useful about where that brand goes
