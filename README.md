@@ -17,10 +17,10 @@ brand-category pairs (Sep 2021 – Mar 2025).
    is real brand movement. So I compare quarters. That is the resolution any
    monthly sample this size gives you, and it applies to anything you test
    against it, search included.
-3. **There is a useful signal in the gap between the two.** Brands searched
-  more than their consideration share implies tend to gain consideration, and
-   preference, over the next six months. It shows up between brands, not within
-   a single brand over time, and that decides what you could actually build.
+3. **There is a useful signal in the gap between the two.** Brands with a search surplus tend to have stronger subsequent consideration and preference
+    over the next six months. primarily as a between-brand positioning signal rather than a within-brand forecast.
+   And that can decide what you could actually build.
+   
 
 Search may run ahead of consideration, but this data cannot prove it. It is
 also arguable that searching a brand *is* consideration, expressed as behaviour
