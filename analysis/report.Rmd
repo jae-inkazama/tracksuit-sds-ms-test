@@ -676,6 +676,43 @@ rather than a property of small brands. That is better news commercially, and a
 better fit with Return on Awareness, which finds the awareness-to-search link
 strongest among low and mid-awareness brands.
 
+**Does the qualification test from §4 actually predict a stronger gap?** It
+should, if the two halves of this study are measuring the same thing, and it is
+the obvious way to check that §4's threshold is doing real work rather than
+sorting categories on nothing.
+
+```{r eligibility-validation}
+# Split the gap test by whether the category passed the ranking gate in §4.
+rank_gate <- between |>
+  group_by(category_name) |> filter(n() >= 4) |>
+  summarise(rho = cor(sos, soc, method = "spearman"), .groups = "drop") |>
+  mutate(passes = rho >= 0.7)
+
+gated <- esos |> inner_join(rank_gate, by = "category_name")
+
+purrr::map_dfr(c(TRUE, FALSE), function(g) {
+  d <- filter(gated, passes == g)
+  fit <- lm(d_soc ~ esos + soc, data = d)
+  b <- coef(fit)[["esos"]]
+  t <- b / cluster_se(fit, d$brand_id)[["esos"]]
+  tibble(categories = if (g) "Pass the §4 gate" else "Fail the §4 gate",
+         n_categories = n_distinct(d$category_name),
+         effect = round(b, 3), `t, clustered` = round(t, 2))
+})
+```
+
+The gap signal is about four times stronger in categories that pass the ranking
+test, and the difference between the two groups is itself significant
+(0.054, clustered t = 2.41, p = 0.02). That is the result that ties the two
+halves of this study together. Section 4's threshold is not just sorting
+categories on data quality — it is picking out the categories where the gap
+carries commercial information.
+
+It also sharpens the recommendation. The gap works everywhere to some degree,
+but it works *well* in the categories that pass, which means the qualification
+test is a targeting rule rather than a gate that excludes clients from
+something valuable.
+
 **The product version.** One flag on the brand dashboard — "search demand
 running ahead of consideration" — plus a quadrant chart placing every brand in
 the category on search surplus against consideration. The step after that is
@@ -915,6 +952,27 @@ and sees a brand called *Fruits* leading haircare, because they then stop
 trusting every other number on the page. Shipping fast where the category
 passes, labelling it directional, and keeping the contamination screen running
 covers most of that risk.
+
+**A risk worth designing around: this metric is gameable.** Surveyed
+consideration is expensive to move — you have to change what people actually
+think. Share of search is not. Brand-term SEO, a burst of search activation, or
+a competitor's PR crisis will move a brand's gap without anything real changing
+underneath. That is tolerable while the metric is directional and unpriced. It
+becomes a problem the moment it lands in a client's KPI deck, because we would
+have created an incentive to optimise the measurement rather than the brand. If
+this ships, it should ship with that stated, and probably with a rule that the
+flag is read alongside the survey rather than instead of it.
+
+**A risk worth designing around: this metric is gameable.** Surveyed
+consideration is expensive to move, because you have to change what people
+actually think. Share of search is not. Brand-term SEO, a burst of search
+activation, or a competitor's PR crisis will move a brand's gap without
+anything real changing underneath. That is tolerable while the metric is
+directional and unpriced. It becomes a problem the moment it lands in a
+client's KPI deck, because we would have created an incentive to optimise the
+measurement rather than the brand. If this ships, it ships with that stated,
+and probably with a rule that the flag is read alongside the survey rather than
+instead of it.
 
 **What search can't do.** No funnel stages. No absolute levels — a relative
 index never says "23% of the category considers you". No audience cuts, at

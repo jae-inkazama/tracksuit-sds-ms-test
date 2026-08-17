@@ -28,6 +28,45 @@ rather than a survey answer. Either way, search sees the movement sooner.
 
 **Recommendation:** complement, not substitute. Details and caveats in §9.
 
+## What I haven't tested
+
+Listing these because they are the places a reviewer should push, and because
+knowing what is untested is part of the result.
+
+- **No holdout.** The gap relationship is fitted and evaluated on the same
+  data. Testing it on later waves it has not seen is the single next step, and
+  the one that decides whether this is shippable.
+- **Nothing here is causal.** Campaigns move search and consideration together;
+  causation could run either way; and searching a brand may simply *be*
+  consideration observed earlier. §8 sets out what would settle it — geo
+  experiments, brand lift studies, or difference-in-differences around known
+  campaign launches. An MMM would put a dollar value on the effect but would
+  not prove it.
+- **Share of search here is share of *tracked* brands**, not share of all
+  category search. A six-brand category and a twenty-eight-brand category are
+  not producing comparable denominators.
+- **The 2–3 month lead is exploratory.** The carryover rate was chosen by
+  fitting the same data, and the placebo puts the lead inside what shuffling
+  can produce about one time in seven.
+- **Search terms were hand-checked for 8 of 50 categories.** The weakest
+  categories in §4 are measuring that, not consumer behaviour.
+- **Search was collected monthly** because that is what Google returns for a
+  43-month window. Weekly collection would let the lag be estimated properly.
+- **Survey weights are treated as respondent counts**, which ignores design
+  effect. True reliability is therefore lower than I report, which makes the
+  noise argument stronger rather than weaker.
+- **Not sized commercially.** A third of categories passing the gate is a rate,
+  not a business case. How many current clients sit in eligible categories is
+  the obvious next question.
+
+## Next steps, in order
+
+1. Holdout test on later waves.
+2. Fix entity matching across the remaining 42 categories and re-run §4.
+3. Re-collect search weekly so the lag can be estimated in weeks.
+4. Size the eligible portion of the client base.
+5. Design a geo or matched-market test with a willing client.
+
 ## Repository layout
 
 
